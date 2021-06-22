@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="popup.master.cs" Inherits="OrangeSummer.Web.MasterApplication.common.master.popup" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= OrangeSummer.Common.Master.AppSetting.SiteTitle %></title>
+    <link href="/common/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/common/vendor/bootstrap/css/doc.min.css" rel="stylesheet" />
+    <link href="/common/vendor/jquery/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/common/css/site.css?v=<%= DateTime.Now.ToString("yyyyMMddHHmmss") %>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h5 class="popup-title"><%= OrangeSummer.Common.Master.AppSetting.Title %></h5>
+                <button type="button" class="btn btn-secondary" aria-label="Close" onclick="self.close();">
+                    <span aria-hidden="true" class="text-white">&times;</span>
+                </button>
+            </div>
+            <div class="popup-body">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+
+    <script src="/common/vendor/jquery/jquery.min.js"></script>
+    <script src="/common/vendor/jquery/jquery-ui.min.js"></script>
+    <script src="/common/vendor/popper/popper.min.js"></script>
+    <script src="/common/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/common/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/common/js/jquery-library.js"></script>
+    <script src="/common/js/site.js"></script>
+    <asp:ContentPlaceHolder ID="ScriptPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

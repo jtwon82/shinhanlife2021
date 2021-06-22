@@ -1,0 +1,10 @@
+﻿{
+  "AppSettings": {
+    "SiteTitle": "test"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-test-8a5bc49c-4789-4c4a-8214-1bd2a9ed368e;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

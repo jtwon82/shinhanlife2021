@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E5810CE-AD88-4872-929E-D8170603F8F1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrangeSummer.Web.UserApplication</RootNamespace>
+    <AssemblyName>OrangeSummer.Web.UserApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="achieve\default.aspx" />
+    <Content Include="board\evt\default.aspx" />
+    <Content Include="board\evt\detail.aspx" />
+    <Content Include="board\notice\default.aspx" />
+    <Content Include="board\notice\detail.aspx" />
+    <Content Include="board\roulette\default.aspx" />
+    <Content Include="board\word\default.aspx" />
+    <Content Include="common\js\jquery-library.js" />
+    <Content Include="common\js\site.js" />
+    <Content Include="common\uc\menu.ascx" />
+    <Content Include="board\ucc\default.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="global.asax" />
+    <Content Include="measure\default.aspx" />
+    <Content Include="member\edit\default.aspx" />
+    <Content Include="member\login\default.aspx" />
+    <Content Include="member\regist\default.aspx" />
+    <Content Include="member\terms\default.aspx" />
+    <Content Include="ranking\default.aspx" />
+    <Content Include="resources\css\common.css" />
+    <Content Include="resources\css\font.css" />
+    <Content Include="resources\css\reset_edit.css" />
+    <Content Include="resources\css\reset.css" />
+    <Content Include="resources\css\swiper.min.css" />
+    <Content Include="resources\img\%40test_img.png" />
+    <Content Include="resources\img\achieve_bali.png" />
+    <Content Include="resources\img\achieve_bangkok.png" />
+    <Content Include="resources\img\achieve_barcelona.png" />
+    <Content Include="resources\img\achieve_danang.png" />
+    <Content Include="resources\img\achieve_hawaii.png" />
+    <Content Include="resources\img\achieve_jeju.png" />
+    <Content Include="resources\img\achieve_lasvegas.png" />
+    <Content Include="resources\img\achieve_paris.png" />
+    <Content Include="resources\img\achieve_southcape.png" />
+    <Content Include="resources\img\achieve_sydney.png" />
+    <Content Include="resources\img\allmenu.png" />
+    <Content Include="resources\img\allmenu_close.png" />
+    <Content Include="resources\img\bg_item_measure.png" />
+    <Content Include="resources\img\bg_item_measure_t.png" />
+    <Content Include="resources\img\bg_rank.png" />
+    <Content Include="resources\img\btn_close.png" />
+    <Content Include="resources\img\btn_close2.png" />
+    <Content Include="resources\img\btn_winning.png" />
+    <Content Include="resources\img\btn_winning_close.png" />
+    <Content Include="resources\img\btn_winning_title01.png" />
+    <Content Include="resources\img\btn_winning_title02.png" />
+    <Content Include="resources\img\bu_arrow_d.png" />
+    <Content Include="resources\img\bu_arrow_r.png" />
+    <Content Include="resources\img\bu_arrow_rg.png" />
+    <Content Include="resources\img\bu_arrow_ro.png" />
+    <Content Include="resources\img\bu_arrow_t.png" />
+    <Content Include="resources\img\bu_paging_l.png" />
+    <Content Include="resources\img\bu_paging_r.png" />
+    <Content Include="resources\img\bu_title_item.png" />
+    <Content Include="resources\img\bu_title_w_item.png" />
+    <Content Include="resources\img\bu_w_arrow_l.png" />
+    <Content Include="resources\img\bu_w_arrow_r.png" />
+    <Content Include="resources\img\desti01.png" />
+    <Content Include="resources\img\desti02.png" />
+    <Content Include="resources\img\desti03.png" />
+    <Content Include="resources\img\desti04.png" />
+    <Content Include="resources\img\desti05.png" />
+    <Content Include="resources\img\desti06.png" />
+    <Content Include="resources\img\desti07.png" />
+    <Content Include="resources\img\desti08.png" />
+    <Content Include="resources\img\desti09.png" />
+    <Content Include="resources\img\desti10.png" />
+    <Content Include="resources\img\event_banner01.png" />
+    <Content Include="resources\img\event_banner_bottom01.png" />
+    <Content Include="resources\img\event_banner_bottom02.png" />
+    <Content Include="resources\img\event_banner_bottom03.png" />
+    <Content Include="resources\img\event_kv01.png" />
+    <Content Include="resources\img\event_kv01_btn.png" />
+    <Content Include="resources\img\event_kv01_list1.png" />
+    <Content Include="resources\img\event_kv01_list2.png" />
+    <Content Include="resources\img\event_kv01_list3.png" />
+    <Content Include="resources\img\event_kv01_list4.png" />
+    <Content Include="resources\img\event_kv01_list5.png" />
+    <Content Include="resources\img\event_kv01_list6.png" />
+    <Content Include="resources\img\event_kv02.png" />
+    <Content Include="resources\img\event_kv02_bg.png" />
+    <Content Include="resources\img\event_kv02_bgwrap.png" />
+    <Content Include="resources\img\event_kv02_btn.png" />
+    <Content Include="resources\img\event_kv02_coupon1.png" />
+    <Content Include="resources\img\event_kv02_coupon2.png" />
+    <Content Include="resources\img\event_kv02_img.png" />
+    <Content Include="resources\img\event_kv02_pin.png" />
+    <Content Include="resources\img\event_kv03.png" />
+    <Content Include="resources\img\event_kv03_btn.png" />
+    <Content Include="resources\img\event_kv_UCC.png" />
+    <Content Include="resources\img\event_UCC_list1.png" />
+    <Content Include="resources\img\event_UCC_list2.png" />
+    <Content Include="resources\img\event_UCC_list3.png" />
+    <Content Include="resources\img\event_UCC_list4.png" />
+    <Content Include="resources\img\event_UCC_list5.png" />
+    <Content Include="resources\img\event_UCC_list6.png" />
+    <Content Include="resources\img\event_writing_contest01.png" />
+    <Content Include="resources\img\event_writing_contest02.png" />
+    <Content Include="resources\img\event_writing_contest03.png" />
+    <Content Include="resources\img\event_writing_contest04.png" />
+    <Content Include="resources\img\flogo.png" />
+    <Content Include="resources\img\hub.png" />
+    <Content Include="resources\img\ico_comment.png" />
+    <Content Include="resources\img\ico_fight.png" />
+    <Content Include="resources\img\ico_file.png" />
+    <Content Include="resources\img\ico_file_down.png" />
+    <Content Include="resources\img\ico_like.png" />
+    <Content Include="resources\img\ico_like_chk.png" />
+    <Content Include="resources\img\ico_reply.png" />
+    <Content Include="resources\img\img_measure01.png" />
+    <Content Include="resources\img\img_measure02.png" />
+    <Content Include="resources\img\img_measure03.png" />
+    <Content Include="resources\img\intro.png" />
+    <Content Include="resources\img\intro_m.png" />
+    <Content Include="resources\img\intro_menu.png" />
+    <Content Include="resources\img\intro_teaser.png" />
+    <Content Include="resources\img\login.png" />
+    <Content Include="resources\img\measure.png" />
+    <Content Include="resources\img\notice_banner01.png" />
+    <Content Include="resources\img\ranking.png" />
+    <Content Include="resources\img\signup_banner.png" />
+    <Content Include="resources\img\signup_edit_banner.png" />
+    <Content Include="resources\img\wbg_achieve_bali.jpg" />
+    <Content Include="resources\img\wbg_achieve_bali.png" />
+    <Content Include="resources\img\wbg_achieve_bali_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_bangkok.jpg" />
+    <Content Include="resources\img\wbg_achieve_bangkok.png" />
+    <Content Include="resources\img\wbg_achieve_bangkok_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_barcelona.jpg" />
+    <Content Include="resources\img\wbg_achieve_barcelona.png" />
+    <Content Include="resources\img\wbg_achieve_barcelona_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_danang.jpg" />
+    <Content Include="resources\img\wbg_achieve_danang.png" />
+    <Content Include="resources\img\wbg_achieve_danang_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_hawaii.jpg" />
+    <Content Include="resources\img\wbg_achieve_hawaii.png" />
+    <Content Include="resources\img\wbg_achieve_hawaii_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_jeju.jpg" />
+    <Content Include="resources\img\wbg_achieve_jeju.png" />
+    <Content Include="resources\img\wbg_achieve_jeju_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_lasvegas.jpg" />
+    <Content Include="resources\img\wbg_achieve_lasvegas.png" />
+    <Content Include="resources\img\wbg_achieve_lasvegas_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_paris.jpg" />
+    <Content Include="resources\img\wbg_achieve_paris.png" />
+    <Content Include="resources\img\wbg_achieve_paris_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_southcape.jpg" />
+    <Content Include="resources\img\wbg_achieve_southcape.png" />
+    <Content Include="resources\img\wbg_achieve_southcape_m.jpg" />
+    <Content Include="resources\img\wbg_achieve_sydney.jpg" />
+    <Content Include="resources\img\wbg_achieve_sydney.png" />
+    <Content Include="resources\img\wbg_achieve_sydney_m.jpg" />
+    <Content Include="resources\img\wbg_event.png" />
+    <Content Include="resources\img\wbg_event01.png" />
+    <Content Include="resources\img\wbg_event02.png" />
+    <Content Include="resources\img\wbg_event03.png" />
+    <Content Include="resources\img\wbg_event_detail.png" />
+    <Content Include="resources\img\wbg_intro.png" />
+    <Content Include="resources\img\wbg_login.png" />
+    <Content Include="resources\img\wbg_login_m.png" />
+    <Content Include="resources\img\wbg_measure.png" />
+    <Content Include="resources\img\wbg_notice.png" />
+    <Content Include="resources\img\wbg_notice_detail.png" />
+    <Content Include="resources\img\wbg_ranking.png" />
+    <Content Include="resources\img\wbg_singup.png" />
+    <Content Include="resources\js\common.js" />
+    <Content Include="resources\js\jquery-3.5.1.min.js" />
+    <Content Include="resources\js\swiper.min.js" />
+    <Content Include="template.aspx" />
+    <Content Include="travel\default.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="achieve\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="achieve\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\evt\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\evt\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\evt\detail.aspx.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\evt\detail.aspx.designer.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\notice\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\notice\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\notice\detail.aspx.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\notice\detail.aspx.designer.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\roulette\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\roulette\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\word\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\word\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="common\master\page.Master.cs">
+      <DependentUpon>page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\master\page.Master.designer.cs">
+      <DependentUpon>page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="common\uc\menu.ascx.cs">
+      <DependentUpon>menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\uc\menu.ascx.designer.cs">
+      <DependentUpon>menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\MemberController.cs" />
+    <Compile Include="controllers\EventController.cs" />
+    <Compile Include="controllers\RouletteController.cs" />
+    <Compile Include="controllers\NoticeController.cs" />
+    <Compile Include="controllers\WordController.cs" />
+    <Compile Include="controllers\UccController.cs" />
+    <Compile Include="board\ucc\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\ucc\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="global.asax.cs">
+      <DependentUpon>global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="measure\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="measure\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\edit\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\edit\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\login\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\login\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\regist\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\regist\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\terms\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\terms\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ranking\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ranking\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="template.aspx.cs">
+      <DependentUpon>template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="template.aspx.designer.cs">
+      <DependentUpon>template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="travel\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="travel\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="common\master\page.Master" />
+    <None Include="packages.config" />
+    <Content Include="resources\fonts\notokr-bold.eot" />
+    <Content Include="resources\fonts\notokr-bold.woff" />
+    <Content Include="resources\fonts\notokr-bold.woff2" />
+    <Content Include="resources\fonts\notokr-light.eot" />
+    <Content Include="resources\fonts\notokr-light.woff" />
+    <Content Include="resources\fonts\notokr-light.woff2" />
+    <Content Include="resources\fonts\notokr-medium.eot" />
+    <Content Include="resources\fonts\notokr-medium.woff" />
+    <Content Include="resources\fonts\notokr-medium.woff2" />
+    <Content Include="resources\fonts\notokr-regular.eot" />
+    <Content Include="resources\fonts\notokr-regular.woff" />
+    <Content Include="resources\fonts\notokr-regular.woff2" />
+    <None Include="Properties\PublishProfiles\orangesummer.co.kr.pubxml" />
+    <None Include="Properties\PublishProfiles\test.orangesummer.co.kr.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MLib\MLib.csproj">
+      <Project>{96f3570b-c1ba-4e65-81f8-cd8be458306f}</Project>
+      <Name>MLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrangeSummer.Business\OrangeSummer.Business.csproj">
+      <Project>{ec61b561-2054-4808-81ed-cc027e28e84c}</Project>
+      <Name>OrangeSummer.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrangeSummer.Common\OrangeSummer.Common.csproj">
+      <Project>{c9c04df0-3a92-4ef1-ac05-f012a85849b0}</Project>
+      <Name>OrangeSummer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrangeSummer.Model\OrangeSummer.Model.csproj">
+      <Project>{dca9b478-d893-4637-a366-ab73b5c78bef}</Project>
+      <Name>OrangeSummer.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52247</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52247/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

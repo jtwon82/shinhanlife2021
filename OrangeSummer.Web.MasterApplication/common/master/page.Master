@@ -1,0 +1,169 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="page.master.cs" Inherits="OrangeSummer.Web.MasterApplication.common.master.page" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= OrangeSummer.Common.Master.AppSetting.SiteTitle %></title>
+    <link href="/common/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/common/vendor/bootstrap/css/doc.min.css" rel="stylesheet" />
+    <link href="/common/vendor/jquery/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/common/css/site.css?v=<%= DateTime.Now.ToString("yyyyMMddHHmmss") %>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body style="margin-bottom: 70px;">
+    <form id="form1" runat="server" class="mt-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+            <div class="container">
+                <a class="navbar-brand mb-0 h1 font-weight-bold" href="/dash/">Dash Board</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top" aria-controls="top" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="top">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="menu-1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">메인 관리</a>
+                            <div class="dropdown-menu" aria-labelledby="menu-1">
+                                <a class="dropdown-item" href="/main/banner/">배너 관리</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-white" href="/member/">회원 관리</a>
+                        </li>
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="menu-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">시책 관리</a>
+                            <div class="dropdown-menu" aria-labelledby="menu-2">
+                                <a class="dropdown-item" href="javascript:alert('준비중 입니다.')">시책 상세 관리</a>
+                            </div>
+                        </li>
+                        <%--<li class="nav-item mx-2">
+                            <a class="nav-link text-white" href="/branch/">지점 관리</a>
+                        </li>--%>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-white" href="/achievement/">업적 관리</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-white" href="/ranking/">랭킹 관리</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-white" href="javascript:alert('준비중 입니다.')">시책진도현황 관리</a>
+                        </li>
+                        <%--<li class="nav-item mx-2">
+                            <a class="nav-link text-white" href="/travel/">여행지 관리</a>
+                        </li>--%>
+                        <li class="nav-item dropdown mx-2">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="menu-3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">공지사항</a>
+                            <div class="dropdown-menu" aria-labelledby="menu-3">
+                                <a class="dropdown-item" href="/board/notice/">공지사항 관리</a>
+                                <a class="dropdown-item" href="/board/agreement/">약관 관리</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown mx-2">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="menu-4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">이벤트</a>
+                            <div class="dropdown-menu" aria-labelledby="menu-4">
+                                <a class="dropdown-item" href="/board/evt/">이벤트 관리</a>
+                                <a class="dropdown-item" href="/board/roulette/">룰렛 이벤트</a>
+                            </div>
+                        </li>
+                        <%--<li class="nav-item dropdown mx-2">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="menu-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">이벤트/공지사항</a>
+                            <div class="dropdown-menu" aria-labelledby="menu-6">
+                                <a class="dropdown-item" href="/board/notice/">공지사항 관리</a>
+                                <a class="dropdown-item" href="/board/evt/">이벤트 관리</a>
+                                <a class="dropdown-item" href="/board/banner/">이벤트 배너 관리</a>
+                                <a class="dropdown-item" href="/board/ucc/">UCC콘테스트</a>
+                                <a class="dropdown-item" href="/board/roulette/">룰렛 이벤트</a>
+                                <a class="dropdown-item" href="/board/word/">여행지명 백일장 인기투표 이벤트</a>
+                                <a class="dropdown-item" href="/board/agreement/">약관 관리</a>
+                            </div>
+                        </li>--%>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-white" href="/admin/">관리자</a>
+                        </li>
+                    </ul>
+
+                    <a href="javascript:;" class="btn btn-sm btn-outline-light" data-toggle="modal" data-target="#master-pwd"><i class="material-icons">vpn_key</i> 비밀번호 관리</a>
+                    <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="btn btn-sm btn-outline-warning ml-2"><i class="material-icons">keyboard_tab</i> 로그아웃</asp:LinkButton>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h3 class="pb-2 my-3" style="color: inherit; border-bottom: 2px solid #808080;"><%= OrangeSummer.Common.Master.AppSetting.Title %></h3>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            <a class="scroll-to-top rounded" href="#page-top" style="display: inline;">TOP</a>
+        </div>
+
+        <footer class="footer">
+            <div class="container text-center mt-4">
+                <span class="text-muted">Copyright &copy; All Rights Reserved.</span>
+            </div>
+        </footer>
+
+        <!-- Modal -->
+        <div class="modal fade" id="master-pwd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-weight-bold" id="exampleModalLabel">비밀번호 수정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>비밀번호</label>
+                            <asp:TextBox ID="upwd1" runat="server" ClientIDMode="Static" TextMode="Password" MaxLength="15" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>비밀번호 확인</label>
+                            <asp:TextBox ID="upwd2" runat="server" ClientIDMode="Static" TextMode="Password" MaxLength="15" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:LinkButton ID="btnPwd" runat="server" OnClick="btnPwd_Click" OnClientClick="if (!member.reset()) { return false; }" CssClass="btn btn-primary">
+                            <i class="material-icons">done_all</i> 비밀번호 변경
+                        </asp:LinkButton>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            <i class="material-icons">close</i> 닫기
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="/common/vendor/jquery/jquery.min.js"></script>
+    <script src="/common/vendor/jquery/jquery-ui.min.js"></script>
+    <script src="/common/vendor/popper/popper.min.js"></script>
+    <script src="/common/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/common/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/common/vendor/block/jquery.blockUI.min.js"></script>
+    <script src="/common/js/jquery-library.js?v=<%= DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
+    <script src="/common/js/site.js?v=<%= DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
+    <script>
+        var member = {
+            reset: function () {
+                var literal = {
+                    upwd1: { selector: $("#upwd1"), required: { message: "비밀번호를 입력해주세요." } },
+                    upwd2: { selector: $("#upwd2"), required: { message: "비밀번호 확인을 입력해주세요." } },
+                    confirm: { selector: $("#upwd2"), compare: { value: $("#upwd1").val(), message: "비밀번호가 일치하지 않습니다.\n다시 확인 후 입력해주세요." } }
+                };
+
+                var checker = $.validate.rules(literal, { mode: "alert" });
+                if (checker) {
+                    $.loading.show();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        };
+    </script>
+    <asp:ContentPlaceHolder ID="ScriptPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="page.master.cs" Inherits="OrangeSummer.Web.UserApplication.common.master.page" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:image" content="">
+    <title>오렌지라이프 슬기로운 썸머생활</title>
+    <link rel="stylesheet" href="/resources/css/font.css">
+    <link rel="stylesheet" href="/resources/css/reset<%= CssEdit() %>.css">
+    <link rel="stylesheet" href="/resources/css/common.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>">
+    <link rel="stylesheet" href="/resources/css/swiper.min.css">
+</head>
+<body>
+	<script src="/resources/js/jquery-3.5.1.min.js"></script>
+    <script src="/resources/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+    <script src="/resources/js/common.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
+    <script src="/common/js/jquery-library.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
+    <script src="/common/js/site.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
+
+	
+	<form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </form>
+    <asp:ContentPlaceHolder ID="ScriptPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    
+
+</body>
+</html>

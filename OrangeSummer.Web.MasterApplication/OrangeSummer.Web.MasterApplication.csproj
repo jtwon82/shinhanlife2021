@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD415D83-FBFD-4D0E-A6A8-9AC4991577C6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrangeSummer.Web.MasterApplication</RootNamespace>
+    <AssemblyName>OrangeSummer.Web.MasterApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.3\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\default.aspx" />
+    <Content Include="admin\regist.aspx" />
+    <Content Include="board\agreement\default.aspx" />
+    <Content Include="board\banner\default.aspx" />
+    <Content Include="board\banner\regist.aspx" />
+    <Content Include="board\evt\default.aspx" />
+    <Content Include="board\evt\regist.aspx" />
+    <Content Include="board\notice\default.aspx" />
+    <Content Include="board\notice\regist.aspx" />
+    <Content Include="board\roulette\default.aspx" />
+    <Content Include="board\ucc\default.aspx" />
+    <Content Include="board\ucc\reply.aspx" />
+    <Content Include="board\word\default.aspx" />
+    <Content Include="board\word\reply.aspx" />
+    <Content Include="branch\default.aspx" />
+    <Content Include="branch\regist.aspx" />
+    <Content Include="common\css\nanumgothic.css" />
+    <Content Include="common\css\site.css" />
+    <Content Include="common\images\img-main.jpg" />
+    <Content Include="common\images\loading.gif" />
+    <Content Include="common\images\logo.png" />
+    <Content Include="common\js\jquery-library.js" />
+    <Content Include="common\js\site.js" />
+    <Content Include="common\summernote\lang\summernote-ar-AR.js" />
+    <Content Include="common\summernote\lang\summernote-ar-AR.min.js" />
+    <Content Include="common\summernote\lang\summernote-bg-BG.js" />
+    <Content Include="common\summernote\lang\summernote-bg-BG.min.js" />
+    <Content Include="common\summernote\lang\summernote-ca-ES.js" />
+    <Content Include="common\summernote\lang\summernote-ca-ES.min.js" />
+    <Content Include="common\summernote\lang\summernote-cs-CZ.js" />
+    <Content Include="common\summernote\lang\summernote-cs-CZ.min.js" />
+    <Content Include="common\summernote\lang\summernote-da-DK.js" />
+    <Content Include="common\summernote\lang\summernote-da-DK.min.js" />
+    <Content Include="common\summernote\lang\summernote-de-DE.js" />
+    <Content Include="common\summernote\lang\summernote-de-DE.min.js" />
+    <Content Include="common\summernote\lang\summernote-el-GR.js" />
+    <Content Include="common\summernote\lang\summernote-el-GR.min.js" />
+    <Content Include="common\summernote\lang\summernote-es-ES.js" />
+    <Content Include="common\summernote\lang\summernote-es-ES.min.js" />
+    <Content Include="common\summernote\lang\summernote-es-EU.js" />
+    <Content Include="common\summernote\lang\summernote-es-EU.min.js" />
+    <Content Include="common\summernote\lang\summernote-fa-IR.js" />
+    <Content Include="common\summernote\lang\summernote-fa-IR.min.js" />
+    <Content Include="common\summernote\lang\summernote-fi-FI.js" />
+    <Content Include="common\summernote\lang\summernote-fi-FI.min.js" />
+    <Content Include="common\summernote\lang\summernote-fr-FR.js" />
+    <Content Include="common\summernote\lang\summernote-fr-FR.min.js" />
+    <Content Include="common\summernote\lang\summernote-gl-ES.js" />
+    <Content Include="common\summernote\lang\summernote-gl-ES.min.js" />
+    <Content Include="common\summernote\lang\summernote-he-IL.js" />
+    <Content Include="common\summernote\lang\summernote-he-IL.min.js" />
+    <Content Include="common\summernote\lang\summernote-hr-HR.js" />
+    <Content Include="common\summernote\lang\summernote-hr-HR.min.js" />
+    <Content Include="common\summernote\lang\summernote-hu-HU.js" />
+    <Content Include="common\summernote\lang\summernote-hu-HU.min.js" />
+    <Content Include="common\summernote\lang\summernote-id-ID.js" />
+    <Content Include="common\summernote\lang\summernote-id-ID.min.js" />
+    <Content Include="common\summernote\lang\summernote-it-IT.js" />
+    <Content Include="common\summernote\lang\summernote-it-IT.min.js" />
+    <Content Include="common\summernote\lang\summernote-ja-JP.js" />
+    <Content Include="common\summernote\lang\summernote-ja-JP.min.js" />
+    <Content Include="common\summernote\lang\summernote-ko-KR.js" />
+    <Content Include="common\summernote\lang\summernote-ko-KR.min.js" />
+    <Content Include="common\summernote\lang\summernote-lt-LT.js" />
+    <Content Include="common\summernote\lang\summernote-lt-LT.min.js" />
+    <Content Include="common\summernote\lang\summernote-lt-LV.js" />
+    <Content Include="common\summernote\lang\summernote-lt-LV.min.js" />
+    <Content Include="common\summernote\lang\summernote-mn-MN.js" />
+    <Content Include="common\summernote\lang\summernote-mn-MN.min.js" />
+    <Content Include="common\summernote\lang\summernote-nb-NO.js" />
+    <Content Include="common\summernote\lang\summernote-nb-NO.min.js" />
+    <Content Include="common\summernote\lang\summernote-nl-NL.js" />
+    <Content Include="common\summernote\lang\summernote-nl-NL.min.js" />
+    <Content Include="common\summernote\lang\summernote-pl-PL.js" />
+    <Content Include="common\summernote\lang\summernote-pl-PL.min.js" />
+    <Content Include="common\summernote\lang\summernote-pt-BR.js" />
+    <Content Include="common\summernote\lang\summernote-pt-BR.min.js" />
+    <Content Include="common\summernote\lang\summernote-pt-PT.js" />
+    <Content Include="common\summernote\lang\summernote-pt-PT.min.js" />
+    <Content Include="common\summernote\lang\summernote-ro-RO.js" />
+    <Content Include="common\summernote\lang\summernote-ro-RO.min.js" />
+    <Content Include="common\summernote\lang\summernote-ru-RU.js" />
+    <Content Include="common\summernote\lang\summernote-ru-RU.min.js" />
+    <Content Include="common\summernote\lang\summernote-sk-SK.js" />
+    <Content Include="common\summernote\lang\summernote-sk-SK.min.js" />
+    <Content Include="common\summernote\lang\summernote-sl-SI.js" />
+    <Content Include="common\summernote\lang\summernote-sl-SI.min.js" />
+    <Content Include="common\summernote\lang\summernote-sr-RS-Latin.js" />
+    <Content Include="common\summernote\lang\summernote-sr-RS-Latin.min.js" />
+    <Content Include="common\summernote\lang\summernote-sr-RS.js" />
+    <Content Include="common\summernote\lang\summernote-sr-RS.min.js" />
+    <Content Include="common\summernote\lang\summernote-sv-SE.js" />
+    <Content Include="common\summernote\lang\summernote-sv-SE.min.js" />
+    <Content Include="common\summernote\lang\summernote-ta-IN.js" />
+    <Content Include="common\summernote\lang\summernote-ta-IN.min.js" />
+    <Content Include="common\summernote\lang\summernote-th-TH.js" />
+    <Content Include="common\summernote\lang\summernote-th-TH.min.js" />
+    <Content Include="common\summernote\lang\summernote-tr-TR.js" />
+    <Content Include="common\summernote\lang\summernote-tr-TR.min.js" />
+    <Content Include="common\summernote\lang\summernote-uk-UA.js" />
+    <Content Include="common\summernote\lang\summernote-uk-UA.min.js" />
+    <Content Include="common\summernote\lang\summernote-uz-UZ.js" />
+    <Content Include="common\summernote\lang\summernote-uz-UZ.min.js" />
+    <Content Include="common\summernote\lang\summernote-vi-VN.js" />
+    <Content Include="common\summernote\lang\summernote-vi-VN.min.js" />
+    <Content Include="common\summernote\lang\summernote-zh-CN.js" />
+    <Content Include="common\summernote\lang\summernote-zh-CN.min.js" />
+    <Content Include="common\summernote\lang\summernote-zh-TW.js" />
+    <Content Include="common\summernote\lang\summernote-zh-TW.min.js" />
+    <Content Include="common\summernote\summernote-bs4.min.css" />
+    <Content Include="common\summernote\summernote-bs4.min.js" />
+    <Content Include="common\vendor\block\jquery.blockUI.min.js" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="common\vendor\bootstrap\css\doc.min.css" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="common\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="common\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="common\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="common\vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="common\vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="common\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="common\vendor\jquery\css\images\ui-bg_diagonals-small_40_db4865_40x40.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-bg_diagonals-small_50_93c3cd_40x40.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-bg_diagonals-small_50_ff3853_40x40.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-bg_diagonals-small_75_ccd232_40x40.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-bg_dots-medium_80_ffff38_4x4.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-bg_dots-small_35_35414f_2x2.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-bg_white-lines_85_f7f7ba_40x100.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-icons_88a206_256x240.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-icons_c02669_256x240.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-icons_e1e463_256x240.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-icons_ffeb33_256x240.png" />
+    <Content Include="common\vendor\jquery\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="common\vendor\jquery\css\jquery-ui.min.css" />
+    <Content Include="common\vendor\jquery\css\jquery-ui.structure.min.css" />
+    <Content Include="common\vendor\jquery\css\jquery-ui.theme.min.css" />
+    <Content Include="common\vendor\jquery\css\jquery.modal.min.css" />
+    <Content Include="common\vendor\jquery\jquery-ui.min.js" />
+    <Content Include="common\vendor\jquery\jquery.js" />
+    <Content Include="common\vendor\jquery\jquery.min.js" />
+    <Content Include="common\vendor\popper\popper.js" />
+    <Content Include="common\vendor\popper\popper.min.js" />
+    <Content Include="dash\default.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="error.aspx" />
+    <Content Include="error\404.aspx" />
+    <Content Include="error\500.aspx" />
+    <Content Include="error\err.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="global.asax" />
+    <Content Include="main\banner\default.aspx" />
+    <Content Include="main\banner\regist.aspx" />
+    <Content Include="member\default.aspx" />
+    <Content Include="member\detail.aspx" />
+    <Content Include="ranking\default.aspx" />
+    <Content Include="reset\default.aspx" />
+    <Content Include="robots.txt" />
+    <Content Include="sample.html" />
+    <Content Include="template.aspx" />
+    <Content Include="travel\default.aspx" />
+    <Content Include="travel\regist.aspx" />
+    <None Include="Web References\kr.co.youiwe.webservice\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\kr.co.youiwe.webservice\ServiceSMS.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="achievement\default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\agreement\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\agreement\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\banner\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\banner\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\banner\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\banner\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\evt\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\evt\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\evt\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\evt\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\notice\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\notice\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\notice\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\notice\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\roulette\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\roulette\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\ucc\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\ucc\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\ucc\reply.aspx.cs">
+      <DependentUpon>reply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\ucc\reply.aspx.designer.cs">
+      <DependentUpon>reply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\word\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\word\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board\word\reply.aspx.cs">
+      <DependentUpon>reply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\word\reply.aspx.designer.cs">
+      <DependentUpon>reply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="branch\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="branch\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="branch\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="branch\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="common\master\page.Master.cs">
+      <DependentUpon>page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\master\page.Master.designer.cs">
+      <DependentUpon>page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="common\master\popup.Master.cs">
+      <DependentUpon>popup.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\master\popup.Master.designer.cs">
+      <DependentUpon>popup.Master</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\AdminController.cs" />
+    <Compile Include="controllers\BranchController.cs" />
+    <Compile Include="controllers\EditorController.cs" />
+    <Compile Include="dash\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dash\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\500.aspx.cs">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="global.asax.cs">
+      <DependentUpon>global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="main\banner\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\banner\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\banner\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\banner\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\detail.aspx.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\detail.aspx.designer.cs">
+      <DependentUpon>detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ranking\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ranking\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reset\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reset\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="template.aspx.cs">
+      <DependentUpon>template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="template.aspx.designer.cs">
+      <DependentUpon>template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="travel\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="travel\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="travel\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="travel\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="achievement\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="achievement\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\kr.co.youiwe.webservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="common\fonts\NanumGothic-Bold.eot" />
+    <Content Include="common\fonts\NanumGothic-Bold.ttf" />
+    <Content Include="common\fonts\NanumGothic-Bold.woff" />
+    <Content Include="common\fonts\NanumGothic-Bold.woff2" />
+    <Content Include="common\fonts\NanumGothic-ExtraBold.eot" />
+    <Content Include="common\fonts\NanumGothic-ExtraBold.ttf" />
+    <Content Include="common\fonts\NanumGothic-ExtraBold.woff" />
+    <Content Include="common\fonts\NanumGothic-ExtraBold.woff2" />
+    <Content Include="common\fonts\NanumGothic-Regular.eot" />
+    <Content Include="common\fonts\NanumGothic-Regular.ttf" />
+    <Content Include="common\fonts\NanumGothic-Regular.woff" />
+    <Content Include="common\fonts\NanumGothic-Regular.woff2" />
+    <Content Include="common\master\page.Master" />
+    <Content Include="common\master\popup.Master" />
+    <Content Include="common\summernote\font\summernote.eot" />
+    <Content Include="common\summernote\font\summernote.ttf" />
+    <Content Include="common\summernote\font\summernote.woff" />
+    <Content Include="common\summernote\font\summernote.woff2" />
+    <Content Include="common\summernote\summernote-bs4.min.js.map" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="common\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="common\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="common\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="common\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="common\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="common\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="common\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="common\vendor\font-awesome\less\animated.less" />
+    <Content Include="common\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="common\vendor\font-awesome\less\core.less" />
+    <Content Include="common\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="common\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="common\vendor\font-awesome\less\icons.less" />
+    <Content Include="common\vendor\font-awesome\less\larger.less" />
+    <Content Include="common\vendor\font-awesome\less\list.less" />
+    <Content Include="common\vendor\font-awesome\less\mixins.less" />
+    <Content Include="common\vendor\font-awesome\less\path.less" />
+    <Content Include="common\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="common\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="common\vendor\font-awesome\less\stacked.less" />
+    <Content Include="common\vendor\font-awesome\less\variables.less" />
+    <Content Include="common\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="common\vendor\font-awesome\scss\_variables.scss" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\OrangeSummerMaster.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\kr.co.youiwe.webservice\ServiceSMS.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MLib\MLib.csproj">
+      <Project>{96f3570b-c1ba-4e65-81f8-cd8be458306f}</Project>
+      <Name>MLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrangeSummer.Business\OrangeSummer.Business.csproj">
+      <Project>{ec61b561-2054-4808-81ed-cc027e28e84c}</Project>
+      <Name>OrangeSummer.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrangeSummer.Common\OrangeSummer.Common.csproj">
+      <Project>{c9c04df0-3a92-4ef1-ac05-f012a85849b0}</Project>
+      <Name>OrangeSummer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrangeSummer.Model\OrangeSummer.Model.csproj">
+      <Project>{dca9b478-d893-4637-a366-ab73b5c78bef}</Project>
+      <Name>OrangeSummer.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://webservice.youiwe.co.kr/SMS.v.5/ServiceSMS.asmx%3fWSDLhttp://webservice.youiwe.co.kr/SMS.v.5/ServiceSMS.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\kr.co.youiwe.webservice\</RelPath>
+      <UpdateFromURL>http://webservice.youiwe.co.kr/SMS.v.5/ServiceSMS.asmx%3fWSDLhttp://webservice.youiwe.co.kr/SMS.v.5/ServiceSMS.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OrangeSummer_Web_MasterApplication_kr_co_youiwe_webservice_ServiceSMS</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52293</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52293/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
