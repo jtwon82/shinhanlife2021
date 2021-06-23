@@ -165,6 +165,7 @@
     <Content Include="resources\img\loginBg.jpg" />
     <Content Include="resources\img\loginBtn.png" />
     <Content Include="resources\img\metaImg.png" />
+    <Content Include="resources\img\sub\bm\bmpersonal_Rankingbox.png" />
     <Content Include="resources\img\sub\bm\bmRankingbox.png" />
     <Content Include="resources\img\sub\bm\left_arrow.png" />
     <Content Include="resources\img\sub\bm\right_arrow.png" />

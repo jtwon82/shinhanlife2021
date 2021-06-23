@@ -18,7 +18,7 @@
                     if (OrangeSummer.Common.User.Identify.Level == "SL")
                     {
                 %>
-                <li><a href="/achieve/sl" class="current">SL 부문</a></li>
+                <li><a href="/achieve/sl" class="current">E SL 부문</a></li>
                 <%
                     }
                 %>

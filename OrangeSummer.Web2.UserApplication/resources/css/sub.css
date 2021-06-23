@@ -146,6 +146,8 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .bmRanking_box dl{
 	padding:0 60px;
 	margin-top:80px;
+	float:left;
+	width:505px;
 }
 .bmRanking_box dt, .bmRanking_box dd{
 	float:left;
@@ -884,4 +886,16 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 
 .popup_fail .popup_wrap .popup_title p.main_txt{
 	font-size:199px;
+}
+
+/*  210623 추가 CSS */
+.bmRanking_box.personal{
+	height:664px;
+	background: url(../img/sub/bm/bmpersonal_Rankingbox.png) no-repeat;
+}
+.bmRanking_box dl.canp{
+	margin-top:50px;
+}
+.bmRanking_box dl.canp dt, .bmRanking_box dl.canp dd{
+	color:#fff;
 }

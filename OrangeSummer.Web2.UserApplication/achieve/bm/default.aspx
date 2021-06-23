@@ -20,13 +20,13 @@
                     if (OrangeSummer.Common.User.Identify.Level == "SL")
                     {
                 %>
-                <li><a href="/achieve/sl">SL 부문</a></li>
+                <li><a href="/achieve/sl">E SL 부문</a></li>
                 <%
                     }
                 %>
 			</ul>
 			<div id="tab-1" class="tab-content current">		
-				<div class="swiper-container3">
+				<div class="swiper-container3 personal">
 					<div class="swiper-wrapper">
                         <%=_contents %>
 					</div>
@@ -36,16 +36,7 @@
 					<div class="swiper-button-next"></div>
 					<div class="swiper-button-prev"></div>
 				</div>
-				<div class="swiper-container3">
-					<div class="swiper-wrapper">
-                        <%=_contents2 %>
-					</div>
-					<!-- Add Pagination 
-					<div class="swiper-pagination"></div>-->
-					<!-- Add Arrows -->
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-				</div>
+
 
 				<ul class="referenceBox">
 					<li>* 본 데이터는 2021 Summer Contest 진도관리를 위한 <br/>보조자료이며, 달성 결과가 아님을 알려드립니다.</li>

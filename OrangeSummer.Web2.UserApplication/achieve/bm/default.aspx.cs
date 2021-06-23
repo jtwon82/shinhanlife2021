@@ -17,7 +17,6 @@ namespace OrangeSummer.Web2.UserApplication.achieve.bm
         protected string _mobile = string.Empty;
         protected string _title = string.Empty;
         protected string _contents = string.Empty;
-        protected string _contents2 = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,47 +43,28 @@ namespace OrangeSummer.Web2.UserApplication.achieve.bm
                         foreach (Model.Achievement item in achievement)
                         {
                             DateTime dt = DateTime.Parse(item.Date);
+                            string cdate = $"{dt.ToString("yyyy")}년 {dt.ToString("MM")}월 {dt.ToString("dd")}";
+
                             if (",FC,SL,NEWFC".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
-                                contents.AppendLine("<div class='swiper-slide'>");
-                                contents.AppendLine("	<div class='bmRanking_box'>");
-                                contents.AppendLine($"		<p><span>{dt.ToString("yyyy")}년 {dt.ToString("MM")}월 {dt.ToString("dd")}일 기준</span>");
-                                contents.AppendLine($"          썸머순위<em>{item.PersonRank}</em></p>");
-                                contents.AppendLine("		<dl>");
-                                contents.AppendLine("			<dt><span>캠페인환산</span>CMIP</dt>");
+                                contents.AppendLine($"<div class='swiper-slide'>");
+                                contents.AppendLine($"	<div class='bmRanking_box personal'>");
+                                contents.AppendLine($"		<p><span>{cdate}일 기준</span>썸머순위<em>{item.PersonRank}</em></p>");
+                                contents.AppendLine($"		<dl>");
+                                contents.AppendLine($"			<dt><span>캠페인환산</span>CMIP</dt>");
                                 contents.AppendLine($"			<dd>{item.PersonCmip}</dd>");
-                                contents.AppendLine("		</dl>");
-                                contents.AppendLine("	</div>");
-                                contents.AppendLine("</div>");
-
-                                contents2.AppendLine("<div class='swiper-slide'>");
-                                contents2.AppendLine("	<div class='bmRanking_box'>");
-                                contents2.AppendLine($"		<p><span>{dt.ToString("yyyy")}년 {dt.ToString("MM")}월 {dt.ToString("dd")}일 기준</span>");
-                                contents2.AppendLine($"          썸머순위<em>{item.PersonRank2}</em></p>");
-                                contents2.AppendLine("		<dl>");
-                                contents2.AppendLine("			<dt><span>캠페인환산</span>CAMP</dt>");
-                                contents2.AppendLine($"			<dd>{item.PersonCamp}</dd>");
-                                contents2.AppendLine("		</dl>");
-                                contents2.AppendLine("	</div>");
-                                contents2.AppendLine("</div>");
+                                contents.AppendLine($"		</dl>");
+                                contents.AppendLine($"		<dl class='canp'>");
+                                contents.AppendLine($"			<dt>CANP</dt>");
+                                contents.AppendLine($"			<dd>{item.PersonCamp}</dd>");
+                                contents.AppendLine($"		</dl>");
+                                contents.AppendLine($"	</div>");
+                                contents.AppendLine($"</div>");
                             }
-                            //else if (",BM,EM,ERM".Contains("," + OrangeSummer.Common.User.Identify.Level))
-                            //{
-                            //    contents.AppendLine("<div class='swiper-slide'>");
-                            //    contents.AppendLine("	<div class='bmRanking_box'>");
-                            //    contents.AppendLine($"		<p><span>{dt.ToString("yyyy")}년 {dt.ToString("MM")}월 {dt.ToString("dd")}일 기준</span>썸머순위<em>{item.BranchRank}</em></p>");
-                            //    contents.AppendLine("		<dl>");
-                            //    contents.AppendLine("			<dt><span>캠페인환산</span>CMIP</dt>");
-                            //    contents.AppendLine($"			<dd>{item.PersonCmip}</dd>");
-                            //    contents.AppendLine("		</dl>");
-                            //    contents.AppendLine("	</div>");
-                            //    contents.AppendLine("</div>");
-                            //}
                         }
 
                         _title = title.ToString();
                         _contents = contents.ToString();
-                        _contents2 = contents2.ToString();
                     }
                 }
                 #endregion
@@ -101,7 +81,7 @@ namespace OrangeSummer.Web2.UserApplication.achieve.bm
                 //}
                 //#endregion
 
-                #region [ 이벤트 배너 ]
+                //#region [ 이벤트 배너 ]
                 //using (Business.Banner biz = new Business.Banner(Common.User.AppSetting.Connection))
                 //{
                 //    List<Model.Banner> list = biz.UserList("MAIN");
@@ -111,7 +91,7 @@ namespace OrangeSummer.Web2.UserApplication.achieve.bm
                 //        this.rptBannerList.DataBind();
                 //    }
                 //}
-                #endregion
+                //#endregion
             }
             catch (Exception ex)
             {
