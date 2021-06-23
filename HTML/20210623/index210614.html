@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=720">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shinhanlife-fc.com/">
+<meta property="og:title" content="신한라이프 놀라운썸머">
+<meta property="og:image" content="https://shinhanlife-fc.com/resources/img/metaImg.png">
+<meta property="og:description" content="신한라이프 놀라운썸머">
+<meta property="og:site_name" content="신한라이프 놀라운썸머">
+
+<title>신한라이프</title>
+
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/swiper-bundle.css">
+
+<script type="text/javascript" src="js/jquery.1.11.0.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/swiper-bundle.js"></script>
+
+</head>
+
+<body id="main">
+	<div class="background">
+		<p class="cover"></p>
+		<p class="upload"><img src="img/index/backgroundImg.jpg" alt=""/></p>
+		<p class="topBox"><img src="img/index/mainTopImg.png" alt=""/></p>
+	</div>
+	<div id="main_wrap">
+		<div id="header">
+			<h1 class="logo"><a href="index.html"><img src="img/index/index_logo.png" alt="ShinhanLife" /></a></h1>
+			<p class="homeBtn"><a href="index.html"><img src="img/index/index_homeIcon.png" alt="ShinhanLife" /></a></p>
+			<header class="cf" id="hd">
+				<div id="hd_wr">
+					<div class="btn"></div>
+					<div class="page_cover"></div>
+					<div id="menu">
+						<div class="person_info">
+							<p class="person_img"><img src="img/index/person_img2.jpg" alt="" /></p>
+							<p class="rank"><span>강남지점</span>정기석 / FC</p>
+							<ul class="editBtn">
+								<li><a href="signup_edit.html">내 정보 수정하기</a></li>
+								<li><a href="">로그아웃</a></li>
+							</ul>
+						</div>
+						<div class="close"></div>
+						<ul id="mainMenu">
+							<li><a href="bm.html">MY 업적</a></li>
+							<li><a href="measure_list.html">시책 안내</a></li>
+							<li><a href="process_cumulative_prize_money.html">시책진도현황</a></li>
+							<li><a href="ranking.html">랭킹</a></li>
+							<li><a href="event.html">이벤트</a></li>
+							<li><a href="notice.html">공지&게시판</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+		</div>
+		<div class="main_container">
+			<div class="main_personInfo">
+				<p class="person_rank"><span class="point">강남지점</span>정기석 / FC</p>
+				<p class="main_personImg"><img src="img/index/personImg2.jpg" alt="" class="personImg" /><span><label for="myfile" class="inputFileButton"><img src="img/index/fileIcon.png" alt="" /></label><input type="file" id="myfile" name="myfile" style="display:none";></span></p>
+				<p class="imgEditBtn"><label for="myfile2" class="inputFileButton2"><img src="img/index/fileIcon.png" alt="" /></label><input type="file" id="myfile2" name="myfile2" style="display:none";></p>
+			</div>
+			<div class="mainEventBanner">
+				<p class="mainEventBanner_t">EVENT</p>
+				<div class="EventBanner_rolling">
+					
+					<!-- Swiper -->
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+						  <div class="swiper-slide"><a href="event_detail.html"><img src="img/index/eventBanner.png" alt="올여름엔 매일매일 룰렛돌리자!"/></a></div>
+						  <div class="swiper-slide"><a href="event_detail.html"><img src="img/index/eventBanner2.png" alt="올여름엔 매일매일 룰렛돌리자!"/></a></div>
+						  <div class="swiper-slide"><a href="event_detail.html"><img src="img/index/eventBanner.png" alt="올여름엔 매일매일 룰렛돌리자!"/></a></div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+					</div>
+					<!-- Initialize Swiper -->
+					<script>
+						var swiper = new Swiper('.swiper-container', {
+						  pagination: {
+							el: '.swiper-pagination',
+						  },
+						});
+					</script>
+
+					<script type="text/javascript">
+						var mySwiper = new Swiper('.swiper-container', {
+						slidesPerView: 1, //슬라이드를 한번에 3개를 보여준다
+						spaceBetween: 30, //슬라이드간 padding 값 30px 씩 떨어뜨려줌
+						loop: false, //loop 를 true 로 할경우 무한반복 슬라이드 false 로 할경우 슬라이드의 끝에서 더보여지지 않음
+						});
+					</script>
+				</div>
+			</div>
+			<dl class="categoryBox">
+				<dt>Category</dt>
+				<dd><a href="bm.html"><span></span>MY 업적</a></dd>
+				<dd><a href="measure_list.html"><span></span>시책 안내</a></dd>
+				<dd><a href="process_cumulative_prize_money.html"><span></span>시책 진도 현황</a></dd>
+				<dd><a href="ranking.html"><span></span>랭킹</a></dd>
+				<dd><a href="event.html"><span></span>이벤트</a></dd>
+				<dd><a href="notice.html"><span></span>공지&게시판</a></dd>
+			</dl>
+		</div>
+	</div>
+</body>
+</html>

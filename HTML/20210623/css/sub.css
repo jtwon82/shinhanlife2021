@@ -1,0 +1,901 @@
+#sub_wrap{
+	max-width:720px;
+	margin:0 auto;
+	position:relative;
+	height:100%;
+}
+.subMeta, .subMeta02, .subMeta03, .subMeta04,
+.subMeta05{
+	height:315px;
+	background:url(../img/sub/subMeta01.jpg) top center no-repeat;
+}
+.subMeta02{
+	background:#e7ebee url(../img/sub/subMeta02.jpg) top center no-repeat;
+}
+.subMeta03{
+	background:#96b3ff url(../img/sub/subMeta03.jpg) top center no-repeat;
+}
+.subMeta04{
+	background:#b6e6d8 url(../img/sub/subMeta04.jpg) top center no-repeat;
+}
+.subMeta05{
+	background:#fff url(../img/sub/subMeta05.jpg) top center no-repeat;
+	height:387px;
+}
+.subMeta06{
+	background:url(../img/sub/event/rouletteImg.jpg) top center no-repeat;
+	height:1789px;
+}
+.subTitle{
+	font-size: 60px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: -5px;
+    text-shadow: 3px 5px 8px rgb(0 0 0 / 50%);
+	margin: 115px 0 115px 0;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.subMeta05 .subTitle{
+	margin:170px 0 150px 0;
+}
+.subContainer{
+	margin:0 47px;
+	overflow:hidden;
+	padding-bottom:30px;
+}
+.subContainer.guide{
+	margin:0 20px;
+}
+.subContainer.cumulative{
+	margin:0 26px;
+}
+.subContainer.notice{
+	margin:0 37px;
+}
+
+/* My영업관리 */
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.tabs li{
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current{
+	background: #ededed;
+	color: #222;
+}
+
+.tab-content{
+	display: none;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+ul.bmTabs{
+	display: table;
+	margin:0 auto 50px auto;
+}
+ul.bmTabs li{
+	float:left;
+	margin-right:12px;
+	border-radius:50px;
+}
+ul.bmTabs li:last-child{margin-right:0;}
+ul.bmTabs li a, ul.bmTabs.measure li a{
+	border:1px solid #715def;
+	border-radius:50px;
+	line-height:66px;
+	color:#715def;
+	font-size:25px;
+	font-weight:300;
+	font-family: 'OneShinhanM', sans-serif;
+	text-align:center;
+	width:236px;
+	box-sizing:border-box;
+	cursor:pointer;
+	display:block;
+	background-color:#fff;
+}
+ul.bmTabs.measure li a{
+	width:189px;
+	border-radius:50px;
+}
+ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.bmTabs.measure li.hover{
+	background:#715def;
+	color:#fff;
+}
+.bmRanking_box{
+	background:url(../img/sub/bm/bmRankingbox.png) no-repeat;
+	height:546px;
+	width:625px;
+	margin:0 auto 37px auto;
+}
+.bmRanking_box p{
+	text-align:center;
+	font-size:57px;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+	padding-top:73px;
+	color:#715def;
+}
+.bmRanking_box p span{
+	display:block;
+	color:#715def;
+	font-size:23px;
+	font-family: 'OneShinhanL', sans-serif;
+	font-weight:200;
+	letter-spacing:-1px;
+}
+.bmRanking_box p em{
+	display:block;
+	color:#715def;
+	font-size:145px;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+	margin-top:-30px;
+}
+.bmRanking_box dl{
+	padding:0 60px;
+	margin-top:80px;
+	float:left;
+	width:505px;
+}
+.bmRanking_box dt, .bmRanking_box dd{
+	float:left;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+}
+.bmRanking_box dt{
+	font-size:32px;
+}
+.bmRanking_box dt span{
+	display:block;
+	font-size:18px;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+}
+.bmRanking_box dd{
+	float:right;
+	font-size:40px;
+}
+.referenceBox{
+	float:left;
+	width:95%;
+	margin-left:26px;
+}
+.referenceBox li{
+	margin-bottom:20px;
+	font-size:16px;
+	font-family: 'OneShinhanM', sans-serif;
+	font-weight:300;
+	letter-spacing:-1px;
+	text-indent:-18px;
+	margin-left:18px;
+}
+
+/* 시책안내 */
+.measure_list{
+	float:left;
+	margin-bottom:36px;
+}
+.measure_list dl{
+	float:left;
+}
+.measure_list ul, .dynamiteBanner{
+	margin-left:-12px;
+}
+.measure_list dl dt, .measure_guide .titleBox dt{
+	float:left;
+	background:url(../img/sub/measure/measuretBg.png) no-repeat;
+	color:#fff;
+	width:159px;
+	height:67px;
+	padding-left:23px;
+	font-weight:bold;
+	line-height:45px;
+	font-size:19px;
+	letter-spacing:-1px;
+}
+.measure_guide .titleBox dt{
+	background:none;
+	color:#715def;
+	width:auto;
+	margin-right:10px;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+}
+.measure_list dl dd, .measure_guide .titleBox dd{
+	color:#715def;
+	font-size:19px;
+	line-height:45px;
+	font-family: 'OneShinhanL', sans-serif;
+	float:left;
+}
+.measure_list dl.dynamite dt{
+	background:url(../img/sub/measure/measuretBg2.png) no-repeat;
+	width:173px;
+	letter-spacing:-1.5px;
+}
+.measure_guide .titleBox{
+	float:left;
+	width:100%;
+}
+.measure_guide .titleBox.sl dt{
+	padding-left:50px;
+	width:132px;
+}
+.measure_guide .titleBox dd{
+	float:left;
+}
+.measure_guide .titleBox ul{
+	float:right;
+}
+.measure_guide .titleBox ul li{
+	float:left;
+	line-height:45px;
+	font-size:19px;
+	font-family: 'OneShinhanL', sans-serif;
+	font-weight:300;
+}
+.measureCon{
+	float:left;
+	width:100%;
+	margin-bottom:50px;
+}
+.measureCon.first{margin-top:20px;}
+.measureCon.last{
+	margin-bottom:40px;
+}
+.measureCon .Con_t{
+	float:left;
+	background:url(../img/sub/measure/circle.png) left center no-repeat;
+	font-size:30px;
+	padding-left:21px;
+	font-weight:300;
+	width:100%;
+	font-family: 'OneShinhanM', sans-serif;
+
+}
+.measureCon .Con{
+	float:left;
+	background:url(../img/sub/measure/measureConBg.png) no-repeat;
+	width:681px;
+	height:152px;
+	padding:41px 0 41px 0;
+}
+.measureCon .Con dl{
+	float:left;
+	border-right:1px dashed #c9c9c9;
+	width:33%;
+	height:152px;
+	text-align:center;
+	box-sizing:border-box;
+}
+.measureCon .Con dl:last-child{border-right:none;}
+.measureCon.sl .Con dl{
+	width:50%;
+}
+.measureCon .Con dt, .measureCon .Con dd{
+	font-size:20px;
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.measureCon .Con dd{
+	font-weight:300;
+	font-family: 'OneShinhanM', sans-serif;
+}
+.measureCon .Con dd{
+	margin-top:40px;
+}
+.measureCon .Con dd em{
+	display:inline-block;
+	color:#715def;
+	font-size:50px;
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.measureCon .Con dl:nth-child(2) dd{margin-top:30px;}
+.measureCon .Con dl:nth-child(2) dd, .measureCon .Con dl:nth-child(2) dd em{
+	font-size:23px;
+}
+.measureCon.sl .Con dl:nth-child(2) dd em {
+    font-size: 50px;
+}
+.measureGuidance{
+	float:left;
+	margin-bottom:50px;
+	width:100%;
+}
+.measureGuidance dt{
+	color:#715def;
+	font-size:20px;
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+	background:url(../img/sub/measure/measuretBg3.png) no-repeat;
+	float:left;
+	width:187px;
+	height:73px;
+	line-height:73px;
+	text-align:center;
+
+}
+.measureGuidance dd{
+	line-height:73px;
+	font-size:20px;
+}
+.measureGuidance dd strong{
+	font-weight:bold;
+}
+.commissionerBox{
+	float:left;
+	margin-bottom:60px;
+}
+.commissionerBox p{
+	background:url(../img/sub/measure/arrow.png) left center no-repeat;
+	font-size:25px;
+	font-weight:bold;
+	padding-left:21px;
+	margin-bottom:23px;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.commissionerBox ul{
+	width:596px;
+	height:85px;
+	background-color:#dbd6fb;
+	padding:30px 0 0 50px;
+	border-radius:30px;
+}
+.commissionerBox li{
+	background:url(../img/sub/measure/circle2.png) left center no-repeat;
+	padding-left:13px;
+	font-size:20px;
+}
+.commissionerBox li span{
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+	color:#715def;
+	line-height:34px;
+}
+.achievement_standards{
+	padding-top: 22px;
+    clear: both;
+    margin: 0 auto;
+    overflow: hidden;
+    width:60%;
+}
+.achievement_standards dt{
+	float:left;
+	font-size:18px;
+	font-family: 'OneShinhanM', sans-serif;
+	font-weight:bold;
+	color:#715def;
+}
+.achievement_standards dt span{
+	font-size:15px;
+	font-family: 'OneShinhanM', sans-serif;
+	color:#715def;
+	display:inline-block;
+	margin:0 10px;
+}
+.achievement_standards dd{
+	color:#000;
+	float:left;
+}
+.achievement_standards dd span{
+	font-family: 'OneShinhanB', sans-serif;
+	font-size:17px;
+	margin-left:5px;
+}
+.achievement_standards dd em{
+	font-family: 'OneShinhanM', sans-serif;
+	font-size:20px;
+	color:#715def;
+	font-weight:bold;
+}
+.evaluation{
+	height:115px;
+	background:url(../img/sub/cumulative/evaluation_standardBox.png) no-repeat;
+	float:left;
+	width:648px;
+}
+.evaluation dt, .evaluation dd{
+	line-height:115px;
+	/*font-weight:bold;*/
+	font-family: 'OneShinhanM', sans-serif;
+	font-size:22px;
+	color:#fff;
+	padding-left:47px;
+	float:left;
+}
+.evaluation dd{	
+	padding-left:100px;
+	color:#000;
+	font-family: 'OneShinhanM', sans-serif;
+	font-weight:normal;
+	width:56%;
+}
+.evaluation.point dd{	
+	padding-left:125px;
+}
+.evaluation dd strong{
+	color:#715def;
+	font-weight:bold;
+	font-family: 'OneShinhanM', sans-serif;
+}
+.necessaryGuidance{
+	float:left;
+	width:100%;
+	margin-top:30px;
+}
+.necessaryGuidance dt{
+	background:url(../img/sub/measure/measuretBg3.png) no-repeat;
+	float:left;
+	width:127px;
+	height:73px;
+	line-height:73px;
+	font-weight:bold;
+	font-family: 'OneShinhanM', sans-serif;
+	color:#715def;
+	padding-left:70px;
+}
+.necessaryGuidance dd{
+	float:left;
+	margin-top:20px;
+	font-weight:bold;
+	font-family: 'OneShinhanL', sans-serif;
+	font-size:18px;
+	width:70%;
+}
+.necessaryGuidance dd strong{
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+	color:#715def;
+}
+.necessaryGuidance dd span{
+	font-weight:bold;
+	font-family: 'OneShinhanL', sans-serif;
+	font-size:15px;
+}
+.bpTxt{
+	float:left;
+	font-size:25px;
+	font-weight:300;
+	font-family: 'OneShinhanM', sans-serif;
+	margin:10px 0 0 25px;
+}
+.bpTxt strong{
+	font-weight:300;
+	font-family: 'OneShinhanM', sans-serif;
+	color:#715def;
+}
+.point_bonus{
+	float:left;
+	width:653px;
+	background:url(../img/sub/measure/bonusBox.png) no-repeat;
+	height:183px;
+	margin-top:22px;
+}
+.point_bonus dt, .point_bonus dd{
+	text-align:center;
+}
+.point_bonus dt{
+	font-size:25px;
+	font-weight:300;
+	font-family: 'OneShinhanB', sans-serif;
+	color:#715def;
+	line-height:68px;
+}
+.point_bonus dd{
+	font-size:21px;
+	margin-top:26px;
+	font-family: 'OneShinhanM', sans-serif;
+	color:#000;
+	line-height:30px;
+}
+.point_bonus dd strong{
+	font-family: 'OneShinhanB', sans-serif;
+	color:#715def;
+	font-weight:bold;
+}
+/* 시책 진도 현황 */
+.cumulativePage{
+	float:left;
+	width:100%;
+}
+.cumulativeTxt{
+	text-align:center;
+	font-size:65px;
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.cumulativeTxt span{
+	font-weight:100;
+	display:block;
+}
+.cumulativeTxt span.person{
+	color:#715def;
+	font-size:35px;
+}
+.cumulativeTxt span.currentDate{
+	color:#b1b1b1;
+	font-size:20px;
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.cumulativePage p em{display:block;}
+.cumulativePage p.currentCumulative span,
+.cumulativePage p.preCumulative span,
+.cumulativePage p.forwardCumulative span{
+	display:inline-block;
+	font-size:30px;
+	font-weight:100;
+}
+.cumulativePage p.currentCumulative span{color:#fff;}
+.cumulativePage p.currentCumulative em,
+.cumulativePage p.preCumulative em,
+.cumulativePage p.forwardCumulative em{
+	font-size:30px;
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+	color:#fff;
+}
+.cumulativePage p.preCumulative em,
+.cumulativePage p.forwardCumulative em{
+	color:#715def;
+}
+.currentCumulative, 
+.preCumulative,
+.forwardCumulative{
+	float:left;
+	width:668px;
+	height:184px;
+	background:url(../img/sub/cumulative/cumulativeBg.png) no-repeat;
+	text-align:center;
+	padding-top:44px;
+	font-size:61px;
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+	color:#fff;
+	margin-top:40px;
+}
+.preCumulative,
+.forwardCumulative{
+	background:url(../img/sub/cumulative/cumulativeBg2.png) no-repeat;
+	color:#000;
+}
+.cumulativePage .endTxt{
+	background:url(../img/sub/cumulative/endIcon.png) center top no-repeat;
+	padding-top:218px;
+	margin:100px 0 60px;
+	text-align:center;
+	font-size:35px;
+	line-height:55px;
+	font-weight:200;
+}
+.cumulativePage .endTxt strong{
+	font-weight:bold;
+	font-family: 'OneShinhanB', sans-serif;
+}
+
+/* 랭킹 */
+.rankingTitle{
+	text-align:center;
+	font-size:60px;
+	letter-spacing:-5px;
+	font-weight:600;
+	margin-bottom:77px;
+}
+.rankingTitle span{
+	display:block;
+	color:#3789dc;
+	font-weight:normal;
+	font-size:20px;
+}
+.rankingBox{
+	float:left;
+	margin:0 0 90px 22px;
+}
+.rankingBox dl{
+	float:left;
+	margin:70px 20px 0 0;
+	position:relative;
+}
+.rankingBox dl:last-child{margin-right:0;}
+.rankingBox dl.centerBox{margin-top:15px;}
+.rankingBox dt{
+	width:54px;
+	height:54px;
+	line-height:54px;
+	border-radius:54px;
+	background:#bfbfbf;
+	text-align:center;
+	color:#fff;
+	font-size:20px;
+	font-family: 'OneShinhanB', sans-serif;
+	position:absolute;
+	top:-27px;
+	left:50%;
+	margin-left:-27px;
+	z-index:1;
+}
+.rankingBox dl.centerBox dt{
+	background-color:#fff;
+	color:#715def;
+	border:4px solid #715def;
+	width:68px;
+	height:68px;
+	box-sizing:border-box;
+	top:-34px;
+	line-height:68px;
+}
+.rankingBox dd{
+	width:161px;
+	height:97px;
+	line-height:35px;
+	border-radius:30px;
+	box-shadow: 1px 0 18px 10px rgb(0 0 0 / 7%);
+	font-family: 'OneShinhanB', sans-serif;
+	text-align:center;
+	font-weight:bold;
+	font-size:24px;
+	color:#715def;
+	padding-top:60px;
+}
+.rankingBox dd.crown, .rankingBox dl.centerBox dd.crown {
+    width: 21px;
+    height: 15px;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    margin-left: -10px;
+	background:none;
+}
+.rankingBox dl.centerBox dd.crown {
+	top: -60px;
+}
+.rankingBox dl.centerBox dd{
+	width:214px;
+	height:140px;
+	background:#715def;
+	color:#fff;
+	line-height:38px;
+	padding-top:72px;
+	font-size:33px;
+}
+
+.rankingBox dl.centerBox dd span{
+	font-size:25px;
+	display:block;
+	color:#fff;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:200;
+}
+.rankingBox dl dd span{
+	font-size:22px;
+	display:block;
+}
+.rankingBox dl dd span.myName{font-size:18px;}
+.rankingBox dl dd span.myName em{
+	color:#000;
+	font-family: 'OneShinhanM', sans-serif;
+	font-weight:bold;
+	font-size:18px;
+}
+.rankingBox dl.centerBox dd span.myName em{
+	color:#fff;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+}
+.rankingUnit{
+	float:left;
+	width:100%;
+	margin-bottom:80px;
+}
+.rankingUnit li{
+	float:left;
+	font-size:20px;
+	font-family: 'OneShinhanM', sans-serif;
+	color:#715def;
+}
+.rankingUnit li:last-child{float:right;}
+.rankingList, .rankingList dl{
+	display:table;
+	margin:0 auto;
+}
+.rankingList dl{
+	margin-bottom:18px;
+}
+.rankingList dt, .rankingList dd{
+	float:left;
+	width:130px;
+	height:46px;
+	line-height:46px;
+	border-radius:40px;
+	text-align:center;
+	color:#fff;
+	font-size:20px;
+	font-family: 'OneShinhanB', sans-serif;
+	background:#bfbfbf;
+	box-shadow: 1px 0 18px 10px rgb(0 0 0 / 7%);
+}
+.rankingList.point dt{
+	width:207px;
+	font-size:18px;
+}
+.rankingList dt{margin-right:10px;}
+.rankingList dd{
+	width:376px;
+	background:#fff;
+	color:#000;
+}
+
+.numbering{
+	display: table;
+    margin: 30px auto 0 auto;
+}
+.numbering li{
+	float:left;
+}
+.numbering li a{
+	margin-right:20px;
+	color:#7d7d7d;
+	font-size:15px;
+}
+.numbering li:first-child a,
+.numbering li:nth-child(6) a{
+	margin-right:30px;
+}
+.numbering li a:hover, .numbering li a.current{
+	font-weight:bold;
+	color:#715def;
+}
+
+
+/* roulette */
+.event_roulette {
+	overflow: hidden; 
+	position: relative;
+}
+.roulette_box{
+	z-index: 1;
+	width: 100%;
+	height: 828px;
+	margin:0px auto;
+	text-align: center;
+	padding-top:700px;
+}
+.roulette_box::before{
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 40px;
+	width: 96px;
+	height: 79px;
+	margin: 640px 0 0 -48px;
+	z-index: 10;
+	background: url(../img/sub/event/event_kv02_pin.png) no-repeat center;
+}
+.roulette_box .obj{
+	position: relative;
+}
+.roulette_box .btn_roulette{
+	z-index: 1;
+	width: 572px;
+	margin-top:140px;
+}
+.roulette_box .roulette{
+	height:556px; 
+	background: url(../img/sub/event/event_kv02_bg.png) center center no-repeat; 
+}
+.roulette_box .roulette img{
+	position:absolute; 
+	top:115px; 
+}
+.roulette_box .roulette img:nth-child(1){
+	left: 204px;
+    top: 110px;
+    transform: rotate(-30deg);
+}
+.roulette_box .roulette img:nth-child(2){
+	left: 119px;
+    top: 212px;
+	transform: rotate(-90deg);
+}
+.roulette_box .roulette img:nth-child(3){
+	left: 194px;
+    top: 373px;
+	transform: rotate(-150deg);
+} 
+.roulette_box .roulette img:nth-child(4){
+	left: 324px;
+    top: 329px;
+	transform: rotate(-210deg);
+}
+.roulette_box .roulette img:nth-child(5){
+	left: 425px;
+    top: 236px;
+	transform: rotate(-270deg);
+}
+.roulette_box .roulette img:nth-child(6){
+	left: 323px;
+    top: 84px;
+	transform: rotate(30deg);
+} 
+.roulette_box .item {
+	position: absolute; 
+	bottom: 116px;
+}
+.eventPage .replyContainer{
+	float:left;
+	margin-top:300px;
+}
+
+/* popup */
+.dimm {position:fixed;top:0;left:0;z-index:999;width:100%;height:100%;background:rgba(0,0,0,0.6);}
+.popup_wrap {display: none; position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 999; overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; /*-ms-overflow-style: none;*/ text-align: center;}
+/* .popup-wrap::-webkit-scrollbar {display: none;} */
+.popup_wrap .popup_inner {position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); margin: auto; padding-bottom: 50px; z-index:1000;}
+.popup_wrap .popup_container {overflow: hidden; position: relative; background: #fff; width:600px; border-radius: 40px; padding:136px 0 90px 0;}
+.popup_wrap .popup_close {position:absolute;top: 20px;right: 20px;width: 77px;}
+.popup_wrap .popup_title p {
+	font-size: 58px;
+	font-weight:bold;
+	line-height:1.1;
+}
+.popup_wrap .popup_title p.sub_txt {
+	font-size: 34px;
+}
+.popup_wrap .popup_title p strong {color:#ff7113;}
+.popup_wrap .popup_cont {margin-top:45px;}
+.popup_wrap .popup_cont .btn {display:block;width: 523px;height: 122px;line-height: 122px;margin:50px auto 0;border-radius:5px;background:#ff7113;font-size: 60px;font-weight:700;color:#fff;}
+
+.popup_winning .popup_inner {height: 650px;}
+
+.main_txt{
+	font-size:58px;
+	color:#715def;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+}
+.popup_wrap.popup_fail .main_txt{
+	font-size:119px;
+	margin-bottom:60px;
+}
+.popup_wrap.popup_fail .sub_txt{
+	font-size:34px;
+}
+.popup_winning .popup_title .sub_txt {margin-top:20px;font-weight:400;font-size:28px;}
+.popup_winning .popup_title .sub_txt span {font-weight:700;}
+.popup_winning .input_group {overflow:hidden;font-size: 40px;margin-bottom:40px;}
+.popup_winning .input_group:last-of-type {margin-bottom:0;}
+.popup_winning .input_group label {float:left;width: 110px;text-align:right;}
+.popup_winning .input_group input {float:right;width:76%;height: 70px;padding:10px 20px;border:2px solid #bfbfbf;font-size:28px;}
+.popup_fail .popup_inner {height: 422px;}
+
+.popup_fail .popup_wrap .popup_title p.main_txt{
+	font-size:199px;
+}
+
+/*  210623 추가 CSS */
+.bmRanking_box.personal{
+	height:664px;
+	background: url(../img/sub/bm/bmpersonal_Rankingbox.png) no-repeat;
+}
+.bmRanking_box dl.canp{
+	margin-top:50px;
+}
+.bmRanking_box dl.canp dt, .bmRanking_box dl.canp dd{
+	color:#fff;
+}

@@ -1,0 +1,323 @@
+.boardTxt{
+	text-align:center;
+	color:#715def;
+	font-weight:bold;
+	margin-bottom:80px;
+	font-size:30px;
+}
+.listBox{
+	float:left;
+	width:100%;
+	margin-bottom:40px;
+}
+.listBox a{
+	float:left;
+	width:100%;
+	display:inline-block;
+}
+.title{
+	font-size:20px;
+	font-weight:bold;
+}
+.title span{
+	font-weight:normal;
+	color:#a9a9a9;
+	display:inline-block;
+	margin-right:27px;
+}
+.replyNum{
+	background:url(../img/sub/board/replyIcon.png) no-repeat;
+	float:right;
+	width:27px;
+	padding-top:30px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+	color:#715def;
+	margin-top: -20px;
+}
+.info{
+	float:left;
+	margin:15px 0 0 45px;
+}
+.info li{
+	float:left;
+	color:#a9a9a9;
+}
+.info li.view em, .info li span{
+	color:#a9a9a9;
+}
+.info li span{
+	display:inline-block;
+	margin:0 5px;
+}
+.numbering{
+	display: table;
+    margin: 0 auto 55px auto;
+}
+.numbering li{
+	float:left;
+}
+.numbering li a{
+	margin-right:20px;
+	color:#7d7d7d;
+	font-size:15px;
+}
+.numbering li:first-child a,
+.numbering li:nth-child(6) a{
+	margin-right:30px;
+}
+.numbering li a:hover, .numbering li a.current{
+	font-weight:bold;
+	color:#715def;
+}
+.viewtitle{
+	float:left;
+	width:100%;
+	border-bottom:1px solid #bfbfbf;
+	padding-bottom:23px;
+	margin-bottom:30px;
+}
+.board_view_wrap .contents{
+	border-bottom:1px solid #bfbfbf;
+	padding-bottom:30px;
+	font-size:20px;
+}
+.board_view_wrap .contents img{
+	display:block;
+	margin-bottom:30px;
+}
+.index_list .prev, .index_list .next{
+	border-bottom:1px solid #f2f2f2;
+	height:50px;
+}
+.index_list .prev a, .index_list .next a{
+	display:inline-block;
+	background:url(../img/sub/board/bu_arrow_t.png) 30px center no-repeat;
+	height:50px;
+	line-height:50px;
+	float:left;
+	padding-left:70px;
+	font-size:20px;
+}
+.index_list .next a{
+	background:url(../img/sub/board/bu_arrow_d.png) 30px center no-repeat;
+}
+.board_view_wrap .btn_area {
+    padding: 50px 35px;
+    font-size: 0;
+}
+.board_view_wrap .btn_boardList {
+    display: inline-block;
+    width: 100%;
+    height: 73px;
+    margin-right: 13px;
+    line-height: 73px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+	border: 1px solid #575757;
+    color: #575757;
+}
+.board_write_wrap .write_box textarea{
+	float:left;
+	width: 646px;
+    height: 187px;
+	border-radius:30px;
+	border:2px solid #715def;
+	box-sizing:border-box;
+	padding:25px 0 0 25px;
+	overflow-y:auto;
+	color: #a8a8a8;
+	font-size:20px;
+	font-family: 'OneShinhanL', sans-serif;
+	margin-bottom:14px;
+}
+.board_write_wrap{
+	float:left;
+	width:100%;
+}
+.eventPage .board_write_wrap{
+	margin-top:300px;
+}
+.view_area{
+	float:left;
+	margin-top:70px;
+	width:100%;
+}
+.view_area .content{
+	float:left;
+	width:100%;
+	border-bottom:1px solid #c9c9c9;
+	padding-bottom:35px;
+	margin-bottom:35px;
+}
+.view_area .content .img{
+	display:inline-block;
+	float:left;
+	margin-right:25px;
+}
+.view_area .content .img img{
+	width:83px;
+	height:83px;
+	border: 1px solid transparent;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+.view_area .content .place{
+	color:#715def;
+	font-size:20px;
+	font-family: 'OneShinhanB', sans-serif;
+	font-weight:bold;
+}
+.view_area .content .user{
+	color:#000;
+	font-size:20px;
+	font-family: 'OneShinhanM', sans-serif;
+	display:inline-block;
+	margin-left:5px;
+}
+.editBtnList{
+	float:right;
+	margin-right:10px;
+}
+.editBtnList a{
+	display:inline-block;
+	float:left;
+	color:#acacac;
+	font-size:16px;
+}
+.editBtnList a span{
+	display:inline-block;
+	color:#acacac;
+	font-size:16px;
+	margin:0 5px;
+}
+.view_area .content .txt{
+	font-family: 'OneShinhanM', sans-serif;
+	margin-top:20px;
+}
+.view_area .content .iconList{
+	float:left;
+	width:100%;
+	margin-top:25px;
+}
+.view_area .content .iconList .number{
+	float:left;
+}
+.view_area .content .iconList .number span{
+	color:#715def;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.view_area .content .reply, 
+.view_area .content .like{
+	float:left;
+}
+.view_area .content .reply a, 
+.view_area .content .like a{
+	display:inline-block;
+	float:left;
+}
+.view_area .content .like a{
+	margin-left:20px;
+	font-size:18px;
+}
+.view_area .content .reply a img, 
+.view_area .content .like a img{
+	display:inline-block;
+	margin-right:5px;
+	vertical-align:middle;
+}
+.iconList .date{
+	float:right;
+	margin-right:5px;
+	color:#acacac;
+}
+.content.view_reply{
+	background:#dbd6fb;
+	border-radius:30px;
+	padding:25px;
+	float:left;
+	width:91%;
+	border:none;
+	margin-top:10px;
+}
+.content.view_reply .ico{
+	float:left;
+	margin-right:10px;
+}
+.content.view_reply .btn_comment_re{
+	float:left;
+	color:#acacac;
+	font-size:16px;
+}
+.content.view_reply .txt{
+	font-size:20px;
+	color:#727272;
+	margin-left:25px;
+}
+.btn_area.page_more, .write_reply{
+	float:left;
+	width:100%;
+}
+.board_write_wrap .write_reply textarea {
+    width: 100%;
+    height: 200px;
+    padding: 20px 25px;
+    border: 2px solid #715def;
+    background: #fff;
+    font-size: 28px;
+	border-radius:30px;
+	box-sizing:border-box;
+	font-family: 'OneShinhanL', sans-serif;
+}
+.btn_area.rere{
+	float:right;
+	margin-top:10px;
+}
+.btn_area button{
+	float:left;
+}
+.btn_area button.btn_reply_del{
+	margin-right:5px;
+}
+.btn_area.page_more .btn_more {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 15px 0;
+    margin: 25px 0;
+    background: url(../img/sub/board/bu_arrow_d.png) no-repeat center bottom;
+    font-size: 20px;
+    font-family: 'OneShinhanM', sans-serif;
+	text-align:center;
+    color: #636363;
+}
+.board_view_wrap .info{margin-left:0;}
+
+/* 이벤트 페이지 */
+.eventPage, .commingEventList, .list, .list dl, .list dd{
+	float:left;
+	width:100%;
+}
+.ingEventTitle, .commingEventTitle{
+	background:url(../img/sub/measure/measuretBg.png) no-repeat;
+	width:158px;
+	height:67px;
+	line-height:47px;
+	padding-left:24px;
+	color:#fff;
+	font-weight:bold;
+	font-size:20px;
+	float:left;
+}
+.list dl dt{
+	font-size:20px;
+	font-weight:200;
+	margin-bottom:15px;
+	float:left;
+}
+.eventPage{margin-bottom:70px;}
+.commingEventList{
+	margin-top:70px;
+}
