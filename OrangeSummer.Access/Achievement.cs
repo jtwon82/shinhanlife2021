@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System;
 using MLib.Util;
+using System.Text;
 
 namespace OrangeSummer.Access
 {
@@ -31,44 +32,21 @@ namespace OrangeSummer.Access
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             DBHelper.ExecuteNonInQuery(_connection, "ADM_ACHIEVEMENT_DELETE");
-            int index = 0;
+            StringBuilder query = new StringBuilder();
+            query.Append("INSERT INTO [ACHIEVEMENT_TEMP] ([ORDERBY], [DATE], [SECTOR_NAME], [BRANCH_NAME], [CODE], [NAME], [LEVEL], [PERSON_CMIP], [PERSON_CAMP], [SL_CMIP], [BRANCH_CMIP], [PERSON_RANK], [PERSON_RANK2], [SL_RANK], [BRANCH_RANK])");
+            query.Append($" SELECT * FROM ( SELECT 0 [ORDERBY], '' [DATE], '' [SECTOR_NAME], '' [BRANCH_NAME], '' [CODE], '' [NAME], '' [LEVEL], 0 [PERSON_CMIP], 0 [PERSON_CAMP], 0 [SL_CMIP], 0 [BRANCH_CMIP], 0 [PERSON_RANK], 0 [PERSON_RANK2], 0 [SL_RANK], 0 [BRANCH_RANK] ");
+
+            int index = 1;
             foreach (DataRow dr in dt.Rows)
             {
                 try
                 {
-                    parameters.Clear();
-                    parameters.Add(new SqlParameter("@ORDERBY", index));
-                    parameters.Add(new SqlParameter("@DATE", dr[0].ToString()));
-                    parameters.Add(new SqlParameter("@SECTOR_NAME", dr[1].ToString()));
-                    parameters.Add(new SqlParameter("@BRANCH_NAME", dr[2].ToString()));
-                    parameters.Add(new SqlParameter("@CODE", dr[3].ToString()));
-                    parameters.Add(new SqlParameter("@NAME", dr[4].ToString()));
-                    parameters.Add(new SqlParameter("@LEVEL", dr[5].ToString()));
-                    parameters.Add(new SqlParameter("@PERSON_CMIP", dr[6].ToString()));
-                    parameters.Add(new SqlParameter("@PERSON_CAMP", dr[7].ToString()));
-                    parameters.Add(new SqlParameter("@SL_CMIP", dr[8].ToString()));
-                    parameters.Add(new SqlParameter("@BRANCH_CMIP", dr[9].ToString()));
-                    parameters.Add(new SqlParameter("@PERSON_RANK", dr[10].ToString()));
-                    parameters.Add(new SqlParameter("@PERSON_RANK2", dr[11].ToString()));
-                    parameters.Add(new SqlParameter("@SL_RANK", dr[12].ToString()));
-                    parameters.Add(new SqlParameter("@BRANCH_RANK", dr[13].ToString()));
-
-                    //parameters.Add(new SqlParameter("@PART", dr[1].ToString()));
-                    //parameters.Add(new SqlParameter("@BRANCH", dr[2].ToString()));
-                    //parameters.Add(new SqlParameter("@CODE", dr[3].ToString()));
-                    //parameters.Add(new SqlParameter("@NAME", dr[4].ToString()));
-                    //parameters.Add(new SqlParameter("@LEVEL", dr[5].ToString()));
-                    //parameters.Add(new SqlParameter("@PERSON_SUM", dr[6].ToString()));
-                    //parameters.Add(new SqlParameter("@PERSON_CMIP", dr[7].ToString()));
-                    //parameters.Add(new SqlParameter("@LEADER_CMIP", "0"));
-                    //parameters.Add(new SqlParameter("@BRANCH_CMIP", dr[9].ToString()));
-                    //parameters.Add(new SqlParameter("@PERSON_RANK", dr[10].ToString()));
-                    //parameters.Add(new SqlParameter("@LEADER_RANK", "0"));
-                    //parameters.Add(new SqlParameter("@BRANCH_RANK", dr[12].ToString()));
-                    //parameters.Add(new SqlParameter("@SL_CMIP", dr[8].ToString()));
-                    //parameters.Add(new SqlParameter("@SL_RANK", dr[11].ToString()));
-
-                    bool result = DBHelper.ExecuteNonQuery(_connection, "ADM_ACHIEVEMENT_REGIST", parameters);
+                    query.Append($" UNION ALL SELECT {index} [ORDERBY], '{dr[0].ToString()}' [DATE], '{dr[1].ToString()}' [SECTOR_NAME] ");
+                    query.Append($", '{dr[2].ToString()}' [BRANCH_NAME], '{dr[3].ToString()}' [CODE], '{dr[4].ToString()}' [NAME], '{dr[5].ToString()}' [LEVEL] ");
+                    query.Append($", '{dr[6].ToString()}' [PERSON_CMIP], '{dr[7].ToString()}' [PERSON_CAMP], '{dr[8].ToString()}' [SL_CMIP], '{dr[9].ToString()}' [BRANCH_CMIP] ");
+                    query.Append($", '{dr[10].ToString()}' [PERSON_RANK], '{dr[10].ToString()}' [PERSON_RANK2], '{dr[11].ToString()}' [SL_RANK], '{dr[12].ToString()}' [BRANCH_RANK] ");
+                    
+                    //bool result = DBHelper.ExecuteNonQuery(_connection, "ADM_ACHIEVEMENT_REGIST", parameters);
                 }
                 catch (Exception ex)
                 {
@@ -77,8 +55,14 @@ namespace OrangeSummer.Access
 
                 index++;
             }
+            query.Append(") A WHERE [ORDERBY]>0 ; SELECT 'SUCCESS' RESULT, 'SUCCESS' MESSAGE");
+
+            
+            DBHelper.ExecuteDataTableInQuery(_connection, query.ToString());
 
             return DBHelper.ExecuteDataTable(_connection, "ADM_ACHIEVEMENT_CHECK");
+
+            //return DBHelper.ExecuteDataTable(_connection, "ADM_ACHIEVEMENT_CHECK");
         }
 
         /// <summary>

@@ -16,7 +16,7 @@
                 <p class="subTitle">랭킹</p>
 			<ul class="bmTabs measure">
 				<li><a href="/ranking" >개인 부문</a></li>
-				<li><a href="/ranking/sl">SL 부문</a></li>
+				<li><a href="/ranking/sl">E SL 부문</a></li>
 				<li><a href="/ranking/point" class="current">지점 부문</a></li>
 			</ul>
                 
