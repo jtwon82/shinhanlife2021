@@ -39,7 +39,7 @@ namespace OrangeSummer.Common
             if (dic.ContainsKey(level))
                 return dic[level];
             else
-                return "";
+                return level;
         }
 
         /// <summary>

@@ -33,12 +33,12 @@ namespace OrangeSummer.Web.MasterApplication
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            foreach (string key in Request.QueryString)
-                Element.CheckInput(Request.QueryString[key]);
+            //foreach (string key in Request.QueryString)
+            //    Element.CheckInput(Request.QueryString[key]);
             //foreach (string key in Request.Form)
             //    Element.CheckInput(Request.Form[key]);
-            foreach (string key in Request.Cookies)
-                Element.CheckInput(Request.Cookies[key].Value);
+            //foreach (string key in Request.Cookies)
+            //    Element.CheckInput(Request.Cookies[key].Value);
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

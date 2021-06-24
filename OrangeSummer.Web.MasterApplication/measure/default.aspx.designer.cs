@@ -7,63 +7,81 @@
 // </자동 생성됨>
 //------------------------------------------------------------------------------
 
-namespace OrangeSummer.Web.MasterApplication.member {
+namespace OrangeSummer.Web.MasterApplication.measure {
     
     
-    public partial class detail {
+    public partial class _default {
         
         /// <summary>
-        /// branch 컨트롤입니다.
+        /// gubun 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList branch;
+        protected global::System.Web.UI.WebControls.DropDownList gubun;
         
         /// <summary>
-        /// level 컨트롤입니다.
+        /// title 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList level;
+        protected global::System.Web.UI.WebControls.TextBox title;
         
         /// <summary>
-        /// btnReset 컨트롤입니다.
+        /// useYn 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnReset;
+        protected global::System.Web.UI.WebControls.DropDownList useYn;
         
         /// <summary>
-        /// delyn 컨트롤입니다.
+        /// sdate 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList delyn;
+        protected global::System.Web.UI.WebControls.TextBox sdate;
         
         /// <summary>
-        /// btnModify 컨트롤입니다.
+        /// edate 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnModify;
+        protected global::System.Web.UI.WebControls.TextBox edate;
         
         /// <summary>
-        /// btnDelete 컨트롤입니다.
+        /// btnSearch 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDelete;
+        protected global::System.Web.UI.WebControls.LinkButton btnSearch;
+        
+        /// <summary>
+        /// rptList 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptList;
+        
+        /// <summary>
+        /// noData 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow noData;
     }
 }

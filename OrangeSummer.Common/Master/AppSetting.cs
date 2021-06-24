@@ -129,6 +129,7 @@ namespace OrangeSummer.Common.Master
                         }
                         break;
                     case "member": title = "회원 관리"; break;
+                    case "measure": title = "시책 상세 관리"; break;
                     case "branch": title = "지점 관리"; break;
                     case "achievement": title = "업적 관리"; break;
                     case "ranking": title = "랭킹 관리"; break;

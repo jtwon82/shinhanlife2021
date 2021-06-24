@@ -47,6 +47,7 @@
     <Compile Include="Banner.cs" />
     <Compile Include="Branch.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="Measure.cs" />
     <Compile Include="NoticeReply.cs" />
     <Compile Include="EventReplyLike.cs" />
     <Compile Include="NoticeReplyLike.cs" />

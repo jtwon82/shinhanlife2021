@@ -176,8 +176,6 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
                 string attfiled = Element.Get(this.attfiled);
                 string attfilenamed = Element.Get(this.attfilenamed);
                 string ext = string.Empty;
-                //S3 s3 = new S3(Common.Master.AppSetting.AwsAccess, Common.Master.AppSetting.AwsSecret, Common.Master.AppSetting.AwsBucket);
-                //s3.IsPublic = true;
 
                 ext = System.IO.Path.GetExtension(this.attfile.PostedFile.FileName).ToLower();
                 if (!Check.IsNone(ext))
@@ -186,17 +184,6 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
                     if (size > (10 * 1024 * 1024))
                         JS.Back("첨부파일은 10MB이하로 해주세요.");
 
-                    //s3.Upload(this.attfile.PostedFile.InputStream, ext);
-                    //if (s3.Result)
-                    //{
-                    //    file = s3.Key;
-                    //    filename = this.attfile.PostedFile.FileName;
-
-                    //    s3.Delete(attfiled); // 기존파일 삭제
-                    //}
-                    //else
-                    //    JS.Back("처리중 에러가 발생했습니다.");
-
                     HttpUpload upload = new HttpUpload(this.attfile.PostedFile);
                     upload.Attached();
                     if (upload.Result)
@@ -204,7 +191,6 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
                         file = upload.FIleFullPath();
                         filename = upload.FileName;
                     }
-
                 }
                 else
                 {

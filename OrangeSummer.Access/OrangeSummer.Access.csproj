@@ -48,6 +48,7 @@
     <Compile Include="Branch.cs" />
     <Compile Include="Dash.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="Measure.cs" />
     <Compile Include="NoticeReply.cs" />
     <Compile Include="WordReply.cs" />
     <Compile Include="Word.cs" />

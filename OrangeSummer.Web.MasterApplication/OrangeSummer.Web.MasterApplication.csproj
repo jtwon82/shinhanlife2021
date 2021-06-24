@@ -261,6 +261,8 @@
     <Content Include="global.asax" />
     <Content Include="main\banner\default.aspx" />
     <Content Include="main\banner\regist.aspx" />
+    <Content Include="measure\default.aspx" />
+    <Content Include="measure\regist.aspx" />
     <Content Include="member\default.aspx" />
     <Content Include="member\detail.aspx" />
     <Content Include="ranking\default.aspx" />
@@ -454,6 +456,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="main\banner\regist.aspx.designer.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="measure\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="measure\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="measure\regist.aspx.cs">
+      <DependentUpon>regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="measure\regist.aspx.designer.cs">
       <DependentUpon>regist.aspx</DependentUpon>
     </Compile>
     <Compile Include="member\default.aspx.cs">

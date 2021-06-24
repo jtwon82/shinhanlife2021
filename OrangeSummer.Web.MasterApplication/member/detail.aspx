@@ -69,6 +69,9 @@
         <asp:LinkButton ID="btnModify" runat="server" OnClick="btnModify_Click" OnClientClick="if (!data.modify()) { return false; }" ClientIDMode="Static" CssClass="btn btn-warning">
             <i class="material-icons">create</i> 수정
         </asp:LinkButton>
+        <asp:LinkButton ID="btnDelete" runat="server" OnClick="btnDelete_Click" OnClientClick="if (!data.delete()) { return false; }" ClientIDMode="Static" CssClass="btn btn-warning">
+            <i class="material-icons">create</i> 삭제
+        </asp:LinkButton>
         <a href="./?command=list<%= Parameters() %>" class="btn btn-secondary">
             <i class="material-icons">list</i> 목록
         </a>
