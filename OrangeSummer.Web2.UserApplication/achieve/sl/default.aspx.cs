@@ -39,7 +39,7 @@ namespace OrangeSummer.Web2.UserApplication.achieve.sl
                         foreach (Model.Achievement item in achievement)
                         {
                             DateTime dt = DateTime.Parse(item.Date);
-                            if (",SL".Contains("," + OrangeSummer.Common.User.Identify.Level))
+                            if (",SL,E SL".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                                 contents.AppendLine("<div class='swiper-slide'>");
                                 contents.AppendLine("	<div class='bmRanking_box'>");

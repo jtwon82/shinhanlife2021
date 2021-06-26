@@ -186,12 +186,13 @@ html.open {overflow: hidden;}
 }
 
 /* 로그인페이지 */
+.login_txt{
+	display:table;
+	margin:100px auto 0 auto;
+}
 .loginPage{
-	background:url(/resources/img/loginBg.jpg) center top no-repeat;
-	min-height:600px;
 	width:720px;
-	margin:0 auto;
-	padding-top:800px;
+	margin:210px auto 0 auto;
 }
 .loginPage .fc_code, .loginPage .fc_pwd{
 	width:639px;

@@ -12,6 +12,7 @@
             <tbody>
                 <tr>
                     <th>구분</th>
+                    <%--<td class="text-left"<%= (_command == "add") ? " colspan=\"3\"" : "" %>>--%>
                     <td colspan="3" class="text-left">
                         <asp:DropDownList ID="type" ClientIDMode="Static" runat="server" CssClass="form-control w-20">
                             <asp:ListItem Text="선택" Value=""></asp:ListItem>
@@ -19,6 +20,24 @@
                             <asp:ListItem Text="Notice" Value="NOTICE"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
+                    <%--<%
+
+                    if (_command == "mod")
+                    {
+
+                    %>
+                    <th>조회수 / 댓글</th>
+                    <td class="text-left">
+                        <%= _view %>회 / <%= _reply %>건 
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="btnDownload_Click" CssClass="btn btn-sm btn-primary ml-2">
+                            <i class="material-icons" style="font-size:small;">vertical_align_bottom</i> 댓글 다운로드
+                        </asp:LinkButton>
+                    </td>
+                    <%
+
+                    }
+
+                    %>--%>
                 </tr>
                 <tr>
                     <th>제목</th>

@@ -13,11 +13,11 @@
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer guide">
-                <p class="subTitle">시책 안내</p>
+                <p class="subTitle"><img src="/resources/img/sub/measureTitle.png" alt="시책안내" /></p>
                 <div class="measure_guide">
                     <ul class="bmTabs measure">
                         <li><a href="/measure/individual/">개인 부문</a></li>
-                        <li><a href="/measure/sl/" class="current">SL 부문</a></li>
+                        <li><a href="/measure/sl/" class="current">E SL 부문</a></li>
                         <li><a href="/measure/point" >지점 부문</a></li>
                     </ul>
                     
@@ -34,7 +34,7 @@
 					</ul-->
 				</div>
 				<div class="measureCon sl first">
-					<p class="Con_t">SL부문</p>
+					<p class="Con_t">E SL부문</p>
 					<div class="Con">
 						<dl>
 							<dt>선발 순위</dt>

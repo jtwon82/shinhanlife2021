@@ -13,7 +13,7 @@
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer notice">
-                <p class="subTitle">시책 안내</p>
+                <p class="subTitle"><img src="/resources/img/sub/measureTitle.png" alt="시책안내" /></p>
                 <div class="measure_list">
                     <dl>
                         <dt>썸머 시책 안내</dt>
@@ -23,7 +23,7 @@
                         <li><a href="./individual/">
                             <img src="/resources/img/sub/measure/measureIndividual.png" alt="Summer Climax 개인부문" /></a></li>
                         <li><a href="./sl/">
-                            <img src="/resources/img/sub/measure/measureSl.png" alt="Summer Climax SL부문" /></a></li>
+                            <img src="/resources/img/sub/measure/measureSl.png" alt="Summer Climax E SL부문" /></a></li>
                         <li><a href="./point/">
                             <img src="/resources/img/sub/measure/measurePoint.png" alt="Summer Climax 지점부문" /></a></li>
                     </ul>

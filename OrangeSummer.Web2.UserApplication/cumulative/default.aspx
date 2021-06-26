@@ -12,7 +12,7 @@
 	<div id="sub_wrap" class="subMeta05">
 		<uc1:menu runat="server" ID="menu" />
 		<div class="subContainer cumulative">
-			<p class="subTitle">시책 진도 현황</p>
+			<p class="subTitle"><img src="/resources/img/sub/processTitle.png" alt="시책진도현황" /></p>
 			<div class="cumulativePage">
 				<p class="endTxt">시책 진도 현황은<br/>
 				썸머 페스티벌 이후인<br/>

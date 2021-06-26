@@ -41,7 +41,7 @@ namespace OrangeSummer.Business
         /// <summary>
         /// 롤렛 담첨자 카운트
         /// </summary>
-        public int UserSuccess()
+        public bool UserSuccess()
         {
             return _roulette.UserSuccess();
         }

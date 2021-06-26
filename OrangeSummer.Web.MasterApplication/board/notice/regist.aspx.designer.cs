@@ -7,13 +7,11 @@
 // </자동 생성됨>
 //------------------------------------------------------------------------------
 
-namespace OrangeSummer.Web.MasterApplication.board.notice
-{
-
-
-    public partial class regist
-    {
-
+namespace OrangeSummer.Web.MasterApplication.board.notice {
+    
+    
+    public partial class regist {
+        
         /// <summary>
         /// type 컨트롤입니다.
         /// </summary>
@@ -22,7 +20,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList type;
-
+        
         /// <summary>
         /// title 컨트롤입니다.
         /// </summary>
@@ -31,7 +29,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox title;
-
+        
         /// <summary>
         /// contents 컨트롤입니다.
         /// </summary>
@@ -40,7 +38,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField contents;
-
+        
         /// <summary>
         /// useyn 컨트롤입니다.
         /// </summary>
@@ -49,7 +47,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList useyn;
-
+        
         /// <summary>
         /// attfile 컨트롤입니다.
         /// </summary>
@@ -58,7 +56,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload attfile;
-
+        
         /// <summary>
         /// btnDownload 컨트롤입니다.
         /// </summary>
@@ -67,7 +65,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnDownload;
-
+        
         /// <summary>
         /// btnDelFile 컨트롤입니다.
         /// </summary>
@@ -76,7 +74,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnDelFile;
-
+        
         /// <summary>
         /// attfiled 컨트롤입니다.
         /// </summary>
@@ -85,7 +83,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField attfiled;
-
+        
         /// <summary>
         /// attfilenamed 컨트롤입니다.
         /// </summary>
@@ -94,7 +92,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField attfilenamed;
-
+        
         /// <summary>
         /// btnRegist 컨트롤입니다.
         /// </summary>
@@ -103,7 +101,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnRegist;
-
+        
         /// <summary>
         /// btnModify 컨트롤입니다.
         /// </summary>
@@ -112,7 +110,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnModify;
-
+        
         /// <summary>
         /// btnDelete 컨트롤입니다.
         /// </summary>
@@ -121,7 +119,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnDelete;
-
+        
         /// <summary>
         /// rptList 컨트롤입니다.
         /// </summary>
@@ -130,7 +128,7 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptList;
-
+        
         /// <summary>
         /// noData 컨트롤입니다.
         /// </summary>

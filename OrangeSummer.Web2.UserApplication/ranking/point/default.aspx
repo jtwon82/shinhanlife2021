@@ -13,7 +13,7 @@
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer">
-                <p class="subTitle">랭킹</p>
+                <p class="subTitle"><img src="/resources/img/sub/rankingTitle.png" alt="랭킹" /></p>
 			<ul class="bmTabs measure">
 				<li><a href="/ranking" >개인 부문</a></li>
 				<li><a href="/ranking/sl">E SL 부문</a></li>

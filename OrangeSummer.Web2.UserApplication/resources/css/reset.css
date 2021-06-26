@@ -109,3 +109,13 @@ button{
 	margin: 0;
     padding: 0;
 }
+
+/* 210625 추가 */
+body.login{
+	background:url(../img/loginBg.jpg) center top no-repeat;
+	min-height:1500px;
+	background-size:cover;
+}
+body.bm{background:#e7ebee;}
+body.bm_sl{background:#96b3ff;}
+body.bm_point{background:#b6e6d8;}

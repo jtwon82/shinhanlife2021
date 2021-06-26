@@ -7,15 +7,15 @@
 <script type="text/javascript" src="/resources/js/common.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-<body>
+<body class="bm_sl">
 	<div id="sub_wrap" class="subMeta03">
 		<uc1:menu runat="server" id="menu" />
 		<div class="subContainer guide">
-			<p class="subTitle">My 업적</p>
+			<p class="subTitle"><img src="/resources/img/sub/bmTitle.png" alt="My업적" /></p>
 			<ul class="bmTabs">
                 <li><a href="/achieve/bm">개인 부문</a></li>
                 <%
-                    if (OrangeSummer.Common.User.Identify.Level == "SL")
+                    if ( ",SL,E SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
                     {
                 %>
                 <li><a href="/achieve/sl" class="current">E SL 부문</a></li>
@@ -35,7 +35,7 @@
 					<div class="swiper-button-prev"></div>
 				</div>
 				<ul class="referenceBox">
-					<li>* 본 데이터는 2021 Summer Contest 진도관리를 위한 <br/>보조자료이며, 달성 결과가 아님을 알려드립니다.</li>
+					<li>* 본 데이터는 2021 Summer Contest 진도관리를 위한 보조자료이며,<br/>달성 결과가 아님을 알려드립니다.</li>
 					<li>* 7월 11일부터 Ready for Summer 가중치가 반영된 환산 CMIP업적을 확인하실 수있습니다.</li>
 					<li>* 자세한 내용은 해당공문을 반드시 참고하시기 바랍니다. </li>
 				</ul>

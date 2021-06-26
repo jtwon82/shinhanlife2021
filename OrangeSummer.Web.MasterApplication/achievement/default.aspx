@@ -59,10 +59,10 @@
                     <th>신분</th>
                     <th>코드</th>
                     <th>성명</th>
-                    <th>개인부문<br />누적건수</th>
-                    <th>개인부문<br />누적 환산 CMP</th>
-                    <th>SL부문<br />환산 CMP</th>
-                    <th>지점부문<br /> 환산 CMP</th>
+                    <th>개인부문<br />누적환산CMIP</th>
+                    <th>개인부문<br />누적원CANP</th>
+                    <th>SL부문<br />환산 CMIP</th>
+                    <th>지점부문<br /> 환산 CMIP</th>
                     <th>개인부문<br /> 순위</th>
                     <th>SL부문<br />순위</th>
                     <th>지점부문<br />순위</th>
@@ -78,8 +78,8 @@
                             <td><%# OrangeSummer.Common.Code.MemberLevelName(Eval("Level").ToString()) %></td>
                             <td><%# Eval("Code") %></td>
                             <td><%# Eval("Name") %></td>
-                            <td><%# Eval("PersonSum") %></td>
                             <td><%# Eval("PersonCmip") %></td>
+                            <td><%# Eval("PersonCamp") %></td>
                             <td><%# Eval("SlCmip") %></td>
                             <td><%# Eval("BranchCmip") %></td>
                             <td><%# Eval("PersonRank") %></td>

@@ -76,18 +76,6 @@ namespace OrangeSummer.Web2.UserApplication.member.login
                         Tool.RR(referer);
                     else
                     {
-                        //if (",FC,NEWFC".Contains(","+ member.Level) )
-                        //{
-                        //    Tool.RR("/achieve/bm");
-                        //}
-                        //else if (",SL".Contains("," + member.Level))
-                        //{
-                        //    Tool.RR("/achieve/sl");
-                        //}
-                        //else if (",BM,EM,ERM".Contains("," + member.Level))
-                        //{
-                        //    Tool.RR("/achieve/point");
-                        //}
                         Tool.RR("/index");
                     }
                 }

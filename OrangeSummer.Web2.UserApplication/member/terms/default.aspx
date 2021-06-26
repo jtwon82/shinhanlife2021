@@ -12,7 +12,7 @@
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer">
-                <p class="subTitle">회원가입 약관</p>
+                <p class="subTitle"><img src="/resources/img/sub/signtermTitle.png" alt="회원가입 약관" /></p>
 
                 <div class="signup_wrap terms_wrap">
                     <p class="title">회원가입 약관</p>

@@ -12,14 +12,15 @@
             <tbody>
                 <tr>
                     <th>구분</th>
-                    <td class="text-left"<%= (_command == "add") ? " colspan=\"3\"" : "" %>>
+                   <%-- <td class="text-left"<%= (_command == "add") ? " colspan=\"3\"" : "" %>>--%>
+                    <td colspan="3" class="text-left">
                         <asp:DropDownList ID="type" ClientIDMode="Static" runat="server" CssClass="form-control">
                             <asp:ListItem Text="선택" Value=""></asp:ListItem>
-                            <asp:ListItem Text="일반" Value="NORMAL"></asp:ListItem>
-                            <asp:ListItem Text="Notice" Value="NOTICE"></asp:ListItem>
+                            <asp:ListItem Text="진행" Value="진행"></asp:ListItem>
+                            <asp:ListItem Text="예정" Value="예정"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <%
+                    <%--<%
 
                     if (_command == "mod")
                     {
@@ -36,11 +37,23 @@
 
                     }
 
-                    %>
+                    %>--%>
                 </tr>
                 <tr>
                     <th>제목</th>
                     <td colspan="3" class="text-left"><asp:TextBox ID="title" ClientIDMode="Static" runat="server" MaxLength="100" CssClass="form-control"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <th>모바일 이벤트 배너 이미지</th>
+                    <td colspan="3" class="text-left">
+                        <div class="custom-file">
+                            <asp:FileUpload ID="attMobile" runat="server" ClientIDMode="Static" CssClass="custom-file-input" />
+                            <label class="custom-file-label" for="attMobile">선택된 파일 없음</label>
+                        </div>
+                        <small class="text-muted">* 이미지 사이즈는 가로 680px 입니다.</small>
+                        <p class="m-0"><asp:Image ID="iattMobile" runat="server" ClientIDMode="Static" Width="100" Visible="false" CssClass="img-thumbnail" /></p>
+                        <asp:HiddenField ID="attMobileed" runat="server" ClientIDMode="Static" />
+                    </td>
                 </tr>
                 <tr>
                     <th>텍스트</th>
@@ -58,6 +71,10 @@
                             <asp:TextBox ID="edate" runat="server" ClientIDMode="Static" MaxLength="10" CssClass="form-control datepicker" style="width:100px;"></asp:TextBox>
                         </div>
                     </td>
+                </tr>
+                <tr>
+                    <th>URL</th>
+                    <td colspan="3" class="text-left"><asp:TextBox ID="url" runat="server" MaxLength="200" CssClass="form-control"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <th>노출 여부</th>
@@ -110,7 +127,7 @@
     {
 
     %>
-    <div class="table-responsive">
+    <div class="table-responsive" style="display:none;">
         <table class="table table-bordered" style="min-width: 1110px;">
             <colgroup>
                 <col style="width: 5%;" />

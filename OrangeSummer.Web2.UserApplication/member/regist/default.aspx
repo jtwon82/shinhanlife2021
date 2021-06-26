@@ -13,7 +13,7 @@
             <uc1:menu runat="server" ID="menu" />
 
             <div class="subContainer">
-                <p class="subTitle">회원가입</p>
+                <p class="subTitle"><img src="/resources/img/sub/signupTitle.png" alt="회원가입" /></p>
                 <div class="signup_wrap">
                     <p class="title">회원정보 기입</p>
 

@@ -32,20 +32,20 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
                 int page = Check.IsNone(Request["page"], 1);
                 using (Business.Event biz = new Business.Event(Common.User.AppSetting.Connection))
                 {
-                    List<Model.Event> list = biz.UserList(page, _size, "NOTICE");
+                    List<Model.Event> list = null; // biz.UserList(page, _size, "NOTICE");
                     //if (list != null)
                     //{
                     //    this.rptNoticeList.DataSource = list;
                     //    this.rptNoticeList.DataBind();
                     //}
 
-                    //list = biz.UserList(page, _size, "NORMAL");
-                    //if (list != null)
-                    //{
-                    //    this.rptList.DataSource = list;
-                    //    this.rptList.DataBind();
-                    //    _total = list[0].Total;
-                    //}
+                    list = biz.UserList(page, _size, "진행");
+                    if (list != null)
+                    {
+                        this.rptList.DataSource = list;
+                        this.rptList.DataBind();
+                        _total = list[0].Total;
+                    }
 
                     Common.User.Paging paging = new Common.User.Paging("./", page, _size, _block, _total);
                     _paging = paging.ToString();

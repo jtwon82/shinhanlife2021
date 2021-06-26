@@ -27,17 +27,11 @@
 	height:1789px;
 }
 .subTitle{
-	font-size: 60px;
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: -5px;
-    text-shadow: 3px 5px 8px rgb(0 0 0 / 50%);
-	margin: 115px 0 115px 0;
-	font-family: 'OneShinhanB', sans-serif;
+	width:392px;
+	margin: 115px auto 115px auto;
 }
 .subMeta05 .subTitle{
-	margin:170px 0 150px 0;
+	margin:170px auto 150px auto;
 }
 .subContainer{
 	margin:0 47px;
@@ -91,7 +85,7 @@ ul.bmTabs li{
 }
 ul.bmTabs li:last-child{margin-right:0;}
 ul.bmTabs li a, ul.bmTabs.measure li a{
-	border:1px solid #715def;
+	/*border:1px solid #715def;*/
 	border-radius:50px;
 	line-height:66px;
 	color:#715def;
@@ -108,6 +102,7 @@ ul.bmTabs li a, ul.bmTabs.measure li a{
 ul.bmTabs.measure li a{
 	width:189px;
 	border-radius:50px;
+	border:1px solid #715def;
 }
 ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.bmTabs.measure li.hover{
 	background:#715def;
@@ -887,11 +882,10 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .popup_fail .popup_wrap .popup_title p.main_txt{
 	font-size:199px;
 }
-
 /*  210623 추가 CSS */
 .bmRanking_box.personal{
 	height:664px;
-	background: url(../img/sub/bm/bmpersonal_Rankingbox.png) no-repeat;
+	background: url(/resources/img/sub/bm/bmpersonal_Rankingbox.png) no-repeat;
 }
 .bmRanking_box dl.canp{
 	margin-top:50px;

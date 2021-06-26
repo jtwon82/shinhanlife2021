@@ -7,9 +7,9 @@
                 <div class="form-group col-md-2">
                     <label>구분</label>
                     <asp:DropDownList ID="type" ClientIDMode="Static" runat="server" CssClass="form-control">
-                        <asp:ListItem Text="선택" Value=""></asp:ListItem>
-                        <asp:ListItem Text="일반" Value="NORMAL"></asp:ListItem>
-                        <asp:ListItem Text="Notice" Value="NOTICE"></asp:ListItem>
+                        <asp:ListItem Text="전체" Value=""></asp:ListItem>
+                        <asp:ListItem Text="진행" Value="진행"></asp:ListItem>
+                        <asp:ListItem Text="예정" Value="예정"></asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group col-md-2">

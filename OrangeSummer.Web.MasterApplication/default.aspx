@@ -25,9 +25,9 @@
                 <asp:TextBox ID="id" runat="server" ClientIDMode="Static" CssClass="form-control form-control-lg" placeholder="아이디를 입력해주세요."></asp:TextBox>
                 <asp:TextBox ID="pwd" runat="server" ClientIDMode="Static" TextMode="Password" CssClass="form-control form-control-lg my-2" placeholder="비밀번호를 입력해주세요."></asp:TextBox>
 
-                <asp:TextBox ID="pno" value="" maxlength="11" runat="server" ClientIDMode="Static" CssClass="form-control form-control-lg my-2" placeholder="전화번호를 입력해주세요."></asp:TextBox>
+                <asp:TextBox ID="pno" type='number' value="" maxlength="11" runat="server" ClientIDMode="Static" CssClass="form-control form-control-lg my-2" placeholder="전화번호를 입력해주세요."></asp:TextBox>
                 <button onclick="return O.SendRndNo();" class="btn btn-lg btn-primary btn-block mb-1" value="">인증번호발송</button>
-                <asp:TextBox ID="rndNo" maxlength="4" runat="server" ClientIDMode="Static" CssClass="form-control form-control-lg my-2" placeholder="인증번호를 입력해주세요."></asp:TextBox>
+                <asp:TextBox ID="rndNo" type='number' maxlength="4" runat="server" ClientIDMode="Static" CssClass="form-control form-control-lg my-2" placeholder="인증번호를 입력해주세요."></asp:TextBox>
                 
                 <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click" OnClientClick="if (!submitForm()) { return false; }" CssClass="btn btn-lg btn-primary btn-block mb-2" Text="로그인"></asp:LinkButton>
                 <%--<a href="javascript:;" class="text-secondary">아이디 / 비밀번호 찾기</a>--%>

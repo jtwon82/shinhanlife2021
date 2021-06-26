@@ -12,7 +12,7 @@
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer">
-                <p class="subTitle">회원정보 수정</p>
+                <p class="subTitle"><img src="/resources/img/sub/signup_editTitle.png" alt="회원정보수정" /></p>
                 <div class="signup_wrap">
                     <p class="title">회원정보 수정</p>
 

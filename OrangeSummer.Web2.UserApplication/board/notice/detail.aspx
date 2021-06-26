@@ -15,7 +15,7 @@
             <uc1:menu runat="server" ID="menu" />
 
             <div class="subContainer notice">
-                <p class="subTitle">공지 & 게시판</p>
+                <p class="subTitle"><img src="/resources/img/sub/noticeTitle.png" alt="공지&게시판" /></p>
 
                 <div class="board_view_wrap">
                     <div class="viewtitle">
@@ -57,24 +57,8 @@
 
                     <div class="view_area">
 
-
                         <asp:Repeater ID="rptList" runat="server">
                             <ItemTemplate>
-                                <%--<div class="content<%# Eval("DepthSeq").ToString() != "1" ? " view_reply" : "" %>" id="content_<%# Eval("Id") %>">
-                                    <div class="info">
-                                        <%# Eval("DepthSeq").ToString() != "1" ? "<span class=\"ico\"><img src=\"/resources/img/ico_reply.png\" alt=\"\"></span>" : "" %>
-                                        <span class="place"></span><span class="user"></span>
-                                        
-                                        <span class="date"></span>
-                                    </div>
-
-                                    <div class="txt">
-                                        
-                                    </div>
-
-                                    <%#Like(Eval("Id").ToString(), Eval("Like").ToString(), Eval("LikeCount").ToString(), Eval("DelYn").ToString()) %>
-                                </div>--%>
-
                                 <div class="content<%# Eval("DepthSeq").ToString() != "1" ? " view_reply" : "" %>" id="content_<%# Eval("Id") %>">
                                     <div class="view_area_info">
                                         <%# Eval("DepthSeq").ToString() != "1" ? "<span class=\"ico\"><img src='/resources/img/sub/board/replyIcon3.png'></span>" : " <span class=\"img\"><img src='"+Eval("Member.ProfileImg")+"' onerror=\"this.src='/resources/img/sub/board/writerImg.jpg'\" style='width:83px;height:83px;' /></span>" %>
@@ -110,28 +94,6 @@
                             </FooterTemplate>
                         </asp:Repeater>
 
-                        <!--
-                        <div class="content view_reply">
-                            <div class="view_area_info">
-                                <span class="ico">
-                                    <img src="img/sub/board/replyIcon3.png" alt=""></span>
-                                <span class="place">강남지점</span>
-                                <span class="user">홍길동</span>
-                                <a href="#" class="btn_comment_re">답글</a>
-                            </div>
-
-                            <div class="txt">
-                                저두요ㅠㅠ
-                            </div>
-
-                            <!--div class="like">
-							<a href="#">
-								<img src="../resources/img/ico_like.png" alt="">
-							</a>
-							<div class="number">LIKE <span>56</span></div>
-						</div
-                        </div>
-                        -->
                     </div>
 
                     <%=_paging%>

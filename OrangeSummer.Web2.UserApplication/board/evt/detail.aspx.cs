@@ -12,9 +12,15 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
 {
     public partial class detail : System.Web.UI.Page
     {
+        protected string _title = string.Empty;
         protected string _contents = string.Empty;
+        protected string _attfile = string.Empty;
+        protected string _attfilename = string.Empty;
+        protected string _attimage = string.Empty;
         protected string _adminName = string.Empty;
         protected string _registDate = string.Empty;
+        protected string _viewCount = string.Empty;
+        protected string _replyCoun = string.Empty;
         protected string _before = string.Empty;
         protected string _next = string.Empty;
         protected string _paging = string.Empty;
@@ -39,9 +45,18 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
                     notice = biz.UserDetail(id);
                     if (notice != null)
                     {
+                        _title = notice.Title;
                         _contents = HttpUtility.HtmlDecode(notice.Contents);
-                        _registDate = notice.RegistDate.Substring(2, 8);
+                        //_attfile = notice.AttFile;
+                        //_attfilename = notice.AttFileName;
+                        _attimage = notice.AttImage;
+                        _registDate = notice.RegistDate.Substring(0, 10);
+                        _viewCount = notice.ViewCount.ToString();
+                        _replyCoun = notice.ReplyCount.ToString();
                         _adminName = notice.Admin.Name;
+
+                        //this.btnDownload.CommandArgument = _attfile;
+                        //this.btnDownload.CommandName = _attfilename;
 
                         notice = biz.UserBefore(id, type);
                         if (notice != null)
@@ -116,7 +131,26 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
                 sb.AppendFormat("</div>");
             }
 
+
+
+
             return sb.ToString();
+        }
+
+        protected void btnDownload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LinkButton btn = (LinkButton)sender;
+                string key = btn.CommandArgument;
+                string filename = btn.CommandName;
+                //S3 s3 = new S3(Common.User.AppSetting.AwsAccess, Common.User.AppSetting.AwsSecret, Common.User.AppSetting.AwsBucket);
+                //s3.Download(key, filename);
+            }
+            catch (Exception ex)
+            {
+                MLib.Util.Error.WebHandler(ex);
+            }
         }
     }
 }

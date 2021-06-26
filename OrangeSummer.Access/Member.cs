@@ -305,8 +305,6 @@ namespace OrangeSummer.Access
             parameters.Add(new SqlParameter("@PWD", pwd));
             using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_MEMBER_LOGIN", parameters))
             {
-                new Log().Info(Tool.Print(dt) + "");
-
                 if (dt.Rows.Count == 1)
                 {
                     DataRow dr = dt.Rows[0];

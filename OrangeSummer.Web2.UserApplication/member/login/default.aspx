@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/common/master/page.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="OrangeSummer.Web2.UserApplication.member.login._default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="/resources/css/reset.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>" />
+    <link rel="stylesheet" href="/resources/css/layout.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<body class="login">
+	<p class="login_txt"><img src="/resources/img/login_txt.png" alt="두번 떠나는 새롭고도 놀라운 신한라이프 첫 썸머! 놀라운 Summer"/></p>
 	<div class="loginPage">
 		<div class="fc_code">
             <asp:TextBox ID="code" runat="server" MaxLength="5" ClientIDMode="Static" placeholder="FC Code No."></asp:TextBox>
@@ -28,6 +32,7 @@
 			</div>
 		</div>
 	</div>
+</body>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <script>

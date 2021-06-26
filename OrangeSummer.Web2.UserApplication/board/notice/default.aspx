@@ -13,13 +13,12 @@
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer">
-                <p class="subTitle">공지 & 게시판</p>
+                <p class="subTitle"><img src="/resources/img/sub/noticeTitle.png" alt="공지&게시판" /></p>
                 <p class="boardTxt">모두가 우리의 썸머를 응원합니다</p>
 
 
                 <asp:Repeater ID="rptNoticeList" runat="server">
                     <ItemTemplate>
-
 
                         <div class="listBox">
                             <a href="detail.aspx?id=<%# Eval("Id").ToString() + "&type=" + Eval("Type").ToString() %>">

@@ -96,12 +96,11 @@
     <Content Include="common\js\common.js" />
     <Content Include="common\js\jquery-library.js" />
     <Content Include="common\js\site.js" />
+    <Content Include="resources\js\swiper-bundle2.js" />
     <Content Include="common\uc\menu.ascx" />
     <Content Include="cumulative\default.aspx" />
     <Content Include="default.aspx" />
-    <Content Include="error\404.aspx" />
-    <Content Include="error\500.aspx" />
-    <Content Include="error\err.html" />
+    <Content Include="error\error.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index\default.aspx" />
@@ -164,7 +163,9 @@
     <Content Include="resources\img\intro.jpg" />
     <Content Include="resources\img\loginBg.jpg" />
     <Content Include="resources\img\loginBtn.png" />
+    <Content Include="resources\img\login_txt.png" />
     <Content Include="resources\img\metaImg.png" />
+    <Content Include="resources\img\sub\bmTitle.png" />
     <Content Include="resources\img\sub\bm\bmpersonal_Rankingbox.png" />
     <Content Include="resources\img\sub\bm\bmRankingbox.png" />
     <Content Include="resources\img\sub\bm\left_arrow.png" />
@@ -191,9 +192,12 @@
     <Content Include="resources\img\sub\cumulative\cumulativeBg2.png" />
     <Content Include="resources\img\sub\cumulative\endIcon.png" />
     <Content Include="resources\img\sub\cumulative\evaluation_standardBox.png" />
+    <Content Include="resources\img\sub\eventTitle.png" />
     <Content Include="resources\img\sub\event\btn_close.png" />
     <Content Include="resources\img\sub\event\eventImg01.png" />
     <Content Include="resources\img\sub\event\eventImg02.png" />
+    <Content Include="resources\img\sub\event\eventlistBanner.jpg" />
+    <Content Include="resources\img\sub\event\eventlistBanner2.jpg" />
     <Content Include="resources\img\sub\event\event_kv02.png" />
     <Content Include="resources\img\sub\event\event_kv02_bg.png" />
     <Content Include="resources\img\sub\event\event_kv02_btn.png" />
@@ -201,6 +205,7 @@
     <Content Include="resources\img\sub\event\event_kv02_coupon2.png" />
     <Content Include="resources\img\sub\event\event_kv02_pin.png" />
     <Content Include="resources\img\sub\event\rouletteImg.jpg" />
+    <Content Include="resources\img\sub\measureTitle.png" />
     <Content Include="resources\img\sub\measure\arrow.png" />
     <Content Include="resources\img\sub\measure\bonusBox.png" />
     <Content Include="resources\img\sub\measure\circle.png" />
@@ -213,9 +218,15 @@
     <Content Include="resources\img\sub\measure\measuretBg.png" />
     <Content Include="resources\img\sub\measure\measuretBg2.png" />
     <Content Include="resources\img\sub\measure\measuretBg3.png" />
+    <Content Include="resources\img\sub\noticeTitle.png" />
+    <Content Include="resources\img\sub\processTitle.png" />
+    <Content Include="resources\img\sub\rankingTitle.png" />
     <Content Include="resources\img\sub\ranking\copper.png" />
     <Content Include="resources\img\sub\ranking\gold.png" />
     <Content Include="resources\img\sub\ranking\sliver.png" />
+    <Content Include="resources\img\sub\signtermTitle.png" />
+    <Content Include="resources\img\sub\signupTitle.png" />
+    <Content Include="resources\img\sub\signup_editTitle.png" />
     <Content Include="resources\img\sub\subMeta01.jpg" />
     <Content Include="resources\img\sub\subMeta02.jpg" />
     <Content Include="resources\img\sub\subMeta03.jpg" />
@@ -343,20 +354,6 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="error\404.aspx.cs">
-      <DependentUpon>404.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="error\404.aspx.designer.cs">
-      <DependentUpon>404.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="error\500.aspx.cs">
-      <DependentUpon>500.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="error\500.aspx.designer.cs">
-      <DependentUpon>500.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

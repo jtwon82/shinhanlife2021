@@ -51,7 +51,10 @@ namespace MLib.Auth
         {
             HttpCookie cookie = new HttpCookie(group);
             cookie[key] = value;
+            cookie.Path = "/";
             cookie.Expires = DateTime.Now.AddDays(expires);
+            //cookie.Secure = true;
+            //cookie.HttpOnly = true;
             HttpContext.Current.Response.Cookies.Add(cookie);
         }
 

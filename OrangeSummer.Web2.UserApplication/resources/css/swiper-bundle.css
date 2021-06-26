@@ -533,3 +533,23 @@ button.swiper-pagination-bullet {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
+
+/* 210625 Ãß°¡ */
+.swiper-container2 .swiper-wrapper {
+	position: relative;
+	width: 640px;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+	transition-property: transform;
+	box-sizing: content-box;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide{width:650px !important;}
+.swiper-pagination2 {
+    position: absolute;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+	bottom:-40px !important;
+}

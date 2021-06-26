@@ -41,7 +41,7 @@
             <a class="nav-link<%= (_orderby == "PERSON_RANK2") ? " active font-weight-bold" : "" %>" href="./?orderby=PERSON_RANK2">CAMP 개인 랭킹</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link<%= (_orderby == "SL_RANK") ? " active font-weight-bold" : "" %>" href="./?orderby=SL_RANK">SL부문 랭킹</a>
+            <a class="nav-link<%= (_orderby == "SL_RANK") ? " active font-weight-bold" : "" %>" href="./?orderby=SL_RANK">E SL부문 랭킹</a>
         </li>
         <li class="nav-item">
             <a class="nav-link<%= (_orderby == "BRANCH_RANK") ? " active font-weight-bold" : "" %>" href="./?orderby=BRANCH_RANK">지점 랭킹</a>
@@ -75,7 +75,7 @@
                     <th>성명</th>
                     <!--<th>개인부문<br />누적건수</th>-->
                     <th>개인부문<br />누적 환산 CMIP</th>
-                    <th>개인부문<br />누적 환산 CAMP</th>
+                    <th>개인부문<br />누적 환산 CANP</th>
                     <th>SL부문<br />누적 환산 CMIP</th>
                     <th>지점부문<br />누적 환산 CMIP</th>
                     <th>개인순위<br />CMIP</th>

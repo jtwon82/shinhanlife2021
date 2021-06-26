@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System;
+using System.Text;
 
 namespace OrangeSummer.Access
 {
@@ -165,23 +166,41 @@ namespace OrangeSummer.Access
         /// <summary>
         /// 이벤트 등록
         /// </summary>
-        public bool Regist(Model.Event evt)
+        public bool Regist(Model.Event m)
         {
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@ID", evt.Id));
-            parameters.Add(new SqlParameter("@FK_ADMIN", evt.FkAdmin));
-            parameters.Add(new SqlParameter("@TYPE", evt.Type));
-            parameters.Add(new SqlParameter("@TITLE", evt.Title));
-            parameters.Add(new SqlParameter("@CONTENTS", evt.Contents));
-            parameters.Add(new SqlParameter("@URL", evt.Url));
-            parameters.Add(new SqlParameter("@ATT_IMAGE", evt.AttImage));
-            parameters.Add(new SqlParameter("@VIEW_COUNT", evt.ViewCount));
-            parameters.Add(new SqlParameter("@REPLY_COUNT", evt.ReplyCount));
-            parameters.Add(new SqlParameter("@SDATE", evt.Sdate));
-            parameters.Add(new SqlParameter("@EDATE", evt.Edate));
-            parameters.Add(new SqlParameter("@USE_YN", evt.UseYn));
+            //List<SqlParameter> parameters = new List<SqlParameter>();
+            //parameters.Add(new SqlParameter("@ID", evt.Id));
+            //parameters.Add(new SqlParameter("@FK_ADMIN", evt.FkAdmin));
+            //parameters.Add(new SqlParameter("@TYPE", evt.Type));
+            //parameters.Add(new SqlParameter("@TITLE", evt.Title));
+            //parameters.Add(new SqlParameter("@CONTENTS", evt.Contents));
+            //parameters.Add(new SqlParameter("@URL", evt.Url));
+            //parameters.Add(new SqlParameter("@ATT_IMAGE", evt.AttImage));
+            //parameters.Add(new SqlParameter("@VIEW_COUNT", evt.ViewCount));
+            //parameters.Add(new SqlParameter("@REPLY_COUNT", evt.ReplyCount));
+            //parameters.Add(new SqlParameter("@SDATE", evt.Sdate));
+            //parameters.Add(new SqlParameter("@EDATE", evt.Edate));
+            //parameters.Add(new SqlParameter("@USE_YN", evt.UseYn));
 
-            return DBHelper.ExecuteNonQuery(_connection, "ADM_EVENT_REGIST", parameters);
+            //return DBHelper.ExecuteNonQuery(_connection, "ADM_EVENT_REGIST", parameters);
+
+            //evt.Id = Tool.UniqueNewGuid;
+            //evt.FkAdmin = Common.Master.Identify.Id;
+            //evt.Type = Element.Get(this.type);
+            //evt.Title = Element.Get(this.title);
+            //evt.AttImage = mobile;
+            //evt.Url = "";
+            //evt.Contents = Element.Get(this.contents);
+            //evt.Sdate = Element.Get(this.edate);
+            //evt.Edate = Element.Get(this.sdate);
+            //evt.UseYn = Element.Get(this.useyn);
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"INSERT INTO [dbo].[EVENT](ID, FK_ADMIN, TYPE, TITLE, CONTENTS, URL, ATT_IMAGE, VIEW_COUNT, REPLY_COUNT, SDATE, EDATE, USE_YN, DEL_YN, REGIST_DATE) ");
+            sb.Append($" VALUES ('{m.Id}', '{m.FkAdmin}', '{m.Type}', '{m.Title}', '{m.Contents}', '{m.Url}', '{m.AttImage}', 0, 0, '{m.Sdate}', '{m.Edate}', '{m.UseYn}', 'N', GETDATE())");
+            //sb.Append($" VALUES ('{m.Id}', null, '{m.Gubun}', '{m.UseYn}', '{m.Title}', '{m.attMobile}', '{m.Contents}', '{m.sdate}', '{m.edate}', 0, GETDATE())");
+
+            return DBHelper.ExecuteNonInQuery(_connection, sb.ToString());
         }
 
         /// <summary>
@@ -243,7 +262,7 @@ namespace OrangeSummer.Access
                             Title = dr["TITLE"].ToString(),
                             Contents = dr["CONTENTS"].ToString(),
                             Url = dr["URL"].ToString(),
-                            AttImage = dr["ATT_IMAGE"].ToString(),
+                            AttImage = "/upload/" + dr["ATT_IMAGE"].ToString(),
                             ViewCount = Convert.ToInt32(dr["VIEW_COUNT"].ToString()),
                             ReplyCount = Convert.ToInt32(dr["REPLY_COUNT"].ToString()),
                             Sdate = dr["SDATE"].ToString(),

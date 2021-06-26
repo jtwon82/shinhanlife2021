@@ -46,7 +46,7 @@ namespace OrangeSummer.Web.MasterApplication.controllers
             {
                 json.Result = "SUCCESS";
                 json.Message = "DEVMODE "+rand_no;
-                MLib.Auth.Web.Cookies("ORANGESUMMER", "RNDNO", AES.Encrypt(Common.User.AppSetting.EncKey, $"{rand_no}"), 1);
+                MLib.Auth.Web.Cookies("ORANGESUMMER_RNDNO", "RNDNO", AES.Encrypt(Common.User.AppSetting.EncKey, $"{rand_no}"), 1);
             }
             else
             {
@@ -83,7 +83,7 @@ namespace OrangeSummer.Web.MasterApplication.controllers
                                 if (result == "1")
                                 {
                                     json.Result = "SUCCESS";
-                                    MLib.Auth.Web.Cookies("ORANGESUMMER", "RNDNO", AES.Encrypt(Common.User.AppSetting.EncKey, $"{rand_no}"), 1);
+                                    MLib.Auth.Web.Cookies("ORANGESUMMER_RNDNO", "RNDNO", AES.Encrypt(Common.User.AppSetting.EncKey, $"{rand_no}"), 1);
                                 }
                                 else
                                 {

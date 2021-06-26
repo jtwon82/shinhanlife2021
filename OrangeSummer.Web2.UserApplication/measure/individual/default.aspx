@@ -15,11 +15,11 @@
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer guide">
-                <p class="subTitle">시책 안내</p>
+                <p class="subTitle"><img src="/resources/img/sub/measureTitle.png" alt="시책안내" /></p>
                 <div class="measure_guide">
                     <ul class="bmTabs measure">
                         <li><a href="/measure/individual/" class="current">개인 부문</a></li>
-                        <li><a href="/measure/sl/">SL 부문</a></li>
+                        <li><a href="/measure/sl/">E SL 부문</a></li>
                         <li><a href="/measure/point">지점 부문</a></li>
                     </ul>
                     <!-- 개인부문 -->

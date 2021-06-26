@@ -36,7 +36,7 @@ namespace SAP.Master.WebApplication
                 string rndNo = Element.Get(this.rndNo);
                 string referer = Check.IsNone(Request["referer"], "");
 
-                string _rndNo = AES.Decrypt(OrangeSummer.Common.User.AppSetting.EncKey, MLib.Auth.Web.Cookies("ORANGESUMMER", "RNDNO"));
+                string _rndNo = AES.Decrypt(OrangeSummer.Common.User.AppSetting.EncKey, MLib.Auth.Web.Cookies("ORANGESUMMER_RNDNO", "RNDNO"));
                 
                 if (_rndNo == rndNo || OrangeSummer.Common.Master.AppSetting.DevMode == "DEV")
                 {
@@ -64,7 +64,7 @@ namespace SAP.Master.WebApplication
                                 }
                                 else
                                 {
-                                    MLib.Auth.Web.Cookies("ORANGESUMMER", "RNDNO", "", 1);
+                                    MLib.Auth.Web.Cookies("ORANGESUMMER_RNDNO", "RNDNO", "", 1);
                                     Tool.RR("/dash/");
                                 }
                             }

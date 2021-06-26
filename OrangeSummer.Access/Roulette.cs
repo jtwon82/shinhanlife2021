@@ -116,19 +116,20 @@ namespace OrangeSummer.Access
         /// 롤렛 담첨자 카운트
         /// </summary>
         /// <returns></returns>
-        public int UserSuccess()
+        public Boolean UserSuccess()
         {
-            int count = 0;
+            Boolean result = false;
             using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_ROULETTE_SUCCESS"))
             {
                 if (dt.Rows.Count == 1)
                 {
                     DataRow dr = dt.Rows[0];
-                    count = Convert.ToInt32(dr["COUNT"].ToString());
+                    //result = Convert.ToInt32(dr["COUNT"].ToString());
+                    result = Convert.ToInt32(dr["RESULT"].ToString())==1;
                 }
             }
 
-            return count;
+            return result;
         }
 
         /// <summary>

@@ -35,10 +35,10 @@ namespace OrangeSummer.Web2.UserApplication.board.roulette
                 using (Business.Roulette biz = new Business.Roulette(Common.User.AppSetting.Connection))
                 {
                     Random random = new Random();
-                    int count = biz.UserSuccess();
+                    //int count = biz.UserSuccess();
                     int ran = 0;
                     bool check = true;
-                    if (count < 15)
+                    if (biz.UserSuccess())
                     {
                         check = biz.UserCheck(Common.User.Identify.Id);
                         if (check)
@@ -47,7 +47,7 @@ namespace OrangeSummer.Web2.UserApplication.board.roulette
                         {
                             ran = random.Next(1, 50);
 
-                            if (ran <= 10)
+                            if (ran <= 5)
                                 _result = "SUCCESS";
                             else
                                 _result = "FAIL";

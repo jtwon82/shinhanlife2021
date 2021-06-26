@@ -45,7 +45,7 @@ namespace OrangeSummer.Web2.UserApplication.achieve.bm
                             DateTime dt = DateTime.Parse(item.Date);
                             string cdate = $"{dt.ToString("yyyy")}년 {dt.ToString("MM")}월 {dt.ToString("dd")}";
 
-                            if (",FC,SL,NEWFC".Contains("," + OrangeSummer.Common.User.Identify.Level))
+                            if (",FC,NEWFC,SL,E SL".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                                 contents.AppendLine($"<div class='swiper-slide'>");
                                 contents.AppendLine($"	<div class='bmRanking_box personal'>");

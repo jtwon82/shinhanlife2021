@@ -15,6 +15,8 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
     public partial class regist : System.Web.UI.Page
     {
         protected string _command = string.Empty;
+        protected string _reply = string.Empty;
+        protected string _view = string.Empty;
         protected string _admName = string.Empty;
         protected string _registDate = string.Empty;
         protected string _paging = string.Empty;
@@ -40,6 +42,8 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
                         if (notice != null)
                         {
                             _command = "mod";
+                            _reply = Convert.ToDecimal(notice.ReplyCount).ToString("#,##0");
+                            _view = Convert.ToDecimal(notice.ViewCount).ToString("#,##0");
                             _registDate = notice.RegistDate;
                             _admName = notice.Admin.Name;
 

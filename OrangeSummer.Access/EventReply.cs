@@ -158,6 +158,7 @@ namespace OrangeSummer.Access
                             Depth = Convert.ToInt32(dr["DEPTH"].ToString()),
                             Contents = dr["CONTENTS"].ToString(),
                             LikeCount = Convert.ToInt32(dr["LIKE_COUNT"].ToString()),
+                            ReplyCount = Convert.ToInt32(dr["REPLY_COUNT"].ToString()),
                             DelYn = dr["DEL_YN"].ToString(),
                             RegistDate = dr["REGIST_DATE"].ToString(),
                             Like = Convert.ToInt32(dr["LIKE"].ToString()),

@@ -321,3 +321,16 @@
 .commingEventList{
 	margin-top:70px;
 }
+
+/* 210625 추가내용 */
+.event_rolling{
+	float:left;
+	width:100%;
+}
+.event_rolling .swiper-slide img{
+	width:640px;
+	height:200px;
+	border: 1px solid transparent;
+    border-radius: 30px;
+    box-sizing: border-box;
+}

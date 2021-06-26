@@ -52,7 +52,6 @@ namespace OrangeSummer.Web2.UserApplication.common.master
             }
             #endregion
 
-
             if (Common.User.AppSetting.DevMode != "DEV" && !Request.IsSecureConnection)
             {
                 string redirectUrl = Request.Url.AbsoluteUri.Replace("http:", "https:");

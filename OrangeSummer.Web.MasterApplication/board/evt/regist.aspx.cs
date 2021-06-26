@@ -51,11 +51,16 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
 
                             Element.Set(this.type, evt.Type);
                             Element.Set(this.title, evt.Title);
+                            Element.Set(this.attMobileed, evt.AttImage);
                             Element.Set(this.contents, evt.Contents);
+                            Element.Set(this.url, evt.Url);
                             Element.Set(this.sdate, evt.Sdate);
                             Element.Set(this.edate, evt.Edate);
                             Element.Set(this.useyn, evt.UseYn);
                             this.type.CssClass = "form-control w-60";
+
+                            this.iattMobile.ImageUrl = Common.Master.AppSetting.uploadFileUrl(evt.AttImage);
+                            this.iattMobile.Visible = true;
 
                             this.btnModify.Visible = true;
                             this.btnDelete.Visible = true;
@@ -111,16 +116,26 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
         {
             try
             {
+                string mobile = string.Empty;
+                string ext = string.Empty;
+
+                HttpUpload upload = new HttpUpload(this.attMobile.PostedFile);
+                upload.Attached();
+                if (upload.Result)
+                    mobile = upload.FIleFullPath();
+                else
+                    JS.Back("처리중 에러가 발생했습니다.");
+
                 Model.Event evt = new Model.Event();
                 evt.Id = Tool.UniqueNewGuid;
                 evt.FkAdmin = Common.Master.Identify.Id;
                 evt.Type = Element.Get(this.type);
                 evt.Title = Element.Get(this.title);
-                evt.AttImage = "";
-                evt.Url = "";
+                evt.AttImage = mobile;
+                evt.Url = Element.Get(this.url) ;
                 evt.Contents = Element.Get(this.contents);
-                evt.Sdate = Element.Get(this.edate);
-                evt.Edate = Element.Get(this.sdate);
+                evt.Sdate = Element.Get(this.sdate);
+                evt.Edate = Element.Get(this.edate);
                 evt.UseYn = Element.Get(this.useyn);
                 using (Business.Event biz = new Business.Event(Common.Master.AppSetting.Connection))
                 {
@@ -142,13 +157,32 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
         {
             try
             {
+                string mobile = string.Empty;
+                string attMobileed = Element.Get(this.attMobileed);
+                string ext = string.Empty;
+
+                ext = System.IO.Path.GetExtension(this.attMobile.PostedFile.FileName).ToLower();
+                if (!Check.IsNone(ext))
+                {
+                    HttpUpload upload = new HttpUpload(this.attMobile.PostedFile);
+                    upload.Attached();
+                    if (upload.Result)
+                        mobile = upload.FIleFullPath();
+                    else
+                        JS.Back("처리중 에러가 발생했습니다.");
+                }
+                else
+                {
+                    mobile = attMobileed;
+                }
+
                 string id = Check.IsNone(Request["id"], true);
                 Model.Event evt = new Model.Event();
                 evt.Id = id;
                 evt.Type = Element.Get(this.type);
                 evt.Title = Element.Get(this.title);
-                evt.AttImage = ""; ;
-                evt.Url = "";
+                evt.AttImage = mobile; ;
+                evt.Url = Element.Get(this.url);
                 evt.Contents = Element.Get(this.contents);
                 evt.Sdate = Element.Get(this.sdate);
                 evt.Edate = Element.Get(this.edate);

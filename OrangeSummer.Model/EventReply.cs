@@ -17,6 +17,7 @@
         public string Contents { get; set; }
         public int LikeCount { get; set; }
         public int Like { get; set; }
+        public int ReplyCount { get; set; }
         public string DelYn { get; set; }
         public string RegistDate { get; set; }
         public Member Member { get; set; }

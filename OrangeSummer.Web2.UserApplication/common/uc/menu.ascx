@@ -46,7 +46,7 @@
                         <a href="/achieve/bm">MY 업적</a>
                         <%
                             }
-                            else if ( ",SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
+                            else if ( ",SL,E SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
                             {
                         %>
                         <a href="/achieve/sl">MY 업적</a>
