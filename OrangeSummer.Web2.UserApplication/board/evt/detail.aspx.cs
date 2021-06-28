@@ -60,13 +60,23 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
 
                         notice = biz.UserBefore(id, type);
                         if (notice != null)
-                            _before = $"<a href=\"detail.aspx?id={notice.Id}&type={notice.Type}\">{notice.Title}</a>";
+                        {
+                            if (notice.Url != "")
+                                _before = $"<a href='{notice.Url}'>{notice.Title}</a>";
+                            else
+                                _before = $"<a href='detail.aspx?id={notice.Id}&type={notice.Type}'>{notice.Title}</a>";
+                        }
                         else
                             _before = "&nbsp;";
 
                         notice = biz.UserNext(id, type);
                         if (notice != null)
-                            _next = $"<a href=\"detail.aspx?id={notice.Id}&type={notice.Type}\">{notice.Title}</a>";
+                        {
+                            if (notice.Url != "")
+                                _next = $"<a href='{notice.Url}'>{notice.Title}</a>";
+                            else
+                                _next = $"<a href='detail.aspx?id={notice.Id}&type={notice.Type}'>{notice.Title}</a>";
+                        }
                         else
                             _next = "&nbsp;";
 

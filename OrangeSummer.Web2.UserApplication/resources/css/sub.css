@@ -24,7 +24,7 @@
 }
 .subMeta06{
 	background:url(/resources/img/sub/event/rouletteImg.jpg) top center no-repeat;
-	height:1789px;
+	height:1789px !important;
 }
 .subTitle{
 	width:392px;
@@ -78,10 +78,13 @@ ul.bmTabs{
 	display: table;
 	margin:0 auto 50px auto;
 }
-ul.bmTabs li{
+ul.bmTabs li, ul.bmTabs.measure.ranking li{
 	float:left;
 	margin-right:12px;
 	border-radius:50px;
+}
+ul.bmTabs.measure li{
+	margin-right:12px;
 }
 ul.bmTabs li:last-child{margin-right:0;}
 ul.bmTabs li a, ul.bmTabs.measure li a{
@@ -100,6 +103,10 @@ ul.bmTabs li a, ul.bmTabs.measure li a{
 	background-color:#fff;
 }
 ul.bmTabs.measure li a{
+	width:189px;
+	border:1px solid #715def;
+}
+ul.bmTabs.measure.ranking li a{
 	width:189px;
 	border-radius:50px;
 	border:1px solid #715def;
@@ -185,7 +192,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .measure_list dl{
 	float:left;
 }
-.measure_list ul, .dynamiteBanner{
+.measure_list ul{
 	margin-left:-12px;
 }
 .measure_list dl dt, .measure_guide .titleBox dt{
@@ -246,9 +253,10 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	width:100%;
 	margin-bottom:50px;
 }
+.measureCon.esl{margin-bottom:0;}
 .measureCon.first{margin-top:20px;}
 .measureCon.last{
-	margin-bottom:40px;
+	margin-bottom:0;
 }
 .measureCon .Con_t{
 	float:left;
@@ -258,20 +266,20 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-weight:300;
 	width:100%;
 	font-family: 'OneShinhanM', sans-serif;
-
+	margin-left:21px;
 }
 .measureCon .Con{
 	float:left;
 	background:url(/resources/img/sub/measure/measureConBg.png) no-repeat;
-	width:681px;
+	width:601px;
 	height:152px;
-	padding:41px 0 41px 0;
+	padding:43px 40px 40px 40px;
 }
 .measureCon .Con dl{
 	float:left;
 	border-right:1px dashed #c9c9c9;
-	width:33%;
-	height:152px;
+	width:25%;
+	height:151px;
 	text-align:center;
 	box-sizing:border-box;
 }
@@ -289,17 +297,22 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-family: 'OneShinhanM', sans-serif;
 }
 .measureCon .Con dd{
-	margin-top:40px;
+	margin-top:23px;
+}
+.measureCon .Con dd.small{
+	font-size:15px;
 }
 .measureCon .Con dd em{
 	display:inline-block;
 	color:#715def;
-	font-size:50px;
+	font-size:33px;
 	font-weight:bold;
 	font-family: 'OneShinhanB', sans-serif;
+	letter-spacing: -3px;
 }
 .measureCon .Con dl:nth-child(2) dd{margin-top:30px;}
-.measureCon .Con dl:nth-child(2) dd, .measureCon .Con dl:nth-child(2) dd em{
+.measureCon .Con dl:nth-child(2) dd, .measureCon .Con dl:nth-child(2) dd em,
+.measureCon.point .Con dl:nth-child(3) dd, .measureCon.point .Con dl:nth-child(3) dd em{
 	font-size:23px;
 }
 .measureCon.sl .Con dl:nth-child(2) dd em {
@@ -332,7 +345,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .commissionerBox{
 	float:left;
-	margin-bottom:60px;
+	margin:60px 0;
 }
 .commissionerBox p{
 	background:url(/resources/img/sub/measure/arrow.png) left center no-repeat;
@@ -343,29 +356,33 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-family: 'OneShinhanB', sans-serif;
 }
 .commissionerBox ul{
-	width:596px;
-	height:85px;
+	width:649px;
+	height:133px;
 	background-color:#dbd6fb;
-	padding:30px 0 0 50px;
+	padding:40px 0 0 0;
 	border-radius:30px;
 }
 .commissionerBox li{
-	background:url(/resources/img/sub/measure/circle2.png) left center no-repeat;
-	padding-left:13px;
-	font-size:20px;
-}
-.commissionerBox li span{
+	text-align:center;
+	font-size:29px;
 	font-weight:bold;
 	font-family: 'OneShinhanB', sans-serif;
 	color:#715def;
 	line-height:34px;
 }
+.commissionerBox li span{
+	font-size:15px;
+	font-family: 'OneShinhanL', sans-serif;
+	color:#000;
+	line-height:40px;
+	display:block;
+}
 .achievement_standards{
-	padding-top: 22px;
+	/*padding-top: 22px;*/
     clear: both;
     margin: 0 auto;
     overflow: hidden;
-    width:60%;
+    width:65%;
 }
 .achievement_standards dt{
 	float:left;
@@ -380,6 +397,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	color:#715def;
 	display:inline-block;
 	margin:0 10px;
+	float:right;
 }
 .achievement_standards dd{
 	color:#000;
@@ -704,7 +722,10 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-family: 'OneShinhanM', sans-serif;
 	color:#715def;
 }
-.rankingUnit li:last-child{float:right;}
+.rankingUnit li:last-child{
+	float:right;
+	margin-right:5px;
+}
 .rankingList, .rankingList dl{
 	display:table;
 	margin:0 auto;
@@ -892,4 +913,112 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .bmRanking_box dl.canp dt, .bmRanking_box dl.canp dd{
 	color:#fff;
+}
+
+/* 210626-2 추가 */
+.dynamiteBanner img{
+	border: 1px solid transparent;
+    border-radius: 30px;
+    box-sizing: border-box;
+	width:642px;
+	height:200px;
+}
+.evaluationInfo, .evaluationInfo dl,
+.mandatory_standards{
+	float:left;
+	width:100%;
+}
+.evaluationInfo dl{
+	line-height:42px;
+}
+.evaluationInfo{
+	margin:0 0 48px 21px;
+}
+.evaluationInfo dt, .evaluationInfo dd{
+	color:#000;
+	font-size:23px;
+	font-family: 'OneShinhanL', sans-serif;
+}
+.evaluationInfo dt{
+	float:left;
+	background:url(/resources/img/sub/measure/circle.png) left center no-repeat;
+	font-family: 'OneShinhanB', sans-serif;
+	padding-left:20px;
+}
+.evaluationInfo dt span{
+	display:inline-block;
+	margin:0 10px;
+	font-size:18px;
+	font-family: 'OneShinhanB', sans-serif;
+}
+.evaluationInfo dt span.sl_blank{margin-left:25px;}
+.mandatory_standards dl{
+	background:url(/resources/img/sub/measure/individual_standardBox.png) no-repeat;
+	width:332px;
+	height:250px;
+	float:left;
+}
+.mandatory_standards dl.two{
+	float:right;
+}
+.mandatory_standards dt{
+	line-height:70px;
+	color:#fff;
+	text-align:center;
+	font-size:18px;
+	font-family: 'OneShinhanM', sans-serif;
+}
+.mandatory_standards dd{
+	margin-top:30px;
+	font-size:23px;
+	font-family: 'OneShinhanM', sans-serif;
+	text-align:center;
+}
+.mandatory_standards dd strong{
+	color:#715def;
+	display:block;
+	font-family: 'OneShinhanM', sans-serif;
+	margin-bottom:10px;
+}
+.mandatory_standards dl.two dd strong{
+	margin-bottom:20px;
+}
+.measureCon .Con dd.trip_area{
+	font-family: 'OneShinhanB', sans-serif;
+	font-size:21px;
+	color:#715def;
+}
+.measureCon .Con dd.trip_area.one{
+	margin-top:50px;
+}
+.measureCon .Con dd em.jeju{
+	background-color:#715def;
+	color:#fff;
+	font-family: 'OneShinhanB', sans-serif;
+	font-size:21px;
+	width:79px;
+	height:30px;
+	line-height:30px;
+	display:block;
+	margin:0 auto;
+	letter-spacing: 0;
+}
+.measureCon .Con dd.blank {
+    margin-top: 50px;
+}
+.measureCon.headoffice .Con dl{
+	width:33%;
+}
+.measureCon.headoffice .Con dl:nth-child(2) dd {
+    margin-top: 23px;
+}
+.measureCon.headoffice .Con dl:last-child dd em{
+    font-size:44px;
+}
+.measureCon.point .Con dl:nth-child(2) dd em{
+    font-size:33px;
+}
+.measureCon.point .Con dl:first-child dd{
+    font-size:21px;
+	margin-top:38px;
 }

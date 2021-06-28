@@ -96,6 +96,8 @@
     <Content Include="common\js\common.js" />
     <Content Include="common\js\jquery-library.js" />
     <Content Include="common\js\site.js" />
+    <Content Include="resources\img\sub\measure\dynamiteBanner.jpg" />
+    <Content Include="resources\img\sub\measure\individual_standardBox.png" />
     <Content Include="resources\js\swiper-bundle2.js" />
     <Content Include="common\uc\menu.ascx" />
     <Content Include="cumulative\default.aspx" />
@@ -234,8 +236,6 @@
     <Content Include="resources\img\sub\subMeta05.jpg" />
     <Content Include="resources\js\common.js" />
     <Content Include="resources\js\includeHTML.js" />
-    <Content Include="resources\js\jquery-3.5.1.min.js" />
-    <Content Include="resources\js\jquery.1.11.0.min.js" />
     <Content Include="resources\js\swiper-bundle.js" />
     <Content Include="resources\js\swiper.js" />
     <Content Include="resources\js\swiper.min.4.3.5.js" />

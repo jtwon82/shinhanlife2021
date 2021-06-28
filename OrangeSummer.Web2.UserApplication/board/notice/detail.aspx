@@ -61,7 +61,7 @@
                             <ItemTemplate>
                                 <div class="content<%# Eval("DepthSeq").ToString() != "1" ? " view_reply" : "" %>" id="content_<%# Eval("Id") %>">
                                     <div class="view_area_info">
-                                        <%# Eval("DepthSeq").ToString() != "1" ? "<span class=\"ico\"><img src='/resources/img/sub/board/replyIcon3.png'></span>" : " <span class=\"img\"><img src='"+Eval("Member.ProfileImg")+"' onerror=\"this.src='/resources/img/sub/board/writerImg.jpg'\" style='width:83px;height:83px;' /></span>" %>
+                                        <%# Eval("DepthSeq").ToString() != "1" ? "<span class=\"ico\"><img src='/resources/img/sub/board/replyIcon3.png' title='ㄴ'></span>" : " <span class=\"img\"><img src='"+Eval("Member.ProfileImg")+"' onerror=\"this.src='/resources/img/index/main_person_img2.png'\" style='width:83px;height:83px;' title='profile'/></span>" %>
                                         <span class="place"><%# Eval("Branch.Name").ToString() %></span>
                                         <span class="user"><%# Eval("Member.Name") %></span>
                                         <div class="editBtnList">

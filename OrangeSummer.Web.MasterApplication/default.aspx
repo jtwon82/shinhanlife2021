@@ -40,8 +40,8 @@
                 </div>
             </footer>
     </form>
-
-    <script src="/common/vendor/jquery/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/common/vendor/jquery/jquery-ui.min.js"></script>
     <script src="/common/vendor/popper/popper.min.js"></script>
     <script src="/common/vendor/bootstrap/js/bootstrap.min.js"></script>

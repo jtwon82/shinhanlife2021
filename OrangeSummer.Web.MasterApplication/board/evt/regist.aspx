@@ -127,7 +127,7 @@
     {
 
     %>
-    <div class="table-responsive" style="display:none;">
+    <div class="table-responsive">
         <table class="table table-bordered" style="min-width: 1110px;">
             <colgroup>
                 <col style="width: 5%;" />

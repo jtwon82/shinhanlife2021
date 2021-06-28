@@ -343,6 +343,7 @@ namespace OrangeSummer.Access
                     {
                         Id = dr["ID"].ToString().ToUpper(),
                         Type = dr["TYPE"].ToString(),
+                        Url = dr["URL"].ToString(),
                         Title = dr["TITLE"].ToString()
                     };
                 }
@@ -369,6 +370,7 @@ namespace OrangeSummer.Access
                     {
                         Id = dr["ID"].ToString().ToUpper(),
                         Type = dr["TYPE"].ToString(),
+                        Url = dr["URL"].ToString(),
                         Title = dr["TITLE"].ToString()
                     };
                 }

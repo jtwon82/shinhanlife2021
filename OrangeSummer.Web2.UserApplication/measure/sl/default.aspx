@@ -2,8 +2,8 @@
 
 <%@ Register Src="~/common/uc/menu.ascx" TagPrefix="uc1" TagName="menu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="/resources/css/sub.css" />
-    <link rel="stylesheet" href="/resources/css/swiper.css" />
+    <link rel="stylesheet" href="/resources/css/sub.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"" />
+    <link rel="stylesheet" href="/resources/css/swiper.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"" />
 
     <script type="text/javascript" src="/resources/js/common.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
     <script type="text/javascript" src="/resources/js/swiper.min.4.3.5.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
@@ -12,7 +12,7 @@
     <body>
         <div id="sub_wrap" class="subMeta05">
             <uc1:menu runat="server" ID="menu" />
-            <div class="subContainer guide">
+		<div class="subContainer guide">
                 <p class="subTitle"><img src="/resources/img/sub/measureTitle.png" alt="시책안내" /></p>
                 <div class="measure_guide">
                     <ul class="bmTabs measure">
@@ -20,11 +20,11 @@
                         <li><a href="/measure/sl/" class="current">E SL 부문</a></li>
                         <li><a href="/measure/point" >지점 부문</a></li>
                     </ul>
-                    
+
 				<!-- SL부문 -->
 				<div class="titleBox">
 					<dl>
-						<dt>SL부문 I</dt>
+						<dt>E SL부문 I</dt>
 						<dd>썸머 시책 안내</dd>
 					</dl>
 					<!--ul>
@@ -33,51 +33,76 @@
 						<li>21-07-11</li>
 					</ul-->
 				</div>
-				<div class="measureCon sl first">
+				<div class="evaluationInfo">
+					<dl>
+						<dt>평가 대상<span class="sl_blank">|</span></dt>
+						<dd>E SL</dd>
+					</dl>
+					<dl>
+						<dt>평가 기준<span class="sl_blank">|</span></dt>
+						<dd>팀 합산 업적 평가 ( ESL업적 포함) 순위</dd>
+					</dl>
+					<dl>
+						<dt>선발 인원<span class="sl_blank">|</span></dt>
+						<dd>상위 100명</dd>
+					</dl>
+					<dl>
+						<dt>놀라운특징<span>|</span></dt>
+						<dd>‘개인 부문’ & ‘E SL 부문’ 중복 달성 가능</dd>
+					</dl>
+				</div>
+				<div class="measureCon first esl">
 					<p class="Con_t">E SL부문</p>
 					<div class="Con">
 						<dl>
-							<dt>선발 순위</dt>
-							<dd>상위 <em>1-10</em> 위</dd>
+							<dt>순위</dt>
+							<dd><em>1-20</em> 위</dd>
 						</dl>
-						
 						<dl>
-							<dt>시상 포인트</dt>
-							<dd> <em>250</em> 만</dd>
+							<dt>최소 기준</dt>
+							<dd>환산 CMIP <br/><em>2,000</em>만 <em>↑</em></dd>
+						</dl>
+						<dl>
+							<dt>보상</dt>
+							<dd class="trip_area">사이판 <em class="jeju">+ 제주</em></dd>
+						</dl>
+						<dl>
+							<dt>기타</dt>
+							<dd class="small">개인부문<br/>
+							중복 달성 시,<br/>
+							100만원 또는<br/>
+							팀 산하 1명 Trip</dd>
 						</dl>
 					</div>
-					<dl class="achievement_standards">
-						<dt>업적순위<span>|</span></dt>
-						<dd>피도입자 합산 <span>캠페인환산</span> <em>CMIP 200백만↑</em></dd>
-					</dl>
 				</div>
 
-				<div class="measureCon sl">
+				<div class="measureCon esl">
 					<div class="Con">
 						<dl>
-							<dt>선발 순위</dt>
-							<dd>상위 <em>11-80</em> 위</dd>
+							<dt>순위</dt>
+							<dd><em>21-100</em> 위</dd>
 						</dl>
 						<dl>
-							<dt>시상 포인트</dt>
-							<dd> <em>250</em> 만</dd>
+							<dt>최소 기준</dt>
+							<dd>환산 CMIP <br/><em>1,000</em>만 <em>↑</em></dd>
+						</dl>
+						<dl>
+							<dt>보상</dt>
+							<dd class="trip_area one">사이판</dd>
+						</dl>
+						<dl>
+							<dt>기타</dt>
+							<dd class="small">개인부문<br/>
+							중복 달성 시,<br/>
+							100만원 또는<br/>
+							팀 산하 1명 Trip</dd>
 						</dl>
 					</div>
-					<dl class="achievement_standards">
-						<dt>업적순위<span>|</span></dt>
-						<dd>피도입자 합산 <span>캠페인환산</span> <em>CMIP 7백만↑</em></dd>
-					</dl>
 				</div>
-
-				<dl class="evaluation">
-					<dt>평가기준</dt>
-					<dd><strong>순수 피도입자업적</strong> 합산 캠페인 환산 CMIP</dd>
-				</dl>
 
 				<dl class="necessaryGuidance">
 					<dt>필수 기준</dt>
-					<dd>피도입자 개인부문 <strong>달성인원 2명↑</strong> <span>(도입자 본인달성인정)</span><br/>
-					본인 <strong>개인부문 필수 기준 달성</strong><br/><span>(7월&8월 각 월별 캠페인 환산 CMIP 30만↑)</span></dd>
+					<dd>개인부문 달성자 2명 이상 (E SL 본인 포함)</dd>
 				</dl>
 			</div>
 		</div>

@@ -14,8 +14,7 @@
 
 <link rel="stylesheet" href="/resources/css/reset.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>" />
 <link rel="stylesheet" href="/resources/css/layout.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>" />
-<!-- script type="text/javascript" src="/resources/js/jquery.1.11.0.min.js"></!-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script -->
 <script type="text/javascript" src="/resources/js/swiper.min.4.3.5.js"></script>
 <script type="text/javascript" src="/common/js/jquery-library.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>

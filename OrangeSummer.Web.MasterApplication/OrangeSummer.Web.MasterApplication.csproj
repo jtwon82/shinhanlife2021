@@ -247,8 +247,6 @@
     <Content Include="common\vendor\jquery\css\jquery-ui.theme.min.css" />
     <Content Include="common\vendor\jquery\css\jquery.modal.min.css" />
     <Content Include="common\vendor\jquery\jquery-ui.min.js" />
-    <Content Include="common\vendor\jquery\jquery.js" />
-    <Content Include="common\vendor\jquery\jquery.min.js" />
     <Content Include="common\vendor\popper\popper.js" />
     <Content Include="common\vendor\popper\popper.min.js" />
     <Content Include="dash\default.aspx" />
