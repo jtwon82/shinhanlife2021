@@ -57,9 +57,9 @@
                 -->
                 <tr>
                     <th>프로필 사진</th>
-                    <td class="text-left"><img src="<%=_profileimg %>" onerror="this.src='https://shinhanlife-fc.com/resources/img/index/default_profile.png'" style="width:171px;height:171px;"/></td>
+                    <td class="text-left"><img src="https://www.shinhanlife-fc.com/<%=_profileimg %>" onerror="this.src='https://www.shinhanlife-fc.com/resources/img/index/default_profile.png'" style="width:171px;height:171px;"/></td>
                     <th>배경 사진</th>
-                    <td class="text-left"><img src="<%=_backbroundimg %>" onerror="this.src='https://shinhanlife-fc.com/resources/img/index/backgroundImg.jpg'" style="width:300px;height:300px;"/></td>
+                    <td class="text-left"><img src="https://www.shinhanlife-fc.com/<%=_backbroundimg %>" onerror="this.src='https://www.shinhanlife-fc.com/resources/img/index/backgroundImg.jpg'" style="width:300px;height:300px;"/></td>
                 </tr>
             </tbody>
         </table>

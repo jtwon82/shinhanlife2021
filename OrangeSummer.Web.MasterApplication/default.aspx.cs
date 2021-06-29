@@ -22,7 +22,14 @@ namespace SAP.Master.WebApplication
         {
             if (!IsPostBack)
             {
-                
+
+            }
+
+            if (OrangeSummer.Common.Master.AppSetting.DevMode != "DEV" && !Request.IsSecureConnection)
+            {
+                //string redirectUrl = Request.Url.AbsoluteUri.Replace("http:", "https:");
+                string nextUrl = "https://" + HttpContext.Current.Request.Url.Host + ":4433/";
+                Response.Redirect(nextUrl);
             }
         }
 

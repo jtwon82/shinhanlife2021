@@ -1022,3 +1022,32 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
     font-size:21px;
 	margin-top:38px;
 }
+
+/*  210628 추가 */
+.product_price{
+	float:left;
+	width:100%;
+}
+.product_price.esl{
+	margin:30px 0 0 21px;
+}
+.product_price dt, .product_price dd{
+	float:left;
+	font-size:20px;
+	color:#715def;
+	font-family: 'OneShinhanM', sans-serif;
+	font-weight:bold;
+}
+.product_price dt span{
+	display:inline-block;
+	float:right;
+	margin:0 10px;
+	color:#715def;
+}
+.product_price dd{
+	color:#000;
+}
+.product_price dd span{
+	font-size:15px;
+	font-family: 'OneShinhanL', sans-serif;
+}

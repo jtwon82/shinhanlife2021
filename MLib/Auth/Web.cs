@@ -53,8 +53,6 @@ namespace MLib.Auth
             cookie[key] = value;
             cookie.Path = "/";
             cookie.Expires = DateTime.Now.AddDays(expires);
-            //cookie.Secure = true;
-            //cookie.HttpOnly = true;
             HttpContext.Current.Response.Cookies.Add(cookie);
         }
 

@@ -104,6 +104,11 @@
 					<dt>필수 기준</dt>
 					<dd>개인부문 달성자 2명 이상 (E SL 본인 포함)</dd>
 				</dl>
+
+				<dl class="product_price esl">
+					<dt>상품가중치  <span>|</span></dt>
+					<dd>신상품 120%, 보장 100%, 변액/저축 80% <span>(단, 변액/저축 단기납 40%)</span></dd>
+				</dl>
 			</div>
 		</div>
 				

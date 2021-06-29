@@ -140,6 +140,11 @@
 						사이판 무조건 확정<span>* SPECIAL CANP 부문 : 절대 기준 (순위 평가X)</span></li>
 					</ul>
 				</div>
+
+				<dl class="product_price">
+					<dt>상품가중치  <span>|</span></dt>
+					<dd>신상품 120%, 보장 100%, 변액/저축 80% <span>(단, 변액/저축 단기납 40%)</span></dd>
+				</dl>
 			</div>
 		</div>
 				

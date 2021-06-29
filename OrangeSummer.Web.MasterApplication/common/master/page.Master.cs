@@ -37,18 +37,18 @@ namespace OrangeSummer.Web.MasterApplication.common.master
             {
                 if (!Forms.IsAuthenticated)
                     Tool.RR("/?referer=" + Agent.Referer());
-            } else
+            }
+            else
             {
-
                 // 아래 코드는 XSRF 공격으로부터 보호받는 데 도움이 됩니다.
                 var requestCookie = Request.Cookies[AntiXsrfTokenKey];
                 Guid requestCookieGuidValue;
                 if (requestCookie != null && Guid.TryParse(requestCookie.Value, out requestCookieGuidValue))
                 {
-                        // 쿠키의 Anti-XSRF 토큰 사용
-                        _antiXsrfTokenValue = requestCookie.Value;
-                        Page.ViewStateUserKey = _antiXsrfTokenValue;
-                    }
+                    // 쿠키의 Anti-XSRF 토큰 사용
+                    _antiXsrfTokenValue = requestCookie.Value;
+                    Page.ViewStateUserKey = _antiXsrfTokenValue;
+                }
                 else
                 {
                     // 새 Anti-XSRF 토큰을 생성하여 쿠키에 저장
@@ -61,13 +61,20 @@ namespace OrangeSummer.Web.MasterApplication.common.master
                         Value = _antiXsrfTokenValue
                     };
                     if (FormsAuthentication.RequireSSL && Request.IsSecureConnection)
-                {
+                    {
                         responseCookie.Secure = true;
                     }
                     Response.Cookies.Set(responseCookie);
                 }
 
                 Page.PreLoad += master_Page_PreLoad;
+            }
+
+            if (Common.Master.AppSetting.DevMode != "DEV" && !Request.IsSecureConnection)
+            {
+                //string redirectUrl = Request.Url.AbsoluteUri.Replace("http:", "https:");
+                string nextUrl = "https://" + HttpContext.Current.Request.Url.Host + ":4433/";
+                Response.Redirect(nextUrl);
             }
         }
 
