@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/common/master/page.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="OrangeSummer.Web2.UserApplication.measure.point._default" %>
 
 <%@ Register Src="~/common/uc/menu.ascx" TagPrefix="uc1" TagName="menu" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="/resources/css/sub.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"" />
     <link rel="stylesheet" href="/resources/css/swiper.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>""/>
@@ -18,8 +17,8 @@
                 <div class="measure_guide">
                     <ul class="bmTabs measure">
                         <li><a href="/measure/individual/">개인 부문</a></li>
-                        <li><a href="/measure/sl/">E SL 부문</a></li>
-                        <li><a href="/measure/point" class="current">지점 부문</a></li>
+                        <li><a href="/measure/sl/">SL 부문</a></li>
+                        <li><a href="/measure/point/" class="current">지점 부문</a></li>
                     </ul>
                     
 				<!-- 지점부문 -->
@@ -99,10 +98,11 @@
 						</dl>
 					</div>
 				</div>
-				
-				<dl class="product_price esl">
+
+				<dl class="product_price">
 					<dt>상품가중치  <span>|</span></dt>
-					<dd>신상품 120%, 보장 100%, 변액/저축 80% <span>(단, 변액/저축 단기납 40%)</span></dd>
+					<dd>추후 안내</dd>
+					
 				</dl>
 				
 			</div>

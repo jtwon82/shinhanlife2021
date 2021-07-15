@@ -22,6 +22,15 @@ namespace OrangeSummer.Web.MasterApplication.board.evt {
         protected global::System.Web.UI.WebControls.DropDownList type;
         
         /// <summary>
+        /// btnDownload 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnDownload;
+        
+        /// <summary>
         /// title 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -85,13 +94,13 @@ namespace OrangeSummer.Web.MasterApplication.board.evt {
         protected global::System.Web.UI.WebControls.TextBox edate;
         
         /// <summary>
-        /// url 컨트롤입니다.
+        /// url_new 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox url;
+        protected global::System.Web.UI.WebControls.TextBox url_new;
         
         /// <summary>
         /// useyn 컨트롤입니다.

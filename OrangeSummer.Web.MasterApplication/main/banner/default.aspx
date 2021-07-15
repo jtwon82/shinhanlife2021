@@ -8,6 +8,7 @@
             <colgroup>
                 <col style="width: 5%;" />
                 <col style="width: 10%;" />
+                <col style="width: 10%;" />
                 <col />
                 <col style="width: 18%;" />
                 <col style="width: 10%;" />
@@ -18,6 +19,7 @@
                 <tr>
                     <th>No</th>
                     <th>구분(순서)</th>
+                    <th>노출 위치</th>
                     <th>제목</th>
                     <th>노출 기간</th>
                     <th>사용 여부</th>
@@ -31,6 +33,7 @@
                         <tr>
                             <td><%# ListNumber(Eval("Total"), Container.ItemIndex) %></td>
                             <td>구분 #<%# Eval("Section") %></td>
+                            <td><%# Eval("Type").ToString() %></td>
                             <td class="text-left"><a href="regist.aspx?id=<%# Eval("Id").ToString() + Parameters() %>"><%# Eval("Title") %></a></td>
                             <td><%# Eval("Sdate").ToString() +" ~ "+ Eval("Edate").ToString() %></td>
                             <td><%# Eval("UseYn").ToString() == "Y" ? "사용" : "미 사용" %></td>

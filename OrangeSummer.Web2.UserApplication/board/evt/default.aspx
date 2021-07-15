@@ -12,12 +12,60 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <body>
-        <div id="sub_wrap" class="subMeta05">
+        <div id="sub_wrap" class="subMeta08">
             <uc1:menu runat="server" ID="menu" />
 		<div class="subContainer notice">
 			<p class="subTitle"><img src="/resources/img/sub/eventTitle.png" alt="이벤트" /></p>
 			<div class="eventPage">
-				<div class="ingEventList">
+
+
+
+                
+				<!--p class="ingEventTitle">진행 중 이벤트</p-->
+				<div class="list">
+					<div class="event_rolling">
+						<!-- Swiper -->
+						<div class="swiper-container2">
+							<div class="swiper-wrapper">
+                        <asp:Repeater ID="rptBannerList" runat="server">
+                            <ItemTemplate>
+								<div class="swiper-slide">
+									<a href="<%# MLib.Util.Check.IsNone(Eval("Link").ToString()) ? "javascript:;" : Eval("Link").ToString() %>">
+                                        <img src="<%# OrangeSummer.Common.User.AppSetting.AwsUrl(Eval("AttMobile").ToString()) %>"/>
+									</a>
+								</div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+							</div>
+							<!-- Add Pagination -->
+							<div class="swiper-pagination2"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="event_board">
+                        <asp:Repeater ID="rptList" runat="server">
+                            <ItemTemplate>
+					<div class="listBox"><a href="<%# Eval("Url").ToString()!=""? Eval("Url").ToString():"detail.aspx?id="+Eval("Id") +"&type="+ Eval("Type").ToString()%>">
+						<p class="title"><span><%# ListNumber(Eval("Total"), Container.ItemIndex) %></span> <%# Eval("Title") %></p>
+						<p class="replyNum"><%# Eval("ReplyCount") %></p>
+						<ul class="info">
+							<li class="name"><%# Eval("Admin.Name") %><span>ㅣ</span></li>
+							<li class="view">view <em><%# Eval("ViewCount") %></em><span>ㅣ</span></li>
+							<li class="date"><%# Eval("RegistDate").ToString().Substring(2, 8) %></li>
+						</ul></a>
+					</div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                    <%=_paging %>
+
+				</div>
+
+
+
+
+				<div class="ingEventList" style="display:none;">
 					<p class="ingEventTitle">진행 중 이벤트</p>
 					<div class="list">
 <%--						<dl><a href="/board/roulette">
@@ -31,7 +79,7 @@
 								<div class="swiper-wrapper">
 
                                  
-                        <asp:Repeater ID="rptList" runat="server">
+                        <%--<asp:Repeater ID="rptList" runat="server">
                             <ItemTemplate>
 								  <div class="swiper-slide">
 									<a href="<%# Eval("Url").ToString()!=""? Eval("Url").ToString():"detail.aspx?id="+Eval("Id") +"&type="+ Eval("Type").ToString()%>">
@@ -41,7 +89,7 @@
 										<img src="<%# Eval("attImage") %>" alt="<%# Eval("Title") %>"/>
 									</a></div>
                             </ItemTemplate>
-                        </asp:Repeater>
+                        </asp:Repeater>--%>
 								</div>
 								<!-- Add Pagination -->
 								<div class="swiper-pagination2"></div>
@@ -65,20 +113,17 @@
     </body>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-							<!-- Initialize Swiper -->
+						<!-- Initialize Swiper -->
 							<script>
-								var swiper = new Swiper('.swiper-container2', {
+							    var swiper = new Swiper('.swiper-container2', {
+							        e: '',
+							        autoplay: {
+							            delay: 5000,
+							            disableOnInteraction: false,
+							        },
 								  pagination: {
 									el: '.swiper-pagination2',
 								  },
-								});
-							</script>
-
-							<script type="text/javascript">
-								var mySwiper = new Swiper('.swiper-container2', {
-								slidesPerView: 1, //슬라이드를 한번에 3개를 보여준다
-								spaceBetween: 30, //슬라이드간 padding 값 30px 씩 떨어뜨려줌
-								loop: false, //loop 를 true 로 할경우 무한반복 슬라이드 false 로 할경우 슬라이드의 끝에서 더보여지지 않음
 								});
 							</script>
 </asp:Content>

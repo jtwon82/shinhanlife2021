@@ -9,6 +9,8 @@ using MLib.Attach;
 using MLib.Data;
 using MLib.Util;
 using OrangeSummer.Common;
+using MLib.Logger;
+using MLib.Config;
 
 namespace OrangeSummer.Web.MasterApplication.board.notice
 {
@@ -252,8 +254,15 @@ namespace OrangeSummer.Web.MasterApplication.board.notice
             LinkButton btn = (LinkButton)sender;
             string key = btn.CommandArgument;
             string filename = btn.CommandName;
-            S3 s3 = new S3(Common.Master.AppSetting.AwsAccess, Common.Master.AppSetting.AwsSecret, Common.Master.AppSetting.AwsBucket);
-            s3.Download(key, filename);
+
+            string path = MapPath("/upload/" + key);
+            byte[] bts = System.IO.File.ReadAllBytes(path);
+            Response.Clear();
+            Response.AddHeader("Content-Type", "Application/octet-stream");
+            Response.AddHeader("Content-Length", bts.Length.ToString());
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + filename);
+            Response.BinaryWrite(bts); Response.Flush(); Response.End();
+
         }
 
         protected string Parameters()

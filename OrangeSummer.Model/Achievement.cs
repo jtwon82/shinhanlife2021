@@ -8,6 +8,7 @@
     {
         public int Total { get; set; }
         public string Id { get; set; }
+        public string ItsMe { get; set; }
         public int Sort { get; set; }
         public string Date { get; set; }
         public string Part { get; set; }
@@ -25,8 +26,11 @@
         public string BranchRank { get; set; }
         public string BranchCmip { get; set; }
         public string SlRank { get; set; }
+        public string SlRank2 { get; set; }
+        public string SlRank3 { get; set; }
         public string SlCmip { get; set; }
-
+        public string SlCmip2 { get; set; }
+        public string SlCmip3 { get; set; }
         public Branch Branch { get; set; }
     }
 }

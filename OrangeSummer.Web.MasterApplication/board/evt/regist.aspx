@@ -12,15 +12,15 @@
             <tbody>
                 <tr>
                     <th>구분</th>
-                   <%-- <td class="text-left"<%= (_command == "add") ? " colspan=\"3\"" : "" %>>--%>
-                    <td colspan="3" class="text-left">
+                    <td class="text-left"<%= (_command == "add") ? " colspan=\"3\"" : "" %>>
+<%--                    <td colspan="3" class="text-left">--%>
                         <asp:DropDownList ID="type" ClientIDMode="Static" runat="server" CssClass="form-control">
                             <asp:ListItem Text="선택" Value=""></asp:ListItem>
                             <asp:ListItem Text="진행" Value="진행"></asp:ListItem>
                             <asp:ListItem Text="예정" Value="예정"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <%--<%
+                    <%
 
                     if (_command == "mod")
                     {
@@ -37,7 +37,7 @@
 
                     }
 
-                    %>--%>
+                    %>
                 </tr>
                 <tr>
                     <th>제목</th>
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     <th>URL</th>
-                    <td colspan="3" class="text-left"><asp:TextBox ID="url" runat="server" MaxLength="200" CssClass="form-control"></asp:TextBox></td>
+                    <td colspan="3" class="text-left"><asp:TextBox ID="url_new" runat="server" MaxLength="200" CssClass="form-control"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <th>노출 여부</th>

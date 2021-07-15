@@ -35,7 +35,6 @@ namespace OrangeSummer.Web2.UserApplication.achieve.bm
                 {
                     StringBuilder title = new StringBuilder();
                     StringBuilder contents = new StringBuilder();
-                    StringBuilder contents2 = new StringBuilder();
                     List<Model.Achievement> achievement = biz.UserList2(Common.User.Identify.Code, "FC");
 
                     if (achievement != null)
@@ -45,17 +44,22 @@ namespace OrangeSummer.Web2.UserApplication.achieve.bm
                             DateTime dt = DateTime.Parse(item.Date);
                             string cdate = $"{dt.ToString("yyyy")}년 {dt.ToString("MM")}월 {dt.ToString("dd")}";
 
-                            if (",FC,NEWFC,SL,E SL".Contains("," + OrangeSummer.Common.User.Identify.Level))
+                            if (",FC,NEWFC,SL,E SL,G SL,S SL".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
-                                contents.AppendLine($"<div class='swiper-slide'>");
+                                string itsMe = item.ItsMe == "0" ? "전 순위 업적" : item.ItsMe == "1" ? "나의 썸머순위" : item.ItsMe == "2" ? "후 순위 업적" : "";
+
+                                contents.AppendLine($"<div class='swiper-slide slide{item.ItsMe}'>");
                                 contents.AppendLine($"	<div class='bmRanking_box personal'>");
-                                contents.AppendLine($"		<p><span>{cdate}일 기준</span>썸머순위<em>{item.PersonRank}</em></p>");
+                                //contents.AppendLine($"		<p><span>{cdate}일 기준</span>썸머순위<em>-</em></p>");
+                                contents.AppendLine($"		<p><span>{cdate}일 기준</span>{itsMe}<em>{item.PersonRank}</em></p>");
                                 contents.AppendLine($"		<dl>");
                                 contents.AppendLine($"			<dt><span>캠페인환산</span>CMIP</dt>");
+                                //contents.AppendLine($"			<dd>-</dd>");
                                 contents.AppendLine($"			<dd>{item.PersonCmip}</dd>");
                                 contents.AppendLine($"		</dl>");
                                 contents.AppendLine($"		<dl class='canp'>");
                                 contents.AppendLine($"			<dt>CANP</dt>");
+                                //contents.AppendLine($"			<dd>-</dd>");
                                 contents.AppendLine($"			<dd>{item.PersonCamp}</dd>");
                                 contents.AppendLine($"		</dl>");
                                 contents.AppendLine($"	</div>");

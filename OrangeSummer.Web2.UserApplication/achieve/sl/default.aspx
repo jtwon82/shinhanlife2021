@@ -15,10 +15,10 @@
 			<ul class="bmTabs">
                 <li><a href="/achieve/bm">개인 부문</a></li>
                 <%
-                    if ( ",SL,E SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
+                    if ( ",SL,E SL,G SL,S SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
                     {
                 %>
-                <li><a href="/achieve/sl" class="current">E SL 부문</a></li>
+                <li><a href="/achieve/sl" class="current"><%=OrangeSummer.Common.User.Identify.LevelName %> 부문</a></li>
                 <%
                     }
                 %>
@@ -48,7 +48,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 		<script>
 		var swiper = new Swiper('.swiper-container3', {
-			initialSlide:'1',
+		    initialSlide: 1,
 			pagination: '.swiper-pagination',
 			paginationClickable: true,
 			nextButton: '.swiper-button-next',
@@ -56,5 +56,11 @@
 			autoplay:false,
 			spaceBetween: 30
 		});
+		$('.swiper-container3 .swiper-slide').each(function (id) {
+		    if ($(this).hasClass("slide1")) {
+		        swiper.slideTo(id, 0, false);
+		    }
+		});
+
 		</script>
 </asp:Content>

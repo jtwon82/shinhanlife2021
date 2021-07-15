@@ -5,7 +5,7 @@
 	height:100%;
 }
 .subMeta, .subMeta02, .subMeta03, .subMeta04,
-.subMeta05{
+.subMeta05, .subMeta06, .subMeta07{
 	height:315px;
 	background:url(/resources/img/sub/subMeta01.jpg) top center no-repeat;
 }
@@ -20,18 +20,39 @@
 }
 .subMeta05{
 	background:#fff url(/resources/img/sub/subMeta05.jpg) top center no-repeat;
-	height:387px;
+	height:381px !important;
 }
 .subMeta06{
 	background:url(/resources/img/sub/event/rouletteImg.jpg) top center no-repeat;
 	height:1789px !important;
 }
+.subMeta07{
+	background:#fff url(/resources/img/sub/subMeta07.jpg) top center no-repeat;
+	height:381px !important;
+}
+.subMeta08{
+	background:#fff url(/resources/img/sub/subMeta08.jpg) top center no-repeat;
+	height:391px !important;
+}
+.subMeta09{
+	background:#fff url(/resources/img/sub/subMeta09.jpg) top center no-repeat;
+	height:401px !important;
+}
 .subTitle{
-	width:392px;
+	width:430px;
 	margin: 115px auto 115px auto;
 }
 .subMeta05 .subTitle{
 	margin:170px auto 150px auto;
+}
+.subMeta07 .subTitle{
+    margin: 171px auto 130px auto;
+}
+.subMeta08 .subTitle{
+    margin: 169px auto 140px auto;
+}
+.subMeta09 .subTitle{
+    margin: 165px auto 145px auto;
 }
 .subContainer{
 	margin:0 47px;
@@ -88,10 +109,10 @@ ul.bmTabs.measure li{
 }
 ul.bmTabs li:last-child{margin-right:0;}
 ul.bmTabs li a, ul.bmTabs.measure li a{
-	/*border:1px solid #715def;*/
+	/*border:1px solid #705dcf;*/
 	border-radius:50px;
 	line-height:66px;
-	color:#715def;
+	color:#705dcf;
 	font-size:25px;
 	font-weight:300;
 	font-family: 'OneShinhanM', sans-serif;
@@ -104,15 +125,15 @@ ul.bmTabs li a, ul.bmTabs.measure li a{
 }
 ul.bmTabs.measure li a{
 	width:189px;
-	border:1px solid #715def;
+	border:1px solid #705dcf;
 }
 ul.bmTabs.measure.ranking li a{
 	width:189px;
 	border-radius:50px;
-	border:1px solid #715def;
+	border:1px solid #705dcf;
 }
 ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.bmTabs.measure li.hover{
-	background:#715def;
+	background:#705dcf;
 	color:#fff;
 }
 .bmRanking_box{
@@ -127,11 +148,11 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-family: 'OneShinhanB', sans-serif;
 	font-weight:bold;
 	padding-top:73px;
-	color:#715def;
+	color:#705dcf;
 }
 .bmRanking_box p span{
 	display:block;
-	color:#715def;
+	color:#705dcf;
 	font-size:23px;
 	font-family: 'OneShinhanL', sans-serif;
 	font-weight:200;
@@ -139,7 +160,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .bmRanking_box p em{
 	display:block;
-	color:#715def;
+	color:#705dcf;
 	font-size:145px;
 	font-family: 'OneShinhanB', sans-serif;
 	font-weight:bold;
@@ -195,6 +216,20 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .measure_list ul{
 	margin-left:-12px;
 }
+.measure_guide .titleBox .titleBox_t.first{
+	margin-top:0;
+	border-top:none;
+	padding-top:0;
+}
+.measure_guide .titleBox .titleBox_t{
+	font-size:28px;
+	font-weight:bold;
+	color:#705dcf;
+	font-family: 'OneShinhanB', sans-serif;
+	margin:50px 0 30px 0;
+	border-top:1px solid #e5e5e5;
+	padding-top:50px;
+}
 .measure_list dl dt, .measure_guide .titleBox dt{
 	float:left;
 	background:url(/resources/img/sub/measure/measuretBg.png) no-repeat;
@@ -209,14 +244,14 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .measure_guide .titleBox dt{
 	background:none;
-	color:#715def;
+	color:#705dcf;
 	width:auto;
 	margin-right:10px;
 	font-family: 'OneShinhanB', sans-serif;
 	font-weight:bold;
 }
 .measure_list dl dd, .measure_guide .titleBox dd{
-	color:#715def;
+	color:#705dcf;
 	font-size:19px;
 	line-height:45px;
 	font-family: 'OneShinhanL', sans-serif;
@@ -254,7 +289,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	margin-bottom:50px;
 }
 .measureCon.esl{margin-bottom:0;}
-.measureCon.first{margin-top:20px;}
+.measureCon.first{margin-top:0;}
 .measureCon.last{
 	margin-bottom:0;
 }
@@ -304,7 +339,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .measureCon .Con dd em{
 	display:inline-block;
-	color:#715def;
+	color:#705dcf;
 	font-size:33px;
 	font-weight:bold;
 	font-family: 'OneShinhanB', sans-serif;
@@ -324,7 +359,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	width:100%;
 }
 .measureGuidance dt{
-	color:#715def;
+	color:#705dcf;
 	font-size:20px;
 	font-weight:bold;
 	font-family: 'OneShinhanB', sans-serif;
@@ -345,7 +380,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .commissionerBox{
 	float:left;
-	margin:60px 0;
+	margin:60px 0 30px;
 }
 .commissionerBox p{
 	background:url(/resources/img/sub/measure/arrow.png) left center no-repeat;
@@ -367,7 +402,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-size:29px;
 	font-weight:bold;
 	font-family: 'OneShinhanB', sans-serif;
-	color:#715def;
+	color:#705dcf;
 	line-height:34px;
 }
 .commissionerBox li span{
@@ -382,19 +417,19 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
     clear: both;
     margin: 0 auto;
     overflow: hidden;
-    width:65%;
+    width:67%;
 }
 .achievement_standards dt{
 	float:left;
 	font-size:18px;
 	font-family: 'OneShinhanM', sans-serif;
 	font-weight:bold;
-	color:#715def;
+	color:#705dcf;
 }
 .achievement_standards dt span{
-	font-size:15px;
+	font-size:20px;
 	font-family: 'OneShinhanM', sans-serif;
-	color:#715def;
+	color:#705dcf;
 	display:inline-block;
 	margin:0 10px;
 	float:right;
@@ -411,7 +446,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .achievement_standards dd em{
 	font-family: 'OneShinhanM', sans-serif;
 	font-size:20px;
-	color:#715def;
+	color:#705dcf;
 	font-weight:bold;
 }
 .evaluation{
@@ -440,14 +475,14 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	padding-left:125px;
 }
 .evaluation dd strong{
-	color:#715def;
+	color:#705dcf;
 	font-weight:bold;
 	font-family: 'OneShinhanM', sans-serif;
 }
 .necessaryGuidance{
 	float:left;
 	width:100%;
-	margin-top:30px;
+	margin-top:10px;
 }
 .necessaryGuidance dt{
 	background:url(/resources/img/sub/measure/measuretBg3.png) no-repeat;
@@ -457,7 +492,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	line-height:73px;
 	font-weight:bold;
 	font-family: 'OneShinhanM', sans-serif;
-	color:#715def;
+	color:#705dcf;
 	padding-left:70px;
 }
 .necessaryGuidance dd{
@@ -471,7 +506,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .necessaryGuidance dd strong{
 	font-weight:bold;
 	font-family: 'OneShinhanB', sans-serif;
-	color:#715def;
+	color:#705dcf;
 }
 .necessaryGuidance dd span{
 	font-weight:bold;
@@ -488,7 +523,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .bpTxt strong{
 	font-weight:300;
 	font-family: 'OneShinhanM', sans-serif;
-	color:#715def;
+	color:#705dcf;
 }
 .point_bonus{
 	float:left;
@@ -504,7 +539,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-size:25px;
 	font-weight:300;
 	font-family: 'OneShinhanB', sans-serif;
-	color:#715def;
+	color:#705dcf;
 	line-height:68px;
 }
 .point_bonus dd{
@@ -516,7 +551,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .point_bonus dd strong{
 	font-family: 'OneShinhanB', sans-serif;
-	color:#715def;
+	color:#705dcf;
 	font-weight:bold;
 }
 /* 시책 진도 현황 */
@@ -535,7 +570,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	display:block;
 }
 .cumulativeTxt span.person{
-	color:#715def;
+	color:#705dcf;
 	font-size:35px;
 }
 .cumulativeTxt span.currentDate{
@@ -563,7 +598,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .cumulativePage p.preCumulative em,
 .cumulativePage p.forwardCumulative em{
-	color:#715def;
+	color:#705dcf;
 }
 .currentCumulative, 
 .preCumulative,
@@ -642,8 +677,8 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .rankingBox dl.centerBox dt{
 	background-color:#fff;
-	color:#715def;
-	border:4px solid #715def;
+	color:#705dcf;
+	border:4px solid #705dcf;
 	width:68px;
 	height:68px;
 	box-sizing:border-box;
@@ -660,7 +695,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	text-align:center;
 	font-weight:bold;
 	font-size:24px;
-	color:#715def;
+	color:#705dcf;
 	padding-top:60px;
 }
 .rankingBox dd.crown, .rankingBox dl.centerBox dd.crown {
@@ -681,7 +716,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .rankingBox dl.centerBox dd{
 	width:214px;
 	height:140px;
-	background:#715def;
+	background:#705dcf;
 	color:#fff;
 	line-height:38px;
 	padding-top:72px;
@@ -720,7 +755,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	float:left;
 	font-size:20px;
 	font-family: 'OneShinhanM', sans-serif;
-	color:#715def;
+	color:#705dcf;
 }
 .rankingUnit li:last-child{
 	float:right;
@@ -775,7 +810,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 .numbering li a:hover, .numbering li a.current{
 	font-weight:bold;
-	color:#715def;
+	color:#705dcf;
 }
 
 
@@ -881,7 +916,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 
 .main_txt{
 	font-size:58px;
-	color:#715def;
+	color:#705dcf;
 	font-family: 'OneShinhanB', sans-serif;
 	font-weight:bold;
 }
@@ -932,7 +967,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	line-height:42px;
 }
 .evaluationInfo{
-	margin:0 0 48px 21px;
+	margin:0 0 30px 21px;
 }
 .evaluationInfo dt, .evaluationInfo dd{
 	color:#000;
@@ -975,7 +1010,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	text-align:center;
 }
 .mandatory_standards dd strong{
-	color:#715def;
+	color:#705dcf;
 	display:block;
 	font-family: 'OneShinhanM', sans-serif;
 	margin-bottom:10px;
@@ -986,13 +1021,13 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .measureCon .Con dd.trip_area{
 	font-family: 'OneShinhanB', sans-serif;
 	font-size:21px;
-	color:#715def;
+	color:#705dcf;
 }
 .measureCon .Con dd.trip_area.one{
 	margin-top:50px;
 }
 .measureCon .Con dd em.jeju{
-	background-color:#715def;
+	background-color:#705dcf;
 	color:#fff;
 	font-family: 'OneShinhanB', sans-serif;
 	font-size:21px;
@@ -1027,6 +1062,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .product_price{
 	float:left;
 	width:100%;
+	text-align: center;
 }
 .product_price.esl{
 	margin:30px 0 0 21px;
@@ -1034,7 +1070,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .product_price dt, .product_price dd{
 	float:left;
 	font-size:20px;
-	color:#715def;
+	color:#705dcf;
 	font-family: 'OneShinhanM', sans-serif;
 	font-weight:bold;
 }
@@ -1042,7 +1078,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	display:inline-block;
 	float:right;
 	margin:0 10px;
-	color:#715def;
+	color:#705dcf;
 }
 .product_price dd{
 	color:#000;
@@ -1051,3 +1087,4 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-size:15px;
 	font-family: 'OneShinhanL', sans-serif;
 }
+

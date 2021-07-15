@@ -21,7 +21,9 @@ namespace OrangeSummer.Common
                 Dictionary<string, string> dic = new Dictionary<string, string>();
                 dic.Add("FC", "FC");
                 dic.Add("NEWFC", "신인FC");
-                dic.Add("SL", "E SL");
+                dic.Add("E SL", "E SL");
+                dic.Add("S SL", "S SL");
+                dic.Add("G SL", "G SL");
                 dic.Add("BM", "BM");
                 dic.Add("EM", "EM");
                 dic.Add("ERM", "ERM");

@@ -8,6 +8,11 @@ using System.Web.UI.WebControls;
 using MLib.Attach;
 using MLib.Data;
 using MLib.Util;
+using MLib.Logger;
+using MLib.Config;
+using System.IO;
+using System.Net;
+using MLib.Cipher;
 
 namespace OrangeSummer.Web2.UserApplication.board.notice
 {
@@ -53,9 +58,8 @@ namespace OrangeSummer.Web2.UserApplication.board.notice
                         _viewCount = notice.ViewCount.ToString();
                         _replyCoun = notice.ReplyCount.ToString();
                         _adminName = notice.Admin.Name;
-
-                        //this.btnDownload.CommandArgument = _attfile;
-                        //this.btnDownload.CommandName = _attfilename;
+                        
+                        MLib.Auth.Web.Cookies("ORANGESUMMER", "NOTICE", AES.Encrypt(Common.User.AppSetting.EncKey, $"{id}|{DateTime.Now.ToString("yyyyMMddHHmmss")}"), 1);
 
                         notice = biz.UserBefore(id, type);
                         if (notice != null)
@@ -143,12 +147,92 @@ namespace OrangeSummer.Web2.UserApplication.board.notice
                 LinkButton btn = (LinkButton)sender;
                 string key = btn.CommandArgument;
                 string filename = btn.CommandName;
-                S3 s3 = new S3(Common.User.AppSetting.AwsAccess, Common.User.AppSetting.AwsSecret, Common.User.AppSetting.AwsBucket);
-                s3.Download(key, filename);
+
+                string secret = MLib.Auth.Web.Cookies("ORANGESUMMER", "NOTICE");
+                secret = AES.Decrypt(Common.User.AppSetting.EncKey, secret);
+                string id = Tool.Separator(secret, "|", 0);
+                Model.Notice notice = null;
+                using (Business.Notice biz = new Business.Notice(Common.User.AppSetting.Connection))
+                {
+                    notice = biz.UserDetail(id);
+                    filename = notice.AttFileName;
+                    key = notice.AttFile;
+                }
+
+                if(notice!= null)
+                {
+                    string encodefilename = Server.UrlEncode(filename);
+                    
+                    string path = (ServerVariables.uploadFullPath +"/"+ key);
+
+                    WebClient wc = new WebClient();
+                    wc.DownloadFile(ServerVariables.uploadFullPath+"/"+key, ServerVariables.uploadFullPath+"/"+filename);
+
+                    Tool.RR("/upload/" + filename);
+
+                    //Tool.RR("/upload/"+ key);
+
+                    //byte[] bts = System.IO.File.ReadAllBytes(path);
+
+                    //Response.ClearContent();
+                    //Response.ClearHeaders();
+                    //Response.ContentType = "application/pdf";
+                    //Response.AddHeader("Cache-Control", "max-age=3");
+                    //Response.AddHeader("Pragma", "public");
+                    //Response.AddHeader("Content-Type", "Application/pdf");
+                    //Response.AddHeader("Content-Length", bts.Length.ToString());
+                    //Response.AddHeader("Content-Disposition", "attachment; filename=" + bts.Length + "_" + encodefilename);
+                    //Response.BinaryWrite(bts); Response.Flush(); Response.End();
+
+                    //using (Stream source = System.IO.File.OpenRead(path))
+                    //{
+                    //    byte[] buffer = new byte[2048];
+                    //    int bytesRead;
+                    //    while ((bytesRead = source.Read(buffer, 0, buffer.Length)) > 0)
+                    //    {
+                    //        if (Response.IsClientConnected)
+                    //        {
+                    //            Response.OutputStream.Write(buffer, 0, buffer.Length);
+                    //            Response.OutputStream.Flush();
+                    //            Response.OutputStream.Close();
+                    //        }
+                    //    }
+                    //}
+                }
             }
             catch (Exception ex)
             {
                 MLib.Util.Error.WebHandler(ex);
+            }
+        }
+        private bool DownloadRemoteImageFile(string uri, string fileName)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            bool bImage = response.ContentType.StartsWith("image",
+                StringComparison.OrdinalIgnoreCase);
+            if ((response.StatusCode == HttpStatusCode.OK ||
+                response.StatusCode == HttpStatusCode.Moved ||
+                response.StatusCode == HttpStatusCode.Redirect) &&
+                bImage)
+            {
+                using (Stream inputStream = response.GetResponseStream())
+                using (Stream outputStream = System.IO.File.OpenWrite(fileName))
+                {
+                    byte[] buffer = new byte[4096];
+                    int bytesRead;
+                    do
+                    {
+                        bytesRead = inputStream.Read(buffer, 0, buffer.Length);
+                        outputStream.Write(buffer, 0, bytesRead);
+                    } while (bytesRead != 0);
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

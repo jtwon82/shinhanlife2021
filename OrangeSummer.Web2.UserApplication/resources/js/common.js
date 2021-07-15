@@ -65,7 +65,6 @@ function roulette() {
 	}
 
 	function endGame() {
-	    console.log('end')
 	    if (gift == 0 || gift == 2 || gift == 4) {
 	        openPopup('.popup_fail');
 	    } else {

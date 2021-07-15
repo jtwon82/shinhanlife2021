@@ -26,10 +26,9 @@ namespace OrangeSummer.Web.UserApplication.board.roulette
                 using (Business.Roulette biz = new Business.Roulette(Common.User.AppSetting.Connection))
                 {
                     Random random = new Random();
-                    int count = biz.UserSuccess();
                     int ran = 0;
                     bool check = true;
-                    if (count < 15)
+                    if (biz.UserSuccess())
                     {
                         check = biz.UserCheck(Common.User.Identify.Id);
                         if (check)

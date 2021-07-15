@@ -17,10 +17,10 @@
 			<ul class="bmTabs">
 				<li><a href="/achieve/bm" class="current">개인 부문</a></li>
                 <%
-                    if ( ",SL,E SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
+                    if ( ",SL,E SL,G SL,S SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
                     {
                 %>
-                <li><a href="/achieve/sl">E SL 부문</a></li>
+                <li><a href="/achieve/sl"><%=OrangeSummer.Common.User.Identify.LevelName %> 부문</a></li>
                 <%
                     }
                 %>
@@ -60,6 +60,11 @@
 			prevButton: '.swiper-button-prev',
 			autoplay:false,
 			spaceBetween: 30
+		});
+		$('.swiper-container3 .swiper-slide').each(function (id) {
+		    if ($(this).hasClass("slide1")) {
+		        swiper.slideTo(id, 0, false);
+		    }
 		});
 		</script>
 </asp:Content>

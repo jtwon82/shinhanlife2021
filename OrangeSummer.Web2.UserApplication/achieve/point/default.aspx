@@ -52,5 +52,10 @@
             autoplay: false,
             spaceBetween: 30
         });
+        $('.swiper-container3 .swiper-slide').each(function (id) {
+            if ($(this).hasClass("slide1")) {
+                swiper.slideTo(id, 0, false);
+            }
+        });
     </script>
 </asp:Content>

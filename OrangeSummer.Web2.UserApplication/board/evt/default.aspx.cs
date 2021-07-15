@@ -32,7 +32,7 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
                 int page = Check.IsNone(Request["page"], 1);
                 using (Business.Event biz = new Business.Event(Common.User.AppSetting.Connection))
                 {
-                    List<Model.Event> list = null; // biz.UserList(page, _size, "NOTICE");
+                    List<Model.Event> list = biz.UserList(page, _size, "NOTICE");
                     //if (list != null)
                     //{
                     //    this.rptNoticeList.DataSource = list;
@@ -43,7 +43,7 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
                     if (list != null)
                     {
                         this.rptList.DataSource = list;
-                        this.rptList.DataBind();
+                        this.rptList.DataBind();;
                         _total = list[0].Total;
                     }
 
@@ -51,17 +51,17 @@ namespace OrangeSummer.Web2.UserApplication.board.evt
                     _paging = paging.ToString();
                 }
 
-                //#region [ 이벤트 배너 ]
-                //using (Business.Banner biz = new Business.Banner(Common.User.AppSetting.Connection))
-                //{
-                //    List<Model.Banner> list = biz.UserList("EVENT");
-                //    if (list != null)
-                //    {
-                //        this.rptBannerList.DataSource = list;
-                //        this.rptBannerList.DataBind();
-                //    }
-                //}
-                //#endregion
+                #region [ 이벤트 배너 ]
+                using (Business.Banner biz = new Business.Banner(Common.User.AppSetting.Connection))
+                {
+                    List<Model.Banner> list = biz.UserList("EVENT");
+                    if (list != null)
+                    {
+                        this.rptBannerList.DataSource = list;
+                        this.rptBannerList.DataBind();
+                    }
+                }
+                #endregion
             }
             catch (Exception ex)
             {

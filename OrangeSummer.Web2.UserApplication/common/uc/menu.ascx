@@ -23,7 +23,7 @@
                     </p>--%>
                     <p class="person_img"><img src="<%=OrangeSummer.Common.User.Identify.ProfileImg %>" onerror="this.src='/resources/img/index/person_img2.jpg'" alt="" style="with:112px;height:112px;"/></p>
 <%--                    <p class="rank" style="width:270px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap"><span ><%= OrangeSummer.Common.User.Identify.BranchName %></span><%= OrangeSummer.Common.User.Identify.Name %> / <%= OrangeSummer.Common.User.Identify.Level %></p>--%>
-                    <p class="rank"><span><%= OrangeSummer.Common.User.Identify.BranchName %></span><%= OrangeSummer.Common.User.Identify.Name %> / <%= OrangeSummer.Common.User.Identify.Level %></p>
+                    <p class="rank"><span><%= OrangeSummer.Common.User.Identify.BranchName %></span><%= OrangeSummer.Common.User.Identify.Name %> / <%= OrangeSummer.Common.User.Identify.LevelName %></p>
                     <ul class="editBtn">
                         <li><a href="/member/edit">내 정보 수정하기</a></li>
                         <li>
@@ -34,7 +34,6 @@
         %>
                 </div>
 
-
                 <div class="close"></div>
                 <ul id="mainMenu">
 
@@ -43,26 +42,26 @@
                             if ( ",FC,NEWFC".Contains(","+OrangeSummer.Common.User.Identify.Level) )
                             {
                         %>
-                        <a href="/achieve/bm">MY 업적</a>
+                        <a href="/achieve/bm">SUMMER 업적</a>
                         <%
                             }
-                            else if ( ",SL,E SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
+                            else if ( ",SL,E SL,G SL,S SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
                             {
                         %>
-                        <a href="/achieve/sl">MY 업적</a>
+                        <a href="/achieve/sl">SUMMER 업적</a>
                         <%
                             }
                             else if (",BM,EM,ERM".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                         %>
-                        <a href="/achieve/point">MY 업적</a>
+                        <a href="/achieve/point">SUMMER 업적</a>
                         <%
                             }
                         %>
                     </li>
                     <li><a href="/measure">시책 안내</a></li>
-                    <li><a href="/cumulative">시책진도현황</a></li>
-                    <li><a href="/ranking">랭킹</a></li>
+                    <%--<li><a href="/cumulative">달성 시상금</a></li>--%>
+                    <li><a href="/ranking">SUMMER 랭킹</a></li>
                     <li><a href="/board/evt">이벤트</a></li>
                     <li><a href="/board/notice">공지&게시판</a></li>
                 </ul>

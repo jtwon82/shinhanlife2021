@@ -96,8 +96,14 @@
     <Content Include="common\js\common.js" />
     <Content Include="common\js\jquery-library.js" />
     <Content Include="common\js\site.js" />
+    <Content Include="measure\headoffice\default.aspx" />
+    <Content Include="resources\img\sub\event\rouletteImg2.jpg" />
     <Content Include="resources\img\sub\measure\dynamiteBanner.jpg" />
     <Content Include="resources\img\sub\measure\individual_standardBox.png" />
+    <Content Include="resources\img\sub\measure\measureHeadoffice.png" />
+    <Content Include="resources\img\sub\subMeta07.jpg" />
+    <Content Include="resources\img\sub\subMeta08.jpg" />
+    <Content Include="resources\img\sub\subMeta09.jpg" />
     <Content Include="resources\js\swiper-bundle2.js" />
     <Content Include="common\uc\menu.ascx" />
     <Content Include="cumulative\default.aspx" />
@@ -370,6 +376,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="measure\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="measure\headoffice\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="measure\headoffice\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="measure\individual\default.aspx.cs">

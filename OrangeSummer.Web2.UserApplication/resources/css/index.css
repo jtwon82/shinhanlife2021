@@ -131,7 +131,7 @@
 }
 .categoryBox dd:nth-child(4), .categoryBox dd:nth-child(7){margin-right:0;}
 .categoryBox dd:nth-child(5), .categoryBox dd:nth-child(6), .categoryBox dd:nth-child(7){margin-top:30px;}
-.categoryBox dd a{
+.categoryBox dd:nth-child(4), .categoryBox dd a{
 	width: 181px;
     height: 131px;
     border-radius: 30px;
@@ -140,6 +140,11 @@
 	text-align:center;
 	font-size:20px;
 	font-weight:bold;
+}
+.categoryBox dd:nth-child(4){padding-top:60px;height:121px;}
+.categoryBox dd:nth-child(4) img{
+	width:140px;
+	margin:0 auto;
 }
 .categoryBox dd a:hover{
 	background-color:#715def;
@@ -162,13 +167,13 @@
 .categoryBox dd:nth-child(3) a:hover span{
 	background:url(/resources/img/index/categoryIcon02.png) bottom center no-repeat;
 }
-.categoryBox dd:nth-child(4) a span{
+/*.categoryBox dd:nth-child(4) a span{
 	height:49px;
 	background:url(/resources/img/index/categoryIcon03.png) top center no-repeat;
 }
 .categoryBox dd:nth-child(4) a:hover span{
 	background:url(/resources/img/index/categoryIcon03.png) bottom center no-repeat;
-}
+}*/
 .categoryBox dd:nth-child(5) a span{
 	height:59px;
 	background:url(/resources/img/index/categoryIcon04.png) top center no-repeat;

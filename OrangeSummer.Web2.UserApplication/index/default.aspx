@@ -26,9 +26,9 @@
             <div class="main_container">
 
             <div class="main_personInfo">
-               <p class="person_rank"><span class="point"><%=_member.Branch.Name %></span><%=_member.Name %> / <%=_member.Level %></p>
-               <p class="main_personImg"><img src="<%=_member.ProfileImg %>" onerror="this.src='/resources/img/index/personImg2.jpg'" alt="" class="personImg " style="width:173px; height:173px;"/><span><label for="myfile" class="inputFileButton"><img src="/resources/img/index/fileIcon.png" alt="" /></label><input type="file" id="myfile" name="myfile" style="display:none";></span></p>
-               <p class="imgEditBtn"><label for="myfile2" class="inputFileButton2"><img src="/resources/img/index/fileIcon.png" alt="" /></label><input type="file" id="myfile2" name="myfile2" style="display:none";></p>
+               <p class="person_rank"><span class="point"><%=_member.Branch.Name %></span><%=_member.Name %> / <%=_member.LevelName %></p>
+               <p class="main_personImg"><img src="<%=_member.ProfileImg %>" onerror="this.src='/resources/img/index/personImg2.jpg'" alt="" class="personImg " style="width:173px; height:173px;"/><span><label for="myfile" class="inputFileButton"><img src="/resources/img/index/fileIcon.png" alt="" /></label><input type="file" id="myfile" name="myfile" style="display:none;" accept="image/*"/></span></p>
+               <p class="imgEditBtn"><label for="myfile2" class="inputFileButton2"><img src="/resources/img/index/fileIcon.png" alt="" /></label><input type="file" id="myfile2" name="myfile2" style="display:none;" /></p>
             </div>
                 
 			<div class="mainEventBanner">
@@ -56,32 +56,32 @@
                             if (",FC".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                         %>
-                        <a href="/achieve/bm"><span></span>MY 업적</a>
+                        <a href="/achieve/bm"><span></span>SUMMER 업적</a>
                         <%
                             }
-                            else if (",SL,E SL".Contains("," + OrangeSummer.Common.User.Identify.Level))
+                            else if (",SL,E SL,G SL,S SL".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                         %>
-                        <a href="/achieve/sl"><span></span>MY 업적</a>
+                        <a href="/achieve/sl"><span></span>SUMMER 업적</a>
                         <%
                             }
                             else if (",BM,EM,ERM".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                         %>
-                        <a href="/achieve/point"><span></span>MY 업적</a>
+                        <a href="/achieve/point"><span></span>SUMMER 업적</a>
                         <%
                             }
                             else if (",NEWFC".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                         %>
-                        <a href="/achieve/bm"><span></span>MY 업적</a>
+                        <a href="/achieve/bm"><span></span>SUMMER 업적</a>
                         <%
                             }
                         %></dd>
 
                     <dd><a href="/measure"><span></span>시책 안내</a></dd>
-                    <dd><a href="/cumulative"><span></span>시책 진도 현황</a></dd>
-                    <dd><a href="/ranking"><span></span>랭킹</a></dd>
+                    <dd><img src="/resources/img/index/categoryIcon03.png" /></dd>
+                    <dd><a href="/ranking"><span></span>SUMMER 랭킹</a></dd>
                     <dd><a href="/board/evt"><span></span>이벤트</a></dd>
                     <dd><a href="/board/notice"><span></span>공지&게시판</a></dd>
                 </dl>
@@ -150,17 +150,14 @@
 					<!-- Initialize Swiper -->
 					<script>
 						var swiper = new Swiper('.swiper-container', {
-						  pagination: {
+						    e: '',
+						    autoplay: {
+						        delay: 5000,
+						        disableOnInteraction: false,
+						    },
+						    pagination: {
 							el: '.swiper-pagination',
 						  },
-						});
-					</script>
-
-					<script type="text/javascript">
-						var mySwiper = new Swiper('.swiper-container', {
-						slidesPerView: 1, //슬라이드를 한번에 3개를 보여준다
-						spaceBetween: 30, //슬라이드간 padding 값 30px 씩 떨어뜨려줌
-						loop: false, //loop 를 true 로 할경우 무한반복 슬라이드 false 로 할경우 슬라이드의 끝에서 더보여지지 않음
 						});
 					</script>
 </asp:Content>

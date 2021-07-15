@@ -2,13 +2,11 @@
 
 <%@ Register Src="~/common/uc/menu.ascx" TagPrefix="uc1" TagName="menu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="/resources/css/sub.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"" />
-    <link rel="stylesheet" href="/resources/css/swiper.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"" />
+    <link rel="stylesheet" href="/resources/css/sub.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>" />
 
     <script type="text/javascript" src="/resources/js/common.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
     <!-- script type="text/javascript" src="/resources/js/swiper.min.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></!-->
     <script type="text/javascript" src="/resources/js/swiper.min.4.3.5.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <body>
@@ -19,8 +17,8 @@
                 <div class="measure_guide">
                     <ul class="bmTabs measure">
                         <li><a href="/measure/individual/" class="current">개인 부문</a></li>
-                        <li><a href="/measure/sl/">E SL 부문</a></li>
-                        <li><a href="/measure/point">지점 부문</a></li>
+                        <li><a href="/measure/sl/">SL 부문</a></li>
+                        <li><a href="/measure/point/">지점 부문</a></li>
                     </ul>
 				<!-- 개인부문 -->
 				<div class="titleBox">
@@ -140,10 +138,11 @@
 						사이판 무조건 확정<span>* SPECIAL CANP 부문 : 절대 기준 (순위 평가X)</span></li>
 					</ul>
 				</div>
-
+                    
 				<dl class="product_price">
 					<dt>상품가중치  <span>|</span></dt>
-					<dd>신상품 120%, 보장 100%, 변액/저축 80% <span>(단, 변액/저축 단기납 40%)</span></dd>
+					<dd>추후 안내</dd>
+					
 				</dl>
 			</div>
 		</div>

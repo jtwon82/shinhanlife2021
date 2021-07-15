@@ -2,7 +2,7 @@
 
 <%@ Register Src="~/common/uc/menu.ascx" TagPrefix="uc1" TagName="menu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="/resources/css/sub.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"" />
+    <link rel="stylesheet" href="/resources/css/sub.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>" />
 
     <script type="text/javascript" src="/resources/js/common.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
     <script type="text/javascript" src="/resources/js/swiper.min.4.3.5.js?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>"></script>
@@ -27,7 +27,7 @@
                         <li><a href="./point/">
                             <img src="/resources/img/sub/measure/measurePoint.png" alt="Summer Climax 지점부문" /></a></li>
                     </ul>
-<%--				    <dl class="dynamite">
+				   <%-- <dl class="dynamite">
 					    <dt>DYNAMITE 시책</dt>
 					    <dd>2021년 9월 30일 ~ 10월 신 계약 마감일</dd>
 				    </dl>

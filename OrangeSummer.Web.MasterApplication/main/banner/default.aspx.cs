@@ -15,7 +15,7 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
         protected string _paging = string.Empty;
         private int _size = 10;
         private int _block = 10;
-        private string _type = "MAIN";
+        private string _type = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -31,7 +31,7 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
                 int page = Check.IsNone(Request["page"], 1);
                 using (Business.Banner biz = new Business.Banner(Common.Master.AppSetting.Connection))
                 {
-                    List<Model.Banner> list = biz.List(page, _size, _type);
+                    List<Model.Banner> list = biz.List(page, _size, "");
                     if (list != null)
                     {
                         this.rptList.DataSource = list;

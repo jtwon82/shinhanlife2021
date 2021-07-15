@@ -37,13 +37,13 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
                 for (int i = 1; i <= 10; i++)
                     this.section.Items.Add(new ListItem("구분 #" + i.ToString(), i.ToString()));
                 this.section.Items.Insert(0, new ListItem("선택", ""));
-
+                
                 if (!Check.IsNone(id))
                 {
                     Model.Banner banner = null;
                     using (Business.Banner biz = new Business.Banner(Common.Master.AppSetting.Connection))
                     {
-                        banner = biz.Detail(id, _type);
+                        banner = biz.Detail(id, "");
                         if (banner != null)
                         {
                             _command = "mod";
@@ -51,6 +51,7 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
                             _admName = banner.Admin.Name;
 
                             Element.Set(this.section, banner.Section.ToString());
+                            Element.Set(this.Type, banner.Type);
                             Element.Set(this.title, banner.Title);
                             Element.Set(this.pced, banner.AttPc);
                             Element.Set(this.mobiled, banner.AttMobile);
@@ -140,7 +141,7 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
                 Model.Banner banner = new Model.Banner();
                 banner.Id = Tool.UniqueNewGuid;
                 banner.FkAdmin = Common.Master.Identify.Id;
-                banner.Type = _type;
+                banner.Type = Element.Get(this.Type);
                 banner.Section = section;
                 banner.Title = Element.Get(this.title);
                 banner.AttPc = pc;
@@ -205,11 +206,11 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
                     pc = pced;
 
                 // 모바일 이미지
+                ext = System.IO.Path.GetExtension(this.mobile.PostedFile.FileName).ToLower();
+                if (ext != ".jpg" && ext != ".png")
+                    JS.Back("jpg, png파일만 업로드 가능합니다.");
                 if (!Check.IsNone(ext))
                 {
-                    ext = System.IO.Path.GetExtension(this.mobile.PostedFile.FileName).ToLower();
-                    if (ext != ".jpg" && ext != ".png")
-                        JS.Back("jpg, png파일만 업로드 가능합니다.");
 
                     //s3.Upload(this.mobile.PostedFile.InputStream, ext);
                     //if (s3.Result)
@@ -232,7 +233,7 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
 
                 Model.Banner banner = new Model.Banner();
                 banner.Id = id;
-                banner.Type = _type;
+                banner.Type = Element.Get(this.Type);
                 banner.Section = section;
                 banner.Title = Element.Get(this.title);
                 banner.AttPc = pc;

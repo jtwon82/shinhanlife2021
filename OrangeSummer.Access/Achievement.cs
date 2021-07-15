@@ -31,22 +31,49 @@ namespace OrangeSummer.Access
         public DataTable Regist(DataTable dt)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
-            DBHelper.ExecuteNonInQuery(_connection, "ADM_ACHIEVEMENT_DELETE");
-            StringBuilder query = new StringBuilder();
-            query.Append("INSERT INTO [ACHIEVEMENT_TEMP] ([ORDERBY], [DATE], [SECTOR_NAME], [BRANCH_NAME], [CODE], [NAME], [LEVEL], [PERSON_CMIP], [PERSON_CAMP], [SL_CMIP], [BRANCH_CMIP], [PERSON_RANK], [PERSON_RANK2], [SL_RANK], [BRANCH_RANK])");
-            query.Append($" SELECT * FROM ( SELECT 0 [ORDERBY], '' [DATE], '' [SECTOR_NAME], '' [BRANCH_NAME], '' [CODE], '' [NAME], '' [LEVEL], 0 [PERSON_CMIP], 0 [PERSON_CAMP], 0 [SL_CMIP], 0 [BRANCH_CMIP], 0 [PERSON_RANK], 0 [PERSON_RANK2], 0 [SL_RANK], 0 [BRANCH_RANK] ");
+            // DBHelper.ExecuteNonInQuery(_connection, "ADM_ACHIEVEMENT_DELETE");
+            DBHelper.ExecuteDataTableInQuery(_connection, "DELETE FROM [ACHIEVEMENT_TEMP12]");
+
+            StringBuilder query_insert= new StringBuilder();
+            StringBuilder query_select = new StringBuilder();
+            StringBuilder query_union = new StringBuilder();
+            query_insert.Append($"INSERT INTO [ACHIEVEMENT_TEMP12] ([ORDERBY], [DATE], [SECTOR_NAME], [BRANCH_NAME], [CODE], [NAME], [LEVEL]");
+            query_insert.Append($", [PERSON_CMIP], [PERSON_CAMP], [SL_CMIP], [BRANCH_CMIP], [PERSON_RANK], [PERSON_RANK2], [SL_RANK], [BRANCH_RANK], [SL_CMIP2], [SL_RANK2], [SL_CMIP3], [SL_RANK3])");
+
+            query_select.Append($" SELECT * FROM ( SELECT 0 [ORDERBY], '' [DATE], '' [SECTOR_NAME], '' [BRANCH_NAME], '' [CODE], '' [NAME], '' [LEVEL]");
+            query_select.Append($", 0 [PERSON_CMIP], 0 [PERSON_CAMP], 0 [SL_CMIP], 0 [BRANCH_CMIP], 0 [PERSON_RANK], 0 [PERSON_RANK2], 0 [SL_RANK], 0 [BRANCH_RANK], 0 [SL_CMIP2], 0 [SL_RANK2], 0 [SL_CMIP3], 0 [SL_RANK3] ");
 
             int index = 1;
             foreach (DataRow dr in dt.Rows)
             {
                 try
                 {
-                    query.Append($" UNION ALL SELECT {index} [ORDERBY], '{dr[0].ToString()}' [DATE], '{dr[1].ToString()}' [SECTOR_NAME] ");
-                    query.Append($", '{dr[2].ToString()}' [BRANCH_NAME], '{dr[3].ToString()}' [CODE], '{dr[4].ToString()}' [NAME], '{dr[5].ToString()}' [LEVEL] ");
-                    query.Append($", '{dr[6].ToString()}' [PERSON_CMIP], '{dr[7].ToString()}' [PERSON_CAMP], '{dr[8].ToString()}' [SL_CMIP], '{dr[9].ToString()}' [BRANCH_CMIP] ");
-                    query.Append($", '{dr[10].ToString()}' [PERSON_RANK], '{dr[10].ToString()}' [PERSON_RANK2], '{dr[11].ToString()}' [SL_RANK], '{dr[12].ToString()}' [BRANCH_RANK] ");
-                    
+                    if(index % 500 == 1) query_union.Append(query_select);
+
+                    query_union.Append($" UNION ALL SELECT {index} [ORDERBY], '{dr[0].ToString()}' [DATE], '{dr[1].ToString()}' [SECTOR_NAME] ");
+                    query_union.Append($", '{dr[2].ToString()}' [BRANCH_NAME], '{dr[3].ToString()}' [CODE], '{dr[4].ToString()}' [NAME], '{dr[5].ToString()}' [LEVEL] ");
+                    query_union.Append($", '{dr[6].ToString()}' [PERSON_CMIP] ");
+                    query_union.Append($", '{dr[7].ToString()}' [PERSON_CAMP] ");
+                    query_union.Append($", '{dr[10].ToString()}' [SL_CMIP] ");
+                    query_union.Append($", '{dr[11].ToString()}' [BRANCH_CMIP] ");
+                    query_union.Append($", '{dr[12].ToString()}' [PERSON_RANK] ");
+                    query_union.Append($", '{dr[12].ToString()}' [PERSON_RANK2] ");
+                    query_union.Append($", '{dr[15].ToString()}' [SL_RANK] ");
+                    query_union.Append($", '{dr[16].ToString()}' [BRANCH_RANK] ");
+
+                    query_union.Append($", '{dr[8].ToString()}' [SL_CMIP2] ");
+                    query_union.Append($", '{dr[13].ToString()}' [SL_RANK2] ");
+                    query_union.Append($", '{dr[9].ToString()}' [SL_CMIP3] ");
+                    query_union.Append($", '{dr[14].ToString()}' [SL_RANK3] ");
+
                     //bool result = DBHelper.ExecuteNonQuery(_connection, "ADM_ACHIEVEMENT_REGIST", parameters);
+
+                    if (index % 500 == 0)
+                    {
+                        query_union.Append(") A WHERE [ORDERBY]>0");
+                        DBHelper.ExecuteDataTableInQuery(_connection, query_insert.ToString() + query_union.ToString());
+                        query_union.Clear();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -55,12 +82,11 @@ namespace OrangeSummer.Access
 
                 index++;
             }
-            query.Append(") A WHERE [ORDERBY]>0 ; SELECT 'SUCCESS' RESULT, 'SUCCESS' MESSAGE");
 
+            query_union.Append(") A WHERE [ORDERBY]>0");
+            DBHelper.ExecuteDataTableInQuery(_connection, query_insert.ToString() + query_union.ToString());
             
-            DBHelper.ExecuteDataTableInQuery(_connection, query.ToString());
-
-            return DBHelper.ExecuteDataTable(_connection, "ADM_ACHIEVEMENT_CHECK");
+            return DBHelper.ExecuteDataTable(_connection, "ADM_ACHIEVEMENT_CHECK12");
 
             //return DBHelper.ExecuteDataTable(_connection, "ADM_ACHIEVEMENT_CHECK");
         }
@@ -108,6 +134,12 @@ namespace OrangeSummer.Access
                             BranchRank = Check.IsNone(dr["BRANCH_RANK"].ToString()) ? "" : dr["BRANCH_RANK"].ToString(),
                             SlCmip = Check.IsNone(dr["SL_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["SL_CMIP"].ToString()).ToString("#,##0"),
                             SlRank = Check.IsNone(dr["SL_RANK"].ToString()) ? "" : dr["SL_RANK"].ToString(),
+
+                            SlCmip2 = Check.IsNone(dr["SL_CMIP2"].ToString()) ? "" : Convert.ToDecimal(dr["SL_CMIP2"].ToString()).ToString("#,##0"),
+                            SlCmip3 = Check.IsNone(dr["SL_CMIP3"].ToString()) ? "" : Convert.ToDecimal(dr["SL_CMIP3"].ToString()).ToString("#,##0"),
+                            SlRank2 = Check.IsNone(dr["SL_RANK2"].ToString()) ? "" : dr["SL_RANK2"].ToString(),
+                            SlRank3 = Check.IsNone(dr["SL_RANK3"].ToString()) ? "" : dr["SL_RANK3"].ToString(),
+
                             Branch = new Model.Branch()
                             {
                                 Name = dr["BRANCH_NAME"].ToString()
@@ -174,7 +206,7 @@ namespace OrangeSummer.Access
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@CODE", code));
             parameters.Add(new SqlParameter("@LEVEL", level));
-            using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_ACHIEVEMENT_LIST2", parameters))
+            using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_ACHIEVEMENT_LIST12", parameters))
             {
                 if (dt.Rows.Count > 0)
                 {
@@ -185,6 +217,7 @@ namespace OrangeSummer.Access
                             //Id = dr["ID"].ToString().ToUpper(),
                             //Sort = Convert.ToInt32(dr["SORT"].ToString()),
                             Date = dr["DATE"].ToString(),
+                            ItsMe = dr["ITS_ME"].ToString(),
                             //Part = dr["PART"].ToString(),
                             //FkBranch = dr["FK_BRANCH"].ToString().ToUpper(),
                             //Code = dr["CODE"].ToString(),
@@ -200,7 +233,11 @@ namespace OrangeSummer.Access
                             BranchCmip = Check.IsNone(dr["BRANCH_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["BRANCH_CMIP"].ToString()).ToString("#,##0"),
                             BranchRank = Check.IsNone(dr["BRANCH_RANK"].ToString()) ? "" : dr["BRANCH_RANK"].ToString(),
                             SlCmip = Check.IsNone(dr["SL_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["SL_CMIP"].ToString()).ToString("#,##0"),
-                            SlRank = Check.IsNone(dr["SL_RANK"].ToString()) ? "" : dr["SL_RANK"].ToString()
+                            SlCmip2 = Check.IsNone(dr["SL_CMIP2"].ToString()) ? "" : Convert.ToDecimal(dr["SL_CMIP2"].ToString()).ToString("#,##0"),
+                            SlCmip3 = Check.IsNone(dr["SL_CMIP3"].ToString()) ? "" : Convert.ToDecimal(dr["SL_CMIP3"].ToString()).ToString("#,##0"),
+                            SlRank = Check.IsNone(dr["SL_RANK"].ToString()) ? "" : dr["SL_RANK"].ToString(),
+                            SlRank2 = Check.IsNone(dr["SL_RANK2"].ToString()) ? "" : dr["SL_RANK2"].ToString(),
+                            SlRank3 = Check.IsNone(dr["SL_RANK3"].ToString()) ? "" : dr["SL_RANK3"].ToString()
                         };
                         achievement.Add(T);
                     }
@@ -220,7 +257,7 @@ namespace OrangeSummer.Access
         //    List<Model.Achievement> achievement = new List<Model.Achievement>();
         //    List<SqlParameter> parameters = new List<SqlParameter>();
         //    parameters.Add(new SqlParameter("@CODE", code));
-        //    using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_ACHIEVEMENT_LIST2_FC", parameters))
+        //    using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_ACHIEVEMENT_LIST", parameters))
         //    {
         //        if (dt.Rows.Count >0)
         //        {

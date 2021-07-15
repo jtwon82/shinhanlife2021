@@ -32,6 +32,7 @@
   transition-property: transform;
   box-sizing: content-box;
 }
+
 .swiper-container-android .swiper-slide,
 .swiper-wrapper {
   transform: translate3d(0px, 0, 0);
@@ -66,7 +67,7 @@
 /* Auto Height */
 .swiper-container-autoheight,
 .swiper-container-autoheight .swiper-slide {
-  height: 230px;
+  height:230px;
 }
 .swiper-container-autoheight .swiper-wrapper {
   align-items: flex-start;
@@ -265,7 +266,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background:#715def;
+  background:#705dcf;
 }
 .swiper-container-vertical > .swiper-pagination-bullets {
   right: 10px;
@@ -544,12 +545,18 @@ button.swiper-pagination-bullet {
 	transition-property: transform;
 	box-sizing: content-box;
 }
-.swiper-container2 .swiper-wrapper .swiper-slide{width:650px !important;}
+/*.swiper-container2 .swiper-wrapper .swiper-slide{width:650px !important;}*/
 .swiper-pagination2 {
     position: absolute;
     text-align: center;
     transition: 300ms opacity;
     transform: translate3d(0, 0, 0);
     z-index: 10;
-	bottom:-40px !important;
+	bottom:0;
+}
+
+/* 210707 Ãß°¡ */
+.event_rolling .swiper-container-autoheight,
+.event_rolling .swiper-container-autoheight .swiper-slide {
+  height:380px;
 }

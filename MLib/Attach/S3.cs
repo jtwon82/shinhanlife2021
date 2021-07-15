@@ -8,6 +8,8 @@ using System.Web;
 using Amazon.S3;
 using Amazon.S3.Model;
 using MLib.Util;
+using MLib.Config;
+using System.Net;
 
 namespace MLib.Attach
 {
@@ -142,31 +144,42 @@ namespace MLib.Attach
         {
             try
             {
-                using (IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(_access, _secret, Amazon.RegionEndpoint.APNortheast2))
-                {
-                    GetObjectRequest req = new GetObjectRequest
-                    {
-                        BucketName = _bucket,
-                        Key = key
-                    };
+                //using (IAmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(_access, _secret, Amazon.RegionEndpoint.APNortheast2))
+                //{
+                //    GetObjectRequest req = new GetObjectRequest
+                //    {
+                //        BucketName = _bucket,
+                //        Key = key
+                //    };
+                //    string dest = Path.Combine(HttpRuntime.CodegenDir, filename);
+                //    using (GetObjectResponse response = client.GetObject(req))
+                //    {
+                //        response.WriteResponseStreamToFile(dest, false);
+                //    }
+                //    HttpContext.Current.Response.Clear();
+                //    HttpContext.Current.Response.AppendHeader("content-disposition", "attachment; filename=" + filename);
+                //    HttpContext.Current.Response.ContentType = "application/octet-stream";
+                //    HttpContext.Current.Response.TransmitFile(dest);
+                //    HttpContext.Current.Response.Flush();
+                //    HttpContext.Current.Response.End();
+                //    System.IO.File.Delete(dest);
+                //    this.Result = true;
+                //}
 
-                    string dest = Path.Combine(HttpRuntime.CodegenDir, filename);
-                    using (GetObjectResponse response = client.GetObject(req))
-                    {
-                        response.WriteResponseStreamToFile(dest, false);
-                    }
+                string dest = Path.Combine(ServerVariables.uploadFullPath, filename);
 
-                    HttpContext.Current.Response.Clear();
-                    HttpContext.Current.Response.AppendHeader("content-disposition", "attachment; filename=" + filename);
-                    HttpContext.Current.Response.ContentType = "application/octet-stream";
-                    HttpContext.Current.Response.TransmitFile(dest);
-                    HttpContext.Current.Response.Flush();
-                    HttpContext.Current.Response.End();
+                WebClient mywebClient = new WebClient();
 
-                    System.IO.File.Delete(dest);
+                mywebClient.DownloadFile(Path.Combine("/upload/", key), Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + filename);
+                
+                //HttpContext.Current.Response.Clear();
+                //HttpContext.Current.Response.AppendHeader("content-disposition", "attachment; filename=" + filename);
+                //HttpContext.Current.Response.ContentType = "application/octet-stream";
+                //HttpContext.Current.Response.TransmitFile(dest);
+                //HttpContext.Current.Response.Flush();
+                //HttpContext.Current.Response.End();
 
-                    this.Result = true;
-                }
+                this.Result = true;
             }
             catch (Exception ex)
             {

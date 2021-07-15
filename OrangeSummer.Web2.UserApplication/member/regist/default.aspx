@@ -42,7 +42,8 @@
                             <asp:TextBox ID="user_fccode" type="number" runat="server" ClientIDMode="Static" MaxLength="5" placeholder="숫자 5자리 필수" CssClass="form_control"></asp:TextBox>
                             <input type="hidden" name="check" id="check" value="N" />
                             <a href="javascript:member.checkCode();" class="btn_check">중복확인</a>
-                        </div>
+                            <p class="warning one">* 성명/연락처 인증 후 코드 중복확인 해주세요.</p>
+					    </div>
 
                         <div class="form_group">
                             <label for="user_password">비밀번호</label>
@@ -116,10 +117,21 @@
                 return $.validate.rules(literal, { mode: "alert" });
             },
             regist: function () {
+
                 var literal = {
+                    user_name: { selector: $("#user_name"), required: { message: "이름을 입력해주세요." } },
+                    user_tel: {
+                        selector: $("#user_tel"), required: { message: "연락처를 입력해주세요." },
+                        digit: { message: "전화번호는 숫자만 입력해주세요." }
+                    },
                     code: function () {
                         return member.common();
                     },
+                    user_password: {
+                        selector: $("#user_password"), required: { message: "비밀번호를 입력해주세요." },
+                        min: { value: 4, message: '비밀번호를 4자 이상으로 입력하세요.' }
+                    },
+                    confirm: { selector: $("#user_password_check"), compare: { value: $("#user_password").val(), message: "비밀번호가 일치하지 않습니다.\n다시 확인 후 입력해주세요." } },
                     checker: function () {
                         if ($("#check").val() === "N") {
                             alert("FC코드 중복 확인 버튼을 선택해주세요.");
@@ -131,17 +143,7 @@
                         }
                         return true;
                     },
-                    user_password: {
-                        selector: $("#user_password"), required: { message: "비밀번호를 입력해주세요." },
-                        min: { value: 4, message: '비밀번호를 4자 이상으로 입력하세요.' }
-                    },
                     user_password_check: { selector: $("#user_password_check"), required: { message: "비밀번호를 재입력해주세요." } },
-                    confirm: { selector: $("#user_password_check"), compare: { value: $("#user_password").val(), message: "비밀번호가 일치하지 않습니다.\n다시 확인 후 입력해주세요." } },
-                    user_name: { selector: $("#user_name"), required: { message: "이름을 입력해주세요." } },
-                    user_tel: {
-                        selector: $("#user_tel"), required: { message: "연락처를 입력해주세요." },
-                        digit: { message: "전화번호는 숫자만 입력해주세요." }
-                    },
                     term_agree_user: { selector: $("#term_agree_user"), required: { message: "서비스 이용약관에 동의해주세요." } },
                     term_agree_privacy: { selector: $("#term_agree_privacy"), required: { message: "개인정보 수집 및 이용에 동의해주세요." } },
                     success: function () {
@@ -158,6 +160,7 @@
                 var checker = $.validate.rules(literal, { mode: "alert" });
                 if (checker) {
                     run = true;
+                    $('.btn_signup').hide();
                     return true;
                 }
             },

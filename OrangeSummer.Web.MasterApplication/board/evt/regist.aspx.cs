@@ -53,7 +53,7 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
                             Element.Set(this.title, evt.Title);
                             Element.Set(this.attMobileed, evt.AttImage);
                             Element.Set(this.contents, evt.Contents);
-                            Element.Set(this.url, evt.Url);
+                            Element.Set(this.url_new, evt.Url);
                             Element.Set(this.sdate, evt.Sdate);
                             Element.Set(this.edate, evt.Edate);
                             Element.Set(this.useyn, evt.UseYn);
@@ -132,7 +132,7 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
                 evt.Type = Element.Get(this.type);
                 evt.Title = Element.Get(this.title);
                 evt.AttImage = mobile;
-                evt.Url = Element.Get(this.url) ;
+                evt.Url = Element.Get(this.url_new) ;
                 evt.Contents = Element.Get(this.contents);
                 evt.Sdate = Element.Get(this.sdate);
                 evt.Edate = Element.Get(this.edate);
@@ -182,7 +182,7 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
                 evt.Type = Element.Get(this.type);
                 evt.Title = Element.Get(this.title);
                 evt.AttImage = mobile; ;
-                evt.Url = Element.Get(this.url);
+                evt.Url = Element.Get(this.url_new);
                 evt.Contents = Element.Get(this.contents);
                 evt.Sdate = Element.Get(this.sdate);
                 evt.Edate = Element.Get(this.edate);

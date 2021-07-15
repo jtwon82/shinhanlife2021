@@ -65,18 +65,31 @@ namespace OrangeSummer.Web2.UserApplication.member.login
                 Model.Member member = biz.UserLogin(code, pwd);
                 if (member != null)
                 {
-                    string[] array = { member.Id, member.Code, member.Name, member.Level, member.Branch.Id, member.Branch.Name, member.ProfileImg, member.BackgroundImg };
+                    string[] array = { member.Id, member.Code, member.Name, member.Level, member.Branch.Id, member.Branch.Name, member.ProfileImg, member.BackgroundImg, member.LevelName };
                     
                     Forms.Authorize(OrangeSummer.Common.User.AppSetting.EncKey, member.Id, array);
                     string remember = Element.Get(this.remember);
                     if (remember == "Y")
                         MLib.Auth.Web.Cookies("ORANGESUMMER", "SECRET", AES.Encrypt(Common.User.AppSetting.EncKey, $"{code}|{pwd}|{DateTime.Now.ToString("yyyyMMddHHmmss")}"), 360);
 
-                    if (!Check.IsNone(referer))
-                        Tool.RR(referer);
-                    else
+                    //if (!Check.IsNone(referer))
+                    //    Tool.RR(referer);
+                    //else
+                    //{
+                    //    Tool.RR("/index");
+                    //}
+
+                    if (",FC,NEWFC".Contains("," + member.LevelName))
                     {
-                        Tool.RR("/index");
+                        Tool.RR("/achieve/bm");
+                    }
+                    else if (",SL,E SL,G SL,S SL".Contains("," + member.LevelName))
+                    {
+                        Tool.RR("/achieve/sl");
+                    }
+                    else if (",BM,EM,ERM".Contains("," + member.LevelName))
+                    {
+                        Tool.RR("/achieve/point");
                     }
                 }
                 else

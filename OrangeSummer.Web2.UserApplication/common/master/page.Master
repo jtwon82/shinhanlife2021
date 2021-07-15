@@ -10,6 +10,7 @@
 <meta property="og:image" content="https://shinhanlife-fc.com/resources/img/metaImg.png">
 <meta property="og:description" content="신한라이프 놀라운썸머">
 <meta property="og:site_name" content="신한라이프 놀라운썸머">
+
 <title>신한라이프 </title>
 
 <link rel="stylesheet" href="/resources/css/reset.css?v=<% =DateTime.Now.ToString("yyyyMMddHHmmss") %>" />
@@ -29,5 +30,16 @@
     <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
 
     </form>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBY905FQDJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BBY905FQDJ');
+</script>
+
 </html>
 

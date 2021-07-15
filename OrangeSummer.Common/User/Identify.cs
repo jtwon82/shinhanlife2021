@@ -90,5 +90,12 @@ namespace OrangeSummer.Common.User
                 return Forms.AuthInfo(AppSetting.EncKey, 7);
             }
         }
+        public static string LevelName
+        {
+            get
+            {
+                return Forms.AuthInfo(AppSetting.EncKey, 8);
+            }
+        }
     }
 }

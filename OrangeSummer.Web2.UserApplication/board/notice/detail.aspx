@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <body>
-        <div id="sub_wrap" class="subMeta05">
+        <div id="sub_wrap" class="subMeta09">
 
             <uc1:menu runat="server" ID="menu" />
 
@@ -31,7 +31,27 @@
                     <div class="contents">
                         <%=_contents %>
                     </div>
+                    
+                <%
 
+                if (!MLib.Util.Check.IsNone(_attfile) && !MLib.Util.Check.IsNone(_attfilename))
+                {
+
+                %>
+                <!-- 200629 수정 -->
+                <div class="download">
+                    <dl>
+                        <dt>첨부파일 : 
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="btnDownload_Click"><%= _attfilename %></asp:LinkButton>
+                        </dt>
+                    </dl>
+                </div>
+                <!-- //200629 수정 -->
+                <% 
+
+                }
+
+                %>
                     <div class="index_list">
                         <ul>
                             <li class="prev">
@@ -79,7 +99,7 @@
                                             <a href="javascript:;" style="cursor:default;" class="on">
                                                 <img src="/resources/img/sub/board/replyIcon2.png" alt="">
                                             </a>
-                                            <div class="number">댓글 <span><%# Eval("ReplyCount") %></span></div>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="number">댓글 <span><%# Eval("ReplyCount") %></span></div>
                                         </div>
 
                                         <%#Like(Eval("Id").ToString(), Eval("Like").ToString(), Eval("LikeCount").ToString(), Eval("DelYn").ToString()) %>

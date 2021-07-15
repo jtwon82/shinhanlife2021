@@ -10,10 +10,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <body>
-        <div id="sub_wrap" class="subMeta05">
+        <div id="sub_wrap" class="subMeta07">
             <uc1:menu runat="server" ID="menu" />
             <div class="subContainer">
-                <p class="subTitle"><img src="/resources/img/sub/rankingTitle.png" alt="랭킹" /></p>
+                <p class="subTitle"><img src="/resources/img/sub/rankingTitle.png" alt="SUMMER 랭킹" /></p>
 			<ul class="bmTabs measure ranking">
 				<li><a href="/ranking" >개인 부문</a></li>
 				<li><a href="/ranking/sl">E SL 부문</a></li>

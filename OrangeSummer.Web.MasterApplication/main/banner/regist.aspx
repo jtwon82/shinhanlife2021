@@ -17,6 +17,15 @@
                     </td>
                 </tr>
                 <tr>
+                    <th>구분</th>
+                    <td colspan="3" class="text-left">
+                        <asp:DropDownList ID="Type" ClientIDMode="Static" runat="server" CssClass="form-control w-20">
+                            <asp:ListItem Text="MAIN" Value="MAIN"></asp:ListItem>
+                            <asp:ListItem Text="EVENT" Value="EVENT"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
                     <th>제목</th>
                     <td colspan="3" class="text-left"><asp:TextBox ID="title" ClientIDMode="Static" runat="server" MaxLength="100" CssClass="form-control"></asp:TextBox></td>
                 </tr>
@@ -39,7 +48,8 @@
                             <asp:FileUpload ID="mobile" runat="server" ClientIDMode="Static" CssClass="custom-file-input" />
                             <label class="custom-file-label" for="mobile">선택된 파일 없음</label>
                         </div>
-                        <small class="text-muted">* 이미지 사이즈는 가로 626*209 px 입니다.</small>
+                        <small class="text-muted">* 메인배너 Size : 가로626*세로209 px입니다.</small><br />
+                        <small class="text-muted">* 이벤트페이지배너 Size : 가로640*세로347 px입니다.</small>
                         <p class="m-0"><asp:Image ID="imobile" runat="server" ClientIDMode="Static" Width="100" Visible="false" CssClass="img-thumbnail" /></p>
                         <asp:HiddenField ID="mobiled" runat="server" ClientIDMode="Static" />
                     </td>

@@ -45,9 +45,9 @@ namespace OrangeSummer.Web2.UserApplication.board.roulette
                             _result = "EXISTS";
                         else
                         {
-                            ran = random.Next(1, 50);
+                            ran = random.Next(1, 100);
 
-                            if (ran <= 5)
+                            if (ran <= 20)
                                 _result = "SUCCESS";
                             else
                                 _result = "FAIL";
