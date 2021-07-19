@@ -19,6 +19,10 @@
 				<li><a href="/ranking/sl">E SL 부문</a></li>
 				<li><a href="/ranking/point" class="current">지점 부문</a></li>
 			</ul>
+			<ul class="bmTabs measure ranking two">
+				<li><a href="/ranking/gsl">G SL 부문</a></li>
+				<li><a href="/ranking/ssl">S SL 부문</a></li>
+			</ul>
                 
                 
 			<%=_branch %>

@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace OrangeSummer.Web2.UserApplication.ranking.sl
+namespace OrangeSummer.Web2.UserApplication.ranking.gsl
 {
     public partial class _default : System.Web.UI.Page
     {
@@ -39,7 +39,7 @@ namespace OrangeSummer.Web2.UserApplication.ranking.sl
                 StringBuilder sb2 = new StringBuilder();
                 StringBuilder sb3 = new StringBuilder();
                 StringBuilder sb4 = new StringBuilder();
-                StringBuilder uniqueChk = new StringBuilder();
+                StringBuilder uniqueChk= new StringBuilder();
                 using (Business.Achievement biz = new Business.Achievement(Common.User.AppSetting.Connection))
                 {
                     #region [ SL ]
@@ -49,7 +49,7 @@ namespace OrangeSummer.Web2.UserApplication.ranking.sl
                     sb3.Clear();
                     sb4.Clear();
 
-                    List<Model.Achievement> sls = biz.UserRanking(1, 100, "E SL");
+                    List<Model.Achievement> sls = biz.UserRanking(1, 100, "G SL");
                     if (sls != null)
                     {
                         DateTime dt = DateTime.Parse(sls[0].Date);
@@ -57,51 +57,51 @@ namespace OrangeSummer.Web2.UserApplication.ranking.sl
                         int index = 1;
                         foreach (Model.Achievement item in sls)
                         {
-                            string key = $"{item.SlRank}|{item.SlCmip}";
+                            string key = $"{item.SlRank3}|{item.SlCmip3}";
                             if (uniqueChk.ToString().Contains(key))
                             {
                                 continue;
                             }
                             uniqueChk.Append(key);
 
-                            if (item.SlRank == "2")
+                            if (item.SlRank3 == "2")
                             {
                                 sb2.Append("<dl class=''>");
                                 sb2.Append("	<dd class='crown'><img src='/resources/img/sub/ranking/sliver.png' alt='' /></dd>");
-                                sb2.Append($"	<dt>{item.SlRank}위</dt>");
+                                sb2.Append($"	<dt>{item.SlRank3}위</dt>");
                                 sb2.Append("	<dd>");
                                 sb2.Append($"	<span class='myName'>{item.Branch.Name}<em> {item.Name}</em></span>");
-                                sb2.Append($"	{item.SlCmip}");
+                                sb2.Append($"	{item.SlCmip3}");
                                 sb2.Append("	</dd>");
                                 sb2.Append("</dl>");
                             }
-                            else if (item.SlRank == "1")
+                            else if (item.SlRank3 == "1")
                             {
                                 sb1.Append("<dl class='centerBox'>");
                                 sb1.Append("	<dd class='crown'><img src='/resources/img/sub/ranking/gold.png' alt='' /></dd>");
-                                sb1.Append($"	<dt>{item.SlRank}위</dt>");
+                                sb1.Append($"	<dt>{item.SlRank3}위</dt>");
                                 sb1.Append("	<dd>");
                                 sb1.Append($"	<span class='myName'>{item.Branch.Name}<em> {item.Name}</em></span>");
-                                sb1.Append($"	{item.SlCmip}");
+                                sb1.Append($"	{item.SlCmip3}");
                                 sb1.Append("	</dd>");
                                 sb1.Append("</dl>");
                             }
-                            else if (item.SlRank == "3")
+                            else if (item.SlRank3 == "3")
                             {
                                 sb3.Append("<dl>");
                                 sb3.Append("	<dd class='crown'><img src='/resources/img/sub/ranking/copper.png' alt='' /></dd>");
-                                sb3.Append($"        <dt>{item.SlRank}위</dt>");
+                                sb3.Append($"        <dt>{item.SlRank3}위</dt>");
                                 sb3.Append("        <dd>");
                                 sb3.Append($"        <span class=\"myName\">{item.Branch.Name}<em> {item.Name}</em></span>");
-                                sb3.Append($"        {item.SlCmip}");
+                                sb3.Append($"        {item.SlCmip3}");
                                 sb3.Append("	</dd>");
                                 sb3.Append("</dl>");
                             }
                             else
                             {
                                 sb4.Append("<dl>");
-                                sb4.Append($"    <dt>{item.SlRank}위</dt>");
-                                sb4.Append($"    <dd>{item.SlCmip}</dd>");
+                                sb4.Append($"    <dt>{item.SlRank3}위</dt>");
+                                sb4.Append($"    <dd>{item.SlCmip3}</dd>");
                                 sb4.Append("</dl>");
                             }
                             index++;

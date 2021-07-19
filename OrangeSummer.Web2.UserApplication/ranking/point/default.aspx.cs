@@ -39,6 +39,7 @@ namespace OrangeSummer.Web2.UserApplication.ranking.point
                 StringBuilder sb2 = new StringBuilder();
                 StringBuilder sb3 = new StringBuilder();
                 StringBuilder sb4 = new StringBuilder();
+                StringBuilder uniqueChk = new StringBuilder();
                 using (Business.Achievement biz = new Business.Achievement(Common.User.AppSetting.Connection))
                 {
 
@@ -58,6 +59,13 @@ namespace OrangeSummer.Web2.UserApplication.ranking.point
                         int index = 1;
                         foreach (Model.Achievement item in branchs)
                         {
+                            string key = $"{item.BranchRank}|{item.BranchCmip}";
+                            if (uniqueChk.ToString().Contains(key))
+                            {
+                                continue;
+                            }
+                            uniqueChk.Append(key);
+
                             if (item.BranchRank == "2")
                             {
                                 sb2.Append("	<dl class=''>");

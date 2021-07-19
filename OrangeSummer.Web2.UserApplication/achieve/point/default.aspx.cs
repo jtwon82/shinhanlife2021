@@ -48,14 +48,27 @@ namespace OrangeSummer.Web2.UserApplication.achieve.point
                                 contents.AppendLine($"<div class='swiper-slide slide{item.ItsMe}'>");
                                 contents.AppendLine("	<div class='bmRanking_box'>");
                                 contents.AppendLine($"		<p><span>{cdate}일 기준</span>{itsMe}<em>{item.BranchRank}</em></p>");
-                                //contents.AppendLine($"          썸머순위<em>-</em></p>");
                                 contents.AppendLine("		<dl>");
                                 contents.AppendLine("			<dt><span>캠페인환산</span>CMIP</dt>");
-                                contents.AppendLine($"			<dd>{item.BranchCmip}</dd>");
-                                //contents.AppendLine($"			<dd>-</dd>");
+                                contents.AppendLine($"			<dd class='cmip'>{item.BranchCmip}</dd>");
                                 contents.AppendLine("		</dl>");
                                 contents.AppendLine("	</div>");
-                                contents.AppendLine("</div>");
+                                if (item.ItsMe == "0")
+                                {
+                                    contents.AppendLine($"	<div class='swiper-button-next'><span>내순위<span></div>");
+                                    contents.AppendLine($"	<div class='swiper-button-prev'></div>");
+                                }
+                                else if (item.ItsMe == "1")
+                                {
+                                    contents.AppendLine($"	<div class='swiper-button-next'><span>뒷순위<span></div>");
+                                    contents.AppendLine($"	<div class='swiper-button-prev'><span>앞순위<span></div>");
+                                }
+                                else if (item.ItsMe == "2")
+                                {
+                                    contents.AppendLine($"	<div class='swiper-button-next'></div>");
+                                    contents.AppendLine($"	<div class='swiper-button-prev'><span>내순위<span></div>");
+                                }
+                                contents.AppendLine($"</div>");
                             }
                         }
 

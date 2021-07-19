@@ -38,7 +38,10 @@
             <a class="nav-link<%= (_orderby == "PERSON_RANK") ? " active font-weight-bold" : "" %>" href="./?orderby=PERSON_RANK">CMIP 개인 랭킹</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link<%= (_orderby == "PERSON_RANK2") ? " active font-weight-bold" : "" %>" href="./?orderby=PERSON_RANK2">CAMP 개인 랭킹</a>
+            <a class="nav-link<%= (_orderby == "SL_RANK2") ? " active font-weight-bold" : "" %>" href="./?orderby=SL_RANK2">S SL부문 랭킹</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link<%= (_orderby == "SL_RANK3") ? " active font-weight-bold" : "" %>" href="./?orderby=SL_RANK3">G SL부문 랭킹</a>
         </li>
         <li class="nav-item">
             <a class="nav-link<%= (_orderby == "SL_RANK") ? " active font-weight-bold" : "" %>" href="./?orderby=SL_RANK">E SL부문 랭킹</a>
@@ -53,18 +56,22 @@
             <colgroup>
                 <col style="width: 5%;" />
                 <col />
-                <col style="width: 8%;" />
-                <col style="width: 8%;" />
-                <col style="width: 6%;" />
-                <col style="width: 8%;" />
-                <col style="width: 8%;" />
-                <col style="width: 8%;" />
-                <col style="width: 8%;" />
-                <col style="width: 8%;" />
                 <col style="width: 6%;" />
                 <col style="width: 6%;" />
                 <col style="width: 6%;" />
-                <col style="width: 8%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 6%;" />
+                <col style="width: 10%;" />
             </colgroup>
             <thead>
                 <tr>
@@ -73,15 +80,21 @@
                     <th>신분</th>
                     <th>코드</th>
                     <th>성명</th>
-                    <!--<th>개인부문<br />누적건수</th>-->
+                    
                     <th>개인부문<br />누적 환산 CMIP</th>
                     <th>개인부문<br />누적 환산 CANP</th>
-                    <th>SL부문<br />누적 환산 CMIP</th>
+                    <th>개인부문<br />보장 CANP</th>
+
+                    <th>S SL부문<br />누적 환산 CMIP</th>
+                    <th>G SL부문<br />누적 환산 CMIP</th>
+                    <th>E SL부문<br />누적 환산 CMIP</th>
                     <th>지점부문<br />누적 환산 CMIP</th>
-                    <th>개인순위<br />CMIP</th>
-                    <th>개인순위<br />CAMP</th>
-                    <th>SL부문<br />순위</th>
-                    <th>지점부문<br />순위</th>
+                    
+                    <th>개인순위</th>
+                    <th>S SL부문</th>
+                    <th>G SL부문</th>
+                    <th>E SL부문</th>
+                    <th>지점부문</th>
                     <th>데이터<br />업데이트 일자</th>
                 </tr>
             </thead>
@@ -94,14 +107,21 @@
                             <td><%# OrangeSummer.Common.Code.MemberLevelName(Eval("Level").ToString()) %></td>
                             <td><%# Eval("Code") %></td>
                             <td><%# Eval("Name") %></td>
-                            <!--<td><%# Eval("PersonSum") %></td>-->
+                            
                             <td><%# Eval("PersonCmip") %></td>
                             <td><%# Eval("PersonCamp") %></td>
+                            <td><%# Eval("PersonCanp") %></td>
+                            
+                            <td><%# Eval("SlCmip2") %></td>
+                            <td><%# Eval("SlCmip3") %></td>
                             <td><%# Eval("SlCmip") %></td>
                             <td><%# Eval("BranchCmip") %></td>
+
                             <td><%# Eval("PersonRank") %></td>
-                            <td><%# Eval("PersonRank2") %></td>
-                            <td><%# Eval("SlRank") %></td>
+                            <td data-d="SlRank2"><%# Eval("SlRank2") %></td>
+                            <td data-d="SlRank3"><%# Eval("SlRank3") %></td>
+                            <td data-d="SlRank"><%# Eval("SlRank") %></td>
+                            
                             <td><%# Eval("BranchRank") %></td>
                             <td><%# Eval("Date") %></td>
                         </tr>

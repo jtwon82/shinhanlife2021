@@ -97,6 +97,8 @@
     <Content Include="common\js\jquery-library.js" />
     <Content Include="common\js\site.js" />
     <Content Include="measure\headoffice\default.aspx" />
+    <Content Include="ranking\gsl\default.aspx" />
+    <Content Include="ranking\ssl\default.aspx" />
     <Content Include="resources\img\sub\event\rouletteImg2.jpg" />
     <Content Include="resources\img\sub\measure\dynamiteBanner.jpg" />
     <Content Include="resources\img\sub\measure\individual_standardBox.png" />
@@ -447,6 +449,13 @@
     <Compile Include="ranking\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ranking\gsl\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ranking\gsl\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ranking\point\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -459,6 +468,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ranking\sl\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ranking\ssl\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ranking\ssl\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\kr.co.youiwe.webservice\Reference.cs">

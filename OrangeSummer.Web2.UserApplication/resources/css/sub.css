@@ -99,6 +99,12 @@ ul.bmTabs{
 	display: table;
 	margin:0 auto 50px auto;
 }
+ul.bmTabs.measure.ranking{
+	margin:0 auto 30px auto;
+}
+ul.bmTabs.measure.ranking.two{
+	margin:0 auto 50px auto;
+}
 ul.bmTabs li, ul.bmTabs.measure.ranking li{
 	float:left;
 	margin-right:12px;
@@ -141,6 +147,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	height:546px;
 	width:625px;
 	margin:0 auto 37px auto;
+	font-family: 'OneShinhanM', sans-serif;
 }
 .bmRanking_box p{
 	text-align:center;
@@ -149,6 +156,7 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-weight:bold;
 	padding-top:73px;
 	color:#705dcf;
+	height:355px;
 }
 .bmRanking_box p span{
 	display:block;
@@ -164,14 +172,30 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-size:145px;
 	font-family: 'OneShinhanB', sans-serif;
 	font-weight:bold;
-	margin-top:-30px;
+	line-height:180px;
 }
 .bmRanking_box dl{
-	padding:0 60px;
-	margin-top:80px;
+	padding:30px 60px 0 60px;
 	float:left;
 	width:505px;
+	height:88px;
 }
+.bmRanking_box.personal dt, 
+.bmRanking_box.personal dt span, 
+.bmRanking_box.personal dd{
+	color:#fff;
+}
+.bmRanking_box.personal dl.canp.two dt, 
+.bmRanking_box.personal dl.canp.two dt span{text-align:center;}
+.bmRanking_box.personal dl.canp.two dt, 
+.bmRanking_box.personal dl.canp.two dt span, 
+.bmRanking_box.personal dl.canp.two dd{
+	color:#000;
+}
+.bmRanking_box dl.canp{
+	padding-top:35px;
+}
+.bmRanking_box.personal dl.canp.two{padding-top:10px;}
 .bmRanking_box dt, .bmRanking_box dd{
 	float:left;
 	font-family: 'OneShinhanB', sans-serif;
@@ -189,6 +213,12 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 .bmRanking_box dd{
 	float:right;
 	font-size:40px;
+}
+.bmRanking_box dd.cmip{
+	margin-top:8px;
+}
+.bmRanking_box.personal dl.canp.two dd.cmip{
+	margin-top:15px;
 }
 .referenceBox{
 	float:left;
@@ -940,14 +970,14 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 }
 /*  210623 추가 CSS */
 .bmRanking_box.personal{
-	height:664px;
+	height:779px;
 	background: url(/resources/img/sub/bm/bmpersonal_Rankingbox.png) no-repeat;
-}
-.bmRanking_box dl.canp{
-	margin-top:50px;
 }
 .bmRanking_box dl.canp dt, .bmRanking_box dl.canp dd{
 	color:#fff;
+}
+.bmRanking_box dl.canp dt{
+	margin-top:5px;
 }
 
 /* 210626-2 추가 */

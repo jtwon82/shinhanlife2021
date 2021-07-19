@@ -28,11 +28,6 @@
 					<div class="swiper-wrapper">
                         <%=_contents %>
 					</div>
-					<!-- Add Pagination 
-					<div class="swiper-pagination"></div>-->
-					<!-- Add Arrows -->
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
 				</div>
 				<ul class="referenceBox">
 					<li>* 본 데이터는 2021 Summer Contest 진도관리를 위한 보조자료이며,<br/>달성 결과가 아님을 알려드립니다.</li>

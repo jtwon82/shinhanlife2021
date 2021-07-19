@@ -39,6 +39,7 @@ namespace OrangeSummer.Web2.UserApplication.ranking
                 StringBuilder sb2 = new StringBuilder();
                 StringBuilder sb3 = new StringBuilder();
                 StringBuilder sb4 = new StringBuilder();
+                StringBuilder uniqueChk = new StringBuilder();
                 using (Business.Achievement biz = new Business.Achievement(Common.User.AppSetting.Connection))
                 {
                     #region [ 개인 ]
@@ -56,7 +57,13 @@ namespace OrangeSummer.Web2.UserApplication.ranking
                         int index = 1;
                         foreach (Model.Achievement item in persons)
                         {
-                            
+                            string key = $"{item.PersonRank}|{item.PersonCmip}";
+                            if (uniqueChk.ToString().Contains(key))
+                            {
+                                continue;
+                            }
+                            uniqueChk.Append(key);
+
                             if (item.PersonRank == "2")
                             {
                                 sb2.Append("<dl>");

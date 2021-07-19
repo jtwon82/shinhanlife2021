@@ -25,6 +25,10 @@
 				<li><a href="/ranking/sl">E SL 부문</a></li>
 				<li><a href="/ranking/point">지점 부문</a></li>
 			</ul>
+			<ul class="bmTabs measure ranking two">
+				<li><a href="/ranking/gsl">G SL 부문</a></li>
+				<li><a href="/ranking/ssl">S SL 부문</a></li>
+			</ul>
                 
 			<%=_person%>
 
@@ -34,10 +38,4 @@
     </body>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-<script>
-    $(document).ready(function () {
-        //$(".rankingBox dl:eq(1)").after($(".rankingBox dl:eq(0)"));
-        
-    });
-</script>
 </asp:Content>

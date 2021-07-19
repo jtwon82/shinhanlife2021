@@ -43,7 +43,7 @@
                     <th>제목</th>
                     <td colspan="3" class="text-left"><asp:TextBox ID="title" ClientIDMode="Static" runat="server" MaxLength="100" CssClass="form-control"></asp:TextBox></td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <th>모바일 이벤트 배너 이미지</th>
                     <td colspan="3" class="text-left">
                         <div class="custom-file">
@@ -56,7 +56,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>텍스트</th>
+                    <th>텍스트<br />(이미지사이즈 width 최대:640px)</th>
                     <td colspan="3" class="text-left">
                         <div id="editor-area"></div>
                         <asp:HiddenField ID="contents" ClientIDMode="Static" runat="server" />
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     <th>URL</th>
-                    <td colspan="3" class="text-left"><asp:TextBox ID="url_new" runat="server" MaxLength="200" CssClass="form-control"></asp:TextBox></td>
+                    <td colspan="3" class="text-left"><asp:TextBox ID="url_new" runat="server" MaxLength="200" CssClass="form-control" autocomplete='off'></asp:TextBox></td>
                 </tr>
                 <tr>
                     <th>노출 여부</th>
@@ -133,6 +133,7 @@
                 <col style="width: 5%;" />
                 <col style="width: 15%;" />
                 <col style="width: 10%;" />
+                <col style="width: 10%;" />
                 <col />
                 <col style="width: 8%;" />
                 <col style="width: 10%;" />
@@ -142,6 +143,7 @@
                 <tr>
                     <th>No</th>
                     <th>지점</th>
+                    <th>CODE</th>
                     <th>이름</th>
                     <th>댓글</th>
                     <th>좋아요</th>
@@ -155,6 +157,7 @@
                         <tr>
                             <td><%# ListNumber(Eval("Total"), Container.ItemIndex) %></td>
                             <td><%# Eval("Branch.Name") %></td>
+                            <td><%# Eval("Member.Code") %></td>
                             <td><%# Eval("Member.Name") %></td>
                             <td class="text-left"><%# Depth(Eval("Depth").ToString()) %> <%# Eval("Contents").ToString().Replace(Environment.NewLine, "<br/>") %></td>
                             <td><%# Eval("LikeCount").ToString() %></td>

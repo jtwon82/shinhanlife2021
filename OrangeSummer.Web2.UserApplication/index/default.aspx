@@ -32,7 +32,7 @@
             </div>
                 
 			<div class="mainEventBanner">
-				<p class="mainEventBanner_t">EVENT</p>
+				<p class="mainEventBanner_t">EVENT & NOTICE</p>
 				<div class="EventBanner_rolling">
 					<!-- Swiper -->
 					<div class="swiper-container">

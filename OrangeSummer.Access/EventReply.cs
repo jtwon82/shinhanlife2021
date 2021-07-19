@@ -52,7 +52,8 @@ namespace OrangeSummer.Access
                             RegistDate = dr["REGIST_DATE"].ToString(),
                             Member = new Model.Member()
                             {
-                                Name = dr["MEMBER_NAME"].ToString()
+                                Name = dr["MEMBER_NAME"].ToString(),
+                                Code= dr["CODE"].ToString()
                             },
                             Branch = new Model.Branch()
                             {
@@ -100,6 +101,7 @@ namespace OrangeSummer.Access
                             RegistDate = dr["REGIST_DATE"].ToString(),
                             Member = new Model.Member()
                             {
+                                Code = dr["CODE"].ToString(),
                                 Name = dr["MEMBER_NAME"].ToString(),
                                 ProfileImg = dr["PROFILE_IMG"].ToString()
                             },

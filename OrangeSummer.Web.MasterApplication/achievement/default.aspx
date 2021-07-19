@@ -55,6 +55,7 @@
                 <col style="width: 5%;" />
                 <col style="width: 5%;" />
                 <col style="width: 5%;" />
+                <col style="width: 5%;" />
             </colgroup>
             <thead>
                 <tr>
@@ -65,6 +66,7 @@
                     <th>성명</th>
                     <th>개인부문<br />누적환산CMIP</th>
                     <th>개인부문<br />누적원CANP</th>
+                    <th>개인부문<br />보장CANP</th>
                     <th>S SL부문<br />환산 CMIP</th>
                     <th>G SL부문<br />환산 CMIP</th>
                     <th>E SL부문<br />환산 CMIP</th>
@@ -88,6 +90,7 @@
                             <td><%# Eval("Name") %></td>
                             <td><%# Eval("PersonCmip") %></td>
                             <td><%# Eval("PersonCamp") %></td>
+                            <td><%# Eval("PersonCanp") %></td>
                             <td><%# Eval("SlCmip2") %></td>
                             <td><%# Eval("SlCmip3") %></td>
                             <td><%# Eval("SlCmip") %></td>

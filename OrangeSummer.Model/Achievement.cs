@@ -19,6 +19,7 @@
         public string PersonSum { get; set; }
         public string PersonCmip { get; set; }
         public string PersonCamp { get; set; }
+        public string PersonCanp { get; set; }
         public string PersonRank { get; set; }
         public string PersonRank2 { get; set; }
         public string LeaderCmip { get; set; }

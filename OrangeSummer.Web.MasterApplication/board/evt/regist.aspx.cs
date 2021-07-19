@@ -117,14 +117,23 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
             try
             {
                 string mobile = string.Empty;
+                string attMobileed = Element.Get(this.attMobileed);
                 string ext = string.Empty;
 
-                HttpUpload upload = new HttpUpload(this.attMobile.PostedFile);
-                upload.Attached();
-                if (upload.Result)
-                    mobile = upload.FIleFullPath();
+                ext = System.IO.Path.GetExtension(this.attMobile.PostedFile.FileName).ToLower();
+                if (!Check.IsNone(ext))
+                {
+                    HttpUpload upload = new HttpUpload(this.attMobile.PostedFile);
+                    upload.Attached();
+                    if (upload.Result)
+                        mobile = upload.FIleFullPath();
+                    else
+                        JS.Back("처리중 에러가 발생했습니다.");
+                }
                 else
-                    JS.Back("처리중 에러가 발생했습니다.");
+                {
+                    mobile = attMobileed;
+                }
 
                 Model.Event evt = new Model.Event();
                 evt.Id = Tool.UniqueNewGuid;
@@ -244,13 +253,14 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
                             sheet.Row(1).Height = 20;
                             sheet.Cell("A1").Value = "#";
                             sheet.Cell("B1").Value = "지점";
-                            sheet.Cell("C1").Value = "이름";
-                            sheet.Cell("D1").Value = "내용";
-                            sheet.Cell("E1").Value = "좋아요";
-                            sheet.Cell("F1").Value = "등록일";
-                            sheet.Range("A1", "F1").Style.Font.Bold = true;
-                            sheet.Range("A1", "F1").Style.Fill.BackgroundColor = XLColor.LightGray;
-                            sheet.Range("A1", "F1").Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+                            sheet.Cell("C1").Value = "CODE";
+                            sheet.Cell("D1").Value = "이름";
+                            sheet.Cell("E1").Value = "내용";
+                            sheet.Cell("F1").Value = "좋아요";
+                            sheet.Cell("G1").Value = "등록일";
+                            sheet.Range("A1", "G1").Style.Font.Bold = true;
+                            sheet.Range("A1", "G1").Style.Fill.BackgroundColor = XLColor.LightGray;
+                            sheet.Range("A1", "G1").Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
 
                             sheet.Column(1).Width = 10;
 
@@ -261,10 +271,11 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
                             {
                                 sheet.Cell("A" + index).Value = count - (index - 2);
                                 sheet.Cell("B" + index).Value = item.Branch.Name;
-                                sheet.Cell("C" + index).Value = item.Member.Name;
-                                sheet.Cell("D" + index).Value = new System.Text.StringBuilder().Insert(0, "  ", item.Depth).ToString() + item.Contents;
-                                sheet.Cell("E" + index).Value = item.LikeCount;
-                                sheet.Cell("F" + index).Value = item.RegistDate;
+                                sheet.Cell("C" + index).Value = item.Member.Code;
+                                sheet.Cell("D" + index).Value = item.Member.Name;
+                                sheet.Cell("E" + index).Value = new System.Text.StringBuilder().Insert(0, "  ", item.Depth).ToString() + item.Contents;
+                                sheet.Cell("F" + index).Value = item.LikeCount;
+                                sheet.Cell("G" + index).Value = item.RegistDate;
                                 sheet.Row(index).Height = 18;
                                 index++;
                             }
@@ -281,17 +292,21 @@ namespace OrangeSummer.Web.MasterApplication.board.evt
                             sheet.Columns("C").AdjustToContents();
                             sheet.Columns("C").Width = 20;
 
-                            sheet.Columns("D").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
+                            sheet.Columns("D").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                             sheet.Columns("D").AdjustToContents();
-                            sheet.Columns("D").Width = 50;
+                            sheet.Columns("D").Width = 20;
 
-                            sheet.Columns("E").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                            sheet.Columns("E").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
                             sheet.Columns("E").AdjustToContents();
-                            sheet.Columns("E").Width = 10;
+                            sheet.Columns("E").Width = 50;
 
                             sheet.Columns("F").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                             sheet.Columns("F").AdjustToContents();
-                            sheet.Columns("F").Width = 20;
+                            sheet.Columns("F").Width = 10;
+
+                            sheet.Columns("G").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                            sheet.Columns("G").AdjustToContents();
+                            sheet.Columns("G").Width = 20;
 
                             book.SaveAs(path);
                             book.Dispose();

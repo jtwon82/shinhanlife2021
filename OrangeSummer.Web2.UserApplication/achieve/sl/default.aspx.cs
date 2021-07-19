@@ -58,15 +58,30 @@ namespace OrangeSummer.Web2.UserApplication.achieve.sl
                                 contents.AppendLine("		<dl>");
                                 contents.AppendLine("			<dt><span>캠페인환산</span>CMIP</dt>");
                                 if (OrangeSummer.Common.User.Identify.LevelName == "E SL")
-                                    contents.AppendLine($"			<dd>{item.SlCmip}</dd>");
+                                    contents.AppendLine($"			<dd class='cmip'>{item.SlCmip}</dd>");
                                 if (OrangeSummer.Common.User.Identify.LevelName == "S SL")
-                                    contents.AppendLine($"			<dd>{item.SlCmip2}</dd>");
+                                    contents.AppendLine($"			<dd class='cmip'>{item.SlCmip2}</dd>");
                                 if (OrangeSummer.Common.User.Identify.LevelName == "G SL")
-                                    contents.AppendLine($"			<dd>{item.SlCmip3}</dd>");
+                                    contents.AppendLine($"			<dd class='cmip'>{item.SlCmip3}</dd>");
                                 //contents.AppendLine($"			<dd>-</dd>");
                                 contents.AppendLine("		</dl>");
                                 contents.AppendLine("	</div>");
-                                contents.AppendLine("</div>");
+                                if (item.ItsMe == "0")
+                                {
+                                    contents.AppendLine($"	<div class='swiper-button-next'><span>내순위<span></div>");
+                                    contents.AppendLine($"	<div class='swiper-button-prev'></div>");
+                                }
+                                else if (item.ItsMe == "1")
+                                {
+                                    contents.AppendLine($"	<div class='swiper-button-next'><span>뒷순위<span></div>");
+                                    contents.AppendLine($"	<div class='swiper-button-prev'><span>앞순위<span></div>");
+                                }
+                                else if (item.ItsMe == "2")
+                                {
+                                    contents.AppendLine($"	<div class='swiper-button-next'></div>");
+                                    contents.AppendLine($"	<div class='swiper-button-prev'><span>내순위<span></div>");
+                                }
+                                contents.AppendLine($"</div>");
                             }
                         }
 
