@@ -141,7 +141,7 @@ namespace OrangeSummer.Common.Master
                             case "evt": title = "이벤트 관리"; break;
                             case "banner": title = "이벤트 배너 관리"; break;
                             case "ucc": title = "UCC 콘테스트"; break;
-                            case "word": title = "여행지명 백일장 인기투표 이벤트"; break;
+                            case "word": title = " 백일장 인기투표 이벤트"; break;
                             case "roulette": title = "룰렛 이벤트"; break;
                             case "agreement": title = "약관 관리"; break;
                             default:

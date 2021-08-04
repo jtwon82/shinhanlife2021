@@ -7,13 +7,11 @@
 // </자동 생성됨>
 //------------------------------------------------------------------------------
 
-namespace OrangeSummer.Web.MasterApplication.member
-{
-
-
-    public partial class _default
-    {
-
+namespace OrangeSummer.Web.MasterApplication.member {
+    
+    
+    public partial class _default {
+        
         /// <summary>
         /// branch 컨트롤입니다.
         /// </summary>
@@ -22,7 +20,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList branch;
-
+        
         /// <summary>
         /// level 컨트롤입니다.
         /// </summary>
@@ -31,7 +29,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList level;
-
+        
         /// <summary>
         /// code 컨트롤입니다.
         /// </summary>
@@ -40,7 +38,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox code;
-
+        
         /// <summary>
         /// mobile 컨트롤입니다.
         /// </summary>
@@ -49,7 +47,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox mobile;
-
+        
         /// <summary>
         /// sdate 컨트롤입니다.
         /// </summary>
@@ -58,7 +56,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox sdate;
-
+        
         /// <summary>
         /// edate 컨트롤입니다.
         /// </summary>
@@ -67,7 +65,16 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox edate;
-
+        
+        /// <summary>
+        /// name 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox name;
+        
         /// <summary>
         /// btnSearch 컨트롤입니다.
         /// </summary>
@@ -76,7 +83,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnSearch;
-
+        
         /// <summary>
         /// btnExcel 컨트롤입니다.
         /// </summary>
@@ -85,7 +92,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnExcel;
-
+        
         /// <summary>
         /// rptList 컨트롤입니다.
         /// </summary>
@@ -94,7 +101,7 @@ namespace OrangeSummer.Web.MasterApplication.member
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptList;
-
+        
         /// <summary>
         /// noData 컨트롤입니다.
         /// </summary>

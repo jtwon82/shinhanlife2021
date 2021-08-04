@@ -20,7 +20,7 @@ namespace OrangeSummer.Common
             {
                 Dictionary<string, string> dic = new Dictionary<string, string>();
                 dic.Add("FC", "FC");
-                dic.Add("NEWFC", "신인FC");
+                dic.Add("신인FC", "신인FC");
                 dic.Add("E SL", "E SL");
                 dic.Add("S SL", "S SL");
                 dic.Add("G SL", "G SL");
@@ -82,10 +82,24 @@ namespace OrangeSummer.Common
         {
             get
             {
+                int id = 1;
                 Dictionary<string, string> dic = new Dictionary<string, string>();
-                dic.Add("1", "라스베가스");
-                dic.Add("2", "하와이");
-                dic.Add("3", "바르셀로나");
+                dic.Add((id++) + "", "OCAN지점/36037/이종호");
+                dic.Add((id++) + "", "강남지점/17721/최재갑");
+                dic.Add((id++) + "", "한신지점/62336/이상윤");
+                dic.Add((id++) + "", "도곡지점/26776/정영섭");
+                dic.Add((id++) + "", "부산1지점/22003/김태호");
+                dic.Add((id++) + "", "TOP지점/55497/김종민");
+                dic.Add((id++) + "", "리더스지점/61576/변영성");
+                dic.Add((id++) + "", "GUINNESS지점/43031/이옥준");
+                dic.Add((id++) + "", "리더스지점/65603/박초희");
+                dic.Add((id++) + "", "잠실지점/28161/조은경");
+                dic.Add((id++) + "", "광주1지점/26671/김상렬");
+                dic.Add((id++) + "", "한신지점/58969/김병선");
+                dic.Add((id++) + "", "신화창조지점/66418/이영수");
+                dic.Add((id++) + "", "압구정지점/64309/강성국");
+                dic.Add((id++) + "", "선두지점/62449/조병화");
+                dic.Add((id++) + "", "ㅁㅁㅁ");
 
                 return dic;
             }

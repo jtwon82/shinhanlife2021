@@ -33,7 +33,8 @@ namespace OrangeSummer.Web2.UserApplication.achieve.sl
                 {
                     StringBuilder title = new StringBuilder();
                     StringBuilder contents = new StringBuilder();
-                    List<Model.Achievement> achievement = biz.UserList2(Common.User.Identify.Code, OrangeSummer.Common.User.Identify.LevelName);
+                    List<Model.Achievement> achievement = biz.UserList2(Common.User.Identify.Code
+                        , OrangeSummer.Common.User.Identify.LevelName);
 
                     if (achievement != null)
                     {

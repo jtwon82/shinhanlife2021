@@ -50,7 +50,7 @@ namespace OrangeSummer.Web.UserApplication.achieve
                     {
                         DateTime dt = DateTime.Parse(achievement.Date);
 
-                        if (Common.User.Identify.Level == "FC" || Common.User.Identify.Level == "NEWFC")
+                        if (Common.User.Identify.Level == "FC" || Common.User.Identify.Level == "신인FC")
                         {
                             title.AppendLine("<div class=\"swiper-container tab_list type01\">");
                             title.AppendLine("  <div class=\"swiper-wrapper\">");

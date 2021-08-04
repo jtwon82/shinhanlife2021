@@ -23,6 +23,16 @@ $(document).ready(function(){
 	init();
 	init2();
 
+	$(".newfc").css({
+	    "font-size": "37px",
+	    "color": "#fff",
+	    "font-family": 'OneShinhanB'
+	});
+
+	$(".new_fc").css({
+	    "margin-top": "10px"
+	});
+
 });
 
 // 팝업

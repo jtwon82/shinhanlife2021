@@ -36,7 +36,7 @@
     <p class="mb-1">* 총 <span class="text-danger font-weight-bold"><%= _total %></span>개의 업적이 있습니다.</p>
 
     <div class="table-responsive">
-        <table class="table table-bordered" style="min-width: 1500px;">
+        <table class="table table-bordered" style="min-width: 2300px;">
             <colgroup>
                 <col style="width: 3%;" />
                 <col style="width: 5%;" />
@@ -56,6 +56,10 @@
                 <col style="width: 5%;" />
                 <col style="width: 5%;" />
                 <col style="width: 5%;" />
+                <col style="width: 5%;" />
+                <col style="width: 5%;" />
+                <col style="width: 5%;" />
+                <col style="width: 10%;" />
             </colgroup>
             <thead>
                 <tr>
@@ -71,11 +75,17 @@
                     <th>G SL부문<br />환산 CMIP</th>
                     <th>E SL부문<br />환산 CMIP</th>
                     <th>지점부문<br /> 환산 CMIP</th>
+
+                    <th>신인FC<br />누적환산CMIP</th>
+                    <th>신인FC<br />누적원CANP</th>
+                    <th>신인FC<br />보장CANP</th>
+
                     <th>개인부문<br /> 순위</th>
                     <th>S SL부문<br />순위</th>
                     <th>G SL부문<br />순위</th>
                     <th>E SL부문<br />순위</th>
                     <th>지점부문<br />순위</th>
+                    <th>신인FC<br />순위</th>
                     <th>데이터<br />업데이트 일자</th>
                 </tr>
             </thead>
@@ -95,11 +105,17 @@
                             <td><%# Eval("SlCmip3") %></td>
                             <td><%# Eval("SlCmip") %></td>
                             <td><%# Eval("BranchCmip") %></td>
+                            
+                            <td><%# Eval("Person2Cmip") %></td>
+                            <td><%# Eval("Person2Camp") %></td>
+                            <td><%# Eval("Person2Canp") %></td>
+
                             <td><%# Eval("PersonRank") %></td>
                             <td><%# Eval("SlRank2") %></td>
                             <td><%# Eval("SlRank3") %></td>
                             <td><%# Eval("SlRank") %></td>
                             <td><%# Eval("BranchRank") %></td>
+                            <td><%# Eval("Person2Rank") %></td>
                             <td><%# Eval("Date") %></td>
                         </tr>
                     </ItemTemplate>

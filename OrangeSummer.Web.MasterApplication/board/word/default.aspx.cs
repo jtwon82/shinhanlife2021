@@ -85,7 +85,7 @@ namespace OrangeSummer.Web.MasterApplication.board.word
                     List<Model.Word> list = biz.Excel();
                     if (list != null)
                     {
-                        string _filename = "여행지명_백일장_인기투표_이벤트";
+                        string _filename = "놀라운_썸머_백일장_컨테스트";
                         using (XLWorkbook book = new XLWorkbook())
                         {
                             string path = System.IO.Path.Combine(Common.Master.AppSetting.Path, "temp", $"{_filename}_{DateTime.Now.ToString("yyyyMMdd")}.xlsx");

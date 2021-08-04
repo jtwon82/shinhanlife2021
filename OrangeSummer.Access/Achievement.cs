@@ -37,13 +37,20 @@ namespace OrangeSummer.Access
             StringBuilder query_insert= new StringBuilder();
             StringBuilder query_select = new StringBuilder();
             StringBuilder query_union = new StringBuilder();
-            query_insert.Append($"INSERT INTO [ACHIEVEMENT_TEMP12] ([ORDERBY], [DATE], [SECTOR_NAME], [BRANCH_NAME], [CODE], [NAME], [LEVEL]");
-            query_insert.Append($", [PERSON_CMIP], [PERSON_CAMP], [PERSON_CANP], [SL_CMIP], [BRANCH_CMIP], [PERSON_RANK], [PERSON_RANK2]");
-            query_insert.Append($", [SL_RANK], [BRANCH_RANK], [SL_CMIP2], [SL_RANK2], [SL_CMIP3], [SL_RANK3])");
+            query_insert.Append($"INSERT INTO [ACHIEVEMENT_TEMP12] (");
+            query_insert.Append($"[ORDERBY], [DATE], [SECTOR_NAME], [BRANCH_NAME], [CODE], [NAME], [LEVEL]");
+            query_insert.Append($", [PERSON_CMIP], [PERSON_CAMP], [PERSON_CANP]");
+            query_insert.Append($", [SL_CMIP2], [SL_CMIP3], [SL_CMIP], [BRANCH_CMIP]");
+            query_insert.Append($", [PERSON2_CMIP], [PERSON2_CAMP], [PERSON2_CANP]");
+            query_insert.Append($", [PERSON_RANK], [SL_RANK2], [SL_RANK3], [SL_RANK], [BRANCH_RANK], [PERSON2_RANK]");
+            query_insert.Append($")");
 
-            query_select.Append($" SELECT * FROM ( SELECT 0 [ORDERBY], '' [DATE], '' [SECTOR_NAME], '' [BRANCH_NAME], '' [CODE], '' [NAME], '' [LEVEL]");
-            query_select.Append($", 0 [PERSON_CMIP], 0 [PERSON_CAMP], 0 [PERSON_CANP], 0 [SL_CMIP], 0 [BRANCH_CMIP], 0 [PERSON_RANK], 0 [PERSON_RANK2]");
-            query_select.Append($", 0 [SL_RANK], 0 [BRANCH_RANK], 0 [SL_CMIP2], 0 [SL_RANK2], 0 [SL_CMIP3], 0 [SL_RANK3] ");
+            query_select.Append($" SELECT * FROM ( SELECT ");
+            query_select.Append($"0 [ORDERBY], '' [DATE], '' [SECTOR_NAME], '' [BRANCH_NAME], '' [CODE], '' [NAME], '' [LEVEL]");
+            query_select.Append($", 0 [PERSON_CMIP], 0 [PERSON_CAMP], 0 [PERSON_CANP]");
+            query_select.Append($", 0 [SL_CMIP2], 0 [SL_CMIP3], 0 [SL_CMIP], 0 [BRANCH_CMIP]");
+            query_select.Append($", 0 [PERSON2_CMIP], 0 [PERSON2_CAMP], 0 [PERSON2_CANP]");
+            query_select.Append($", 0 [PERSON_RANK], 0 [SL_RANK2], 0 [SL_RANK3], 0 [SL_RANK], 0 [BRANCH_RANK], 0 [PERSON2_RANK]");
 
             int index = 1;
             foreach (DataRow dr in dt.Rows)
@@ -51,24 +58,33 @@ namespace OrangeSummer.Access
                 try
                 {
                     if(index % 500 == 1) query_union.Append(query_select);
+                    int id = 0;
 
-                    query_union.Append($" UNION ALL SELECT {index} [ORDERBY], '{dr[0].ToString()}' [DATE], '{dr[1].ToString()}' [SECTOR_NAME] ");
-                    query_union.Append($", '{dr[2].ToString()}' [BRANCH_NAME], '{dr[3].ToString()}' [CODE], '{dr[4].ToString()}' [NAME], '{dr[5].ToString()}' [LEVEL] ");
-                    query_union.Append($", '{dr[6].ToString()}' [PERSON_CMIP] ");
-                    query_union.Append($", '{dr[7].ToString()}' [PERSON_CAMP] ");
-                    query_union.Append($", '{dr[8].ToString()}' [PERSON_CANP] ");
+                    query_union.Append($" UNION ALL SELECT  ");
+                    query_union.Append($"{index} [ORDERBY], '{dr[id++].ToString()}' [DATE], '{dr[id++].ToString()}' [SECTOR_NAME] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [BRANCH_NAME], '{dr[id++].ToString()}' [CODE], '{dr[id++].ToString()}' [NAME] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [LEVEL] ");
 
-                    query_union.Append($", '{dr[11].ToString()}' [SL_CMIP] ");
-                    query_union.Append($", '{dr[12].ToString()}' [BRANCH_CMIP] ");
-                    query_union.Append($", '{dr[13].ToString()}' [PERSON_RANK] ");
-                    query_union.Append($", '{dr[13].ToString()}' [PERSON_RANK2] ");
-                    query_union.Append($", '{dr[16].ToString()}' [SL_RANK] ");
-                    query_union.Append($", '{dr[17].ToString()}' [BRANCH_RANK] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON_CMIP] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON_CAMP] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON_CANP] ");
 
-                    query_union.Append($", '{dr[9].ToString()}' [SL_CMIP2] ");
-                    query_union.Append($", '{dr[14].ToString()}' [SL_RANK2] ");
-                    query_union.Append($", '{dr[10].ToString()}' [SL_CMIP3] ");
-                    query_union.Append($", '{dr[15].ToString()}' [SL_RANK3] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [SL_CMIP2] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [SL_CMIP3] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [SL_CMIP] ");
+
+                    query_union.Append($", '{dr[id++].ToString()}' [BRANCH_CMIP] ");
+
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON2_CMIP] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON2_CAMP] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON2_CANP] ");
+
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON_RANK] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [SL_RANK2] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [SL_RANK3] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [SL_RANK] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [BRANCH_RANK] ");
+                    query_union.Append($", '{dr[id++].ToString()}' [PERSON2_RANK] ");
 
                     //bool result = DBHelper.ExecuteNonQuery(_connection, "ADM_ACHIEVEMENT_REGIST", parameters);
 
@@ -128,10 +144,17 @@ namespace OrangeSummer.Access
                             Name = dr["NAME"].ToString(),
                             Level = dr["LEVEL"].ToString(),
                             PersonSum = dr["PERSON_SUM"].ToString(),
+
                             PersonCmip = Check.IsNone(dr["PERSON_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON_CMIP"].ToString()).ToString("#,##0"),
                             PersonCamp = Check.IsNone(dr["PERSON_CAMP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON_CAMP"].ToString()).ToString("#,##0"),
                             PersonCanp = Check.IsNone(dr["PERSON_CANP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON_CANP"].ToString()).ToString("#,##0"),
                             PersonRank = Check.IsNone(dr["PERSON_RANK"].ToString()) ? "" : dr["PERSON_RANK"].ToString(),
+
+                            Person2Cmip = Check.IsNone(dr["PERSON2_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON2_CMIP"].ToString()).ToString("#,##0"),
+                            Person2Camp = Check.IsNone(dr["PERSON2_CAMP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON2_CAMP"].ToString()).ToString("#,##0"),
+                            Person2Canp = Check.IsNone(dr["PERSON2_CANP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON2_CANP"].ToString()).ToString("#,##0"),
+                            Person2Rank = Check.IsNone(dr["PERSON2_RANK"].ToString()) ? "" : dr["PERSON2_RANK"].ToString(),
+
                             PersonRank2 = Check.IsNone(dr["PERSON_RANK2"].ToString()) ? "" : dr["PERSON_RANK2"].ToString(),
                             LeaderCmip = Check.IsNone(dr["LEADER_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["LEADER_CMIP"].ToString()).ToString("#,##0"),
                             LeaderRank = Check.IsNone(dr["LEADER_RANK"].ToString()) ? "" : dr["LEADER_RANK"].ToString(),
@@ -234,6 +257,12 @@ namespace OrangeSummer.Access
                             PersonCanp = Check.IsNone(dr["PERSON_CANP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON_CANP"].ToString()).ToString("#,##0"),
                             PersonRank = Check.IsNone(dr["PERSON_RANK"].ToString()) ? "" : dr["PERSON_RANK"].ToString(),
                             PersonRank2 = Check.IsNone(dr["PERSON_RANK2"].ToString()) ? "" : dr["PERSON_RANK2"].ToString(),
+
+                            Person2Cmip = Check.IsNone(dr["PERSON2_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON2_CMIP"].ToString()).ToString("#,##0"),
+                            Person2Camp = Check.IsNone(dr["PERSON2_CAMP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON2_CAMP"].ToString()).ToString("#,##0"),
+                            Person2Canp = Check.IsNone(dr["PERSON2_CANP"].ToString()) ? "" : Convert.ToDecimal(dr["PERSON2_CANP"].ToString()).ToString("#,##0"),
+                            Person2Rank = Check.IsNone(dr["PERSON2_RANK"].ToString()) ? "" : dr["PERSON2_RANK"].ToString(),
+                            
                             //LeaderCmip = Check.IsNone(dr["LEADER_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["LEADER_CMIP"].ToString()).ToString("#,##0"),
                             //LeaderRank = Check.IsNone(dr["LEADER_RANK"].ToString()) ? "" : dr["LEADER_RANK"].ToString(),
                             BranchCmip = Check.IsNone(dr["BRANCH_CMIP"].ToString()) ? "" : Convert.ToDecimal(dr["BRANCH_CMIP"].ToString()).ToString("#,##0"),

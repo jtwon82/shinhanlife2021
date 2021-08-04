@@ -23,7 +23,20 @@
                     </p>--%>
                     <p class="person_img"><img src="<%=OrangeSummer.Common.User.Identify.ProfileImg %>" onerror="this.src='/resources/img/index/person_img2.jpg'" alt="" style="with:112px;height:112px;"/></p>
 <%--                    <p class="rank" style="width:270px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap"><span ><%= OrangeSummer.Common.User.Identify.BranchName %></span><%= OrangeSummer.Common.User.Identify.Name %> / <%= OrangeSummer.Common.User.Identify.Level %></p>--%>
+        <%
+            if (OrangeSummer.Common.User.Identify.LevelName == "신인FC" )
+            {
+        %>
+                    <p class="rank new_fc"><span><%= OrangeSummer.Common.User.Identify.BranchName %></span><em class="newfc"><%= OrangeSummer.Common.User.Identify.Name %> / 신인FC</em></p>
+        <%
+            }
+            else
+            {
+        %>
                     <p class="rank"><span><%= OrangeSummer.Common.User.Identify.BranchName %></span><%= OrangeSummer.Common.User.Identify.Name %> / <%= OrangeSummer.Common.User.Identify.LevelName %></p>
+        <%
+            }
+        %>
                     <ul class="editBtn">
                         <li><a href="/member/edit">내 정보 수정하기</a></li>
                         <li>
@@ -39,7 +52,7 @@
 
                     <li>
                         <%
-                            if ( ",FC,NEWFC".Contains(","+OrangeSummer.Common.User.Identify.Level) )
+                            if ( ",FC,신인FC".Contains(","+OrangeSummer.Common.User.Identify.Level) )
                             {
                         %>
                         <a href="/achieve/bm">SUMMER 업적</a>

@@ -399,3 +399,10 @@ html.open {overflow: hidden;}
     color: #000;
     opacity: 1;
 }
+
+/* 신인FC 폰트사이즈 변경 
+.newfc{
+	font-size:37px;
+	color:#fff;
+	font-family: 'OneShinhanB';
+}*/

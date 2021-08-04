@@ -30,6 +30,10 @@
                         <asp:TextBox ID="edate" runat="server" ClientIDMode="Static" MaxLength="10" CssClass="form-control datepicker mr-2 mb-2" placeholder="종료일"></asp:TextBox>
                     </div>
                 </div>
+                <div class="form-group col-md-3 mb-1">
+                    <label>이름</label>
+                    <asp:TextBox ID="name" ClientIDMode="Static" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
                 <div class="col-md-8"></div>
             </div>
         </div>

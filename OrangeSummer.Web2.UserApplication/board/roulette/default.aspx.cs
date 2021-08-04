@@ -32,29 +32,36 @@ namespace OrangeSummer.Web2.UserApplication.board.roulette
         {
             try
             {
-                using (Business.Roulette biz = new Business.Roulette(Common.User.AppSetting.Connection))
+                if ("00408,17386,24384,41504,45799,56499,64500".Contains(Common.User.Identify.Code))
                 {
-                    Random random = new Random();
-                    //int count = biz.UserSuccess();
-                    int ran = 0;
-                    bool check = true;
-                    if (biz.UserSuccess())
+                    _result = "FAIL";
+                }
+                else
+                {
+                    using (Business.Roulette biz = new Business.Roulette(Common.User.AppSetting.Connection))
                     {
-                        check = biz.UserCheck(Common.User.Identify.Id);
-                        if (check)
-                            _result = "EXISTS";
-                        else
+                        Random random = new Random();
+                        //int count = biz.UserSuccess();
+                        int ran = 0;
+                        bool check = true;
+                        if (biz.UserSuccess())
                         {
-                            ran = random.Next(1, 100);
-
-                            if (ran <= 20)
-                                _result = "SUCCESS";
+                            check = biz.UserCheck(Common.User.Identify.Id);
+                            if (check)
+                                _result = "EXISTS";
                             else
-                                _result = "FAIL";
+                            {
+                                ran = random.Next(1, 100);
+
+                                if (ran <= 20)
+                                    _result = "SUCCESS";
+                                else
+                                    _result = "FAIL";
+                            }
                         }
+                        else
+                            _result = "FAIL";
                     }
-                    else
-                        _result = "FAIL";
                 }
             }
             catch (Exception ex)

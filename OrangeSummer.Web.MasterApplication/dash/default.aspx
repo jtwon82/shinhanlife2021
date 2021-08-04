@@ -30,8 +30,14 @@
                     <li class="d-flex justify-content-between align-items-center p-2">개인 총 누적 업적(CAMP)
                             <span><span class="font-weight-bold text-primary"><%= _apersoncamp %></span>원</span>
                     </li>
-                    <li class="d-flex justify-content-between align-items-center p-2">SL 총 누적 건수
-                            <span><span class="font-weight-bold text-primary"><%= _asl %></span>원</span>
+                    <li class="d-flex justify-content-between align-items-center p-2">S SL 총 누적 건수
+                            <span><span class="font-weight-bold text-primary"><%= _assl %></span>원</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center p-2">G SL 총 누적 건수
+                            <span><span class="font-weight-bold text-primary"><%= _agsl %></span>원</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center p-2">E SL 총 누적 건수
+                            <span><span class="font-weight-bold text-primary"><%= _aesl %></span>원</span>
                     </li>
                     <li class="d-flex justify-content-between align-items-center p-2">지점 총 누적 건수
                             <span><span class="font-weight-bold text-primary"><%= _abranch %></span>원</span>
@@ -46,10 +52,20 @@
             <div class="card-body">
                 <ul class="list-group">
                     <li class="d-flex justify-content-between align-items-center p-2">개인 1위
-                            <span><span class="font-weight-bold text-primary"><%= _pbranch %></span>지점 <span class="font-weight-bold text-primary"><%= _pname %></span>님</span>
+                            <span><span class="font-weight-bold text-primary"><%= _pbranch %></span>지점
+                                 <span class="font-weight-bold text-primary"><%= _pname %></span>님</span>
                     </li>
-                    <li class="d-flex justify-content-between align-items-center p-2">SL 1위
-                            <span><span class="font-weight-bold text-primary"><%= _lbranch %></span>지점 <span class="font-weight-bold text-primary"><%= _lname %></span>님</span>
+                    <li class="d-flex justify-content-between align-items-center p-2">S SL 1위
+                            <span><span class="font-weight-bold text-primary"><%= _SLbranch2 %></span>지점
+                                 <span class="font-weight-bold text-primary"><%= _SLname2 %></span>님</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center p-2">G SL 1위
+                            <span><span class="font-weight-bold text-primary"><%= _SLbranch3 %></span>지점
+                                 <span class="font-weight-bold text-primary"><%= _SLname3 %></span>님</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center p-2">E SL 1위
+                            <span><span class="font-weight-bold text-primary"><%= _SLbranch %></span>지점
+                                 <span class="font-weight-bold text-primary"><%= _SLname %></span>님</span>
                     </li>
                     <li class="d-flex justify-content-between align-items-center p-2">지점 1위
                             <span><span class="font-weight-bold text-primary"><%= _bbranch %></span>지점</span>

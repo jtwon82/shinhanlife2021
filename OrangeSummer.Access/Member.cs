@@ -28,7 +28,8 @@ namespace OrangeSummer.Access
         /// <summary>
         /// 회원관리 리스트
         /// </summary>
-        public List<Model.Member> List(int page, int size, string branch, string level, string code, string mobile, string sdate, string edate)
+        public List<Model.Member> List(int page, int size, string branch, string level, string code, string mobile
+            , string sdate, string edate, string name)
         {
             List<Model.Member> lists = null;
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -40,6 +41,7 @@ namespace OrangeSummer.Access
             parameters.Add(new SqlParameter("@KEY_MOBILE", mobile));
             parameters.Add(new SqlParameter("@KEY_SDATE", sdate));
             parameters.Add(new SqlParameter("@KEY_EDATE", edate));
+            parameters.Add(new SqlParameter("@KEY_MAME", name));
             using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "ADM_MEMBER_LIST", parameters))
             {
                 if (dt.Rows.Count > 0)
@@ -79,7 +81,7 @@ namespace OrangeSummer.Access
         /// <summary>
         /// 회원관리 엑셀
         /// </summary>
-        public List<Model.Member> Excel(string branch, string level, string code, string mobile, string sdate, string edate)
+        public List<Model.Member> Excel(string branch, string level, string code, string mobile, string sdate, string edate, string name)
         {
             List<Model.Member> lists = null;
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -89,6 +91,7 @@ namespace OrangeSummer.Access
             parameters.Add(new SqlParameter("@KEY_MOBILE", mobile));
             parameters.Add(new SqlParameter("@KEY_SDATE", sdate));
             parameters.Add(new SqlParameter("@KEY_EDATE", edate));
+            parameters.Add(new SqlParameter("@KEY_NAME", name));
             using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "ADM_MEMBER_EXCEL", parameters))
             {
                 if (dt.Rows.Count > 0)
@@ -184,10 +187,11 @@ namespace OrangeSummer.Access
         /// <summary>
         /// 회원관리 비밀번호 재설정
         /// </summary>
-        public bool Reset(string id)
+        public bool Reset(string id, string change_pwd)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ID", id));
+            parameters.Add(new SqlParameter("@CHANGE_PWD", change_pwd));
 
             return DBHelper.ExecuteNonQuery(_connection, "ADM_MEMBER_RESET", parameters);
         }
@@ -329,7 +333,6 @@ namespace OrangeSummer.Access
                         BackgroundImg = dr["BACKGROUND_IMG"].ToString(),
                         Branch = new Model.Branch()
                         {
-                            Id = dr["BRANCH_ID"].ToString().ToUpper(),
                             Name = dr["BRANCH_NAME"].ToString()
                         }
                     };

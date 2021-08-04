@@ -1118,3 +1118,69 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
 	font-family: 'OneShinhanL', sans-serif;
 }
 
+
+
+
+/*  210721 추가 */
+.event_vote{
+    background: url(/resources/img/sub/event/voteEvent_bg.jpg) top center no-repeat;
+    background-size: cover;
+}
+.event_vote .subContainer{
+    margin:0;
+    padding-bottom:0;
+}
+.event_vote .event_kv .wc_list{
+    padding-top: 15px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+.event_vote .event_kv .top{
+    width:100%;
+}
+.event_vote .event_kv .wc_list li{
+    display:inline-block;
+    width: 49%;
+    text-align: center;
+    margin-bottom: 28px;
+}
+.event_vote .event_kv .wc_list li:nth-child(even){
+    margin-left: 1%;
+}
+.event_vote .event_kv .wc_list li .img {
+    overflow:hidden;
+}
+.event_vote .event_kv .wc_list li .img img{
+    float:right;
+    width: 100%;
+}
+.event_vote .btn_ucc{
+    margin-top: 45px;
+}
+.event_vote .btn_ucc img{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+.event_vote input[type="radio"]{display:none;}
+.event_vote input[type="radio"]+ em {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border: 2px solid #715ecf;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-top: 10px;
+     }
+.event_vote input[type="radio"]:checked + em {
+   background-color: #715ecf;
+    }
+ .event_vote .logo_bottom{
+     display:block;
+     margin-top: 45px;
+ }
+  .event_vote .logo_bottom img{
+      margin:0 auto;
+  }

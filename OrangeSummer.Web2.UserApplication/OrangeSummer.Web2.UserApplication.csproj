@@ -93,13 +93,33 @@
     <Content Include="board\notice\default.aspx" />
     <Content Include="board\notice\detail.aspx" />
     <Content Include="board\roulette\default.aspx" />
+    <Content Include="board\word\default.aspx" />
     <Content Include="common\js\common.js" />
     <Content Include="common\js\jquery-library.js" />
     <Content Include="common\js\site.js" />
     <Content Include="measure\headoffice\default.aspx" />
     <Content Include="ranking\gsl\default.aspx" />
     <Content Include="ranking\ssl\default.aspx" />
+    <Content Include="resources\img\sub\event\event_vote_btn.png" />
+    <Content Include="resources\img\sub\event\event_vote_logo.png" />
+    <Content Include="resources\img\sub\event\event_vote_top.png" />
+    <Content Include="resources\img\sub\event\event_writing_1.png" />
+    <Content Include="resources\img\sub\event\event_writing_10.png" />
+    <Content Include="resources\img\sub\event\event_writing_11.png" />
+    <Content Include="resources\img\sub\event\event_writing_12.png" />
+    <Content Include="resources\img\sub\event\event_writing_13.png" />
+    <Content Include="resources\img\sub\event\event_writing_14.png" />
+    <Content Include="resources\img\sub\event\event_writing_15.png" />
+    <Content Include="resources\img\sub\event\event_writing_2.png" />
+    <Content Include="resources\img\sub\event\event_writing_3.png" />
+    <Content Include="resources\img\sub\event\event_writing_4.png" />
+    <Content Include="resources\img\sub\event\event_writing_5.png" />
+    <Content Include="resources\img\sub\event\event_writing_6.png" />
+    <Content Include="resources\img\sub\event\event_writing_7.png" />
+    <Content Include="resources\img\sub\event\event_writing_8.png" />
+    <Content Include="resources\img\sub\event\event_writing_9.png" />
     <Content Include="resources\img\sub\event\rouletteImg2.jpg" />
+    <Content Include="resources\img\sub\event\voteEvent_bg.jpg" />
     <Content Include="resources\img\sub\measure\dynamiteBanner.jpg" />
     <Content Include="resources\img\sub\measure\individual_standardBox.png" />
     <Content Include="resources\img\sub\measure\measureHeadoffice.png" />
@@ -265,6 +285,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <Content Include="resources\img\sub\event\Thumbs.db" />
     <None Include="Web References\kr.co.youiwe.webservice\ServiceSMS.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -330,6 +351,13 @@
     <Compile Include="board\roulette\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="board\word\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board\word\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="common\master\page.Master.cs">
       <DependentUpon>page.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -349,6 +377,7 @@
     <Compile Include="controllers\NoticeController.cs" />
     <Compile Include="controllers\RouletteController.cs" />
     <Compile Include="controllers\SmsController.cs" />
+    <Compile Include="controllers\WordController.cs" />
     <Compile Include="cumulative\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

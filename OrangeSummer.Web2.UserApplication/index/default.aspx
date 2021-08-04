@@ -53,7 +53,7 @@
                     <dt>Category</dt>
                     <dd>
                         <%
-                            if (",FC".Contains("," + OrangeSummer.Common.User.Identify.Level))
+                            if (",FC,신인FC".Contains("," + OrangeSummer.Common.User.Identify.Level))
                             {
                         %>
                         <a href="/achieve/bm"><span></span>SUMMER 업적</a>
@@ -69,12 +69,6 @@
                             {
                         %>
                         <a href="/achieve/point"><span></span>SUMMER 업적</a>
-                        <%
-                            }
-                            else if (",NEWFC".Contains("," + OrangeSummer.Common.User.Identify.Level))
-                            {
-                        %>
-                        <a href="/achieve/bm"><span></span>SUMMER 업적</a>
                         <%
                             }
                         %></dd>

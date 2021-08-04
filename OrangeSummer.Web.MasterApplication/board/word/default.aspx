@@ -17,13 +17,16 @@
             <i class="material-icons">vertical_align_bottom</i> 참여자 다운로드
         </asp:LinkButton>
 
-        <asp:LinkButton ID="btnReply" runat="server" OnClick="btnReply_Click" CssClass="btn btn-secondary ml-2">
-            <i class="material-icons">vertical_align_bottom</i> 댓글 다운로드
-        </asp:LinkButton>
+        <div style="display:none;">
+            <asp:LinkButton ID="btnReply" runat="server" OnClick="btnReply_Click" CssClass="btn btn-secondary ml-2">
+                <i class="material-icons">vertical_align_bottom</i> 댓글 다운로드
+            </asp:LinkButton>
 
-        <a href="javascript:$.library.popup('reply.aspx', 'UCC_REPLY', 1110, 650);" class="btn btn-secondary ml-2">
-            <i class="material-icons">article</i> 댓글 보기
-        </a>
+            <a href="javascript:$.library.popup('reply.aspx', 'UCC_REPLY', 1110, 650);" class="btn btn-secondary ml-2">
+                <i class="material-icons">article</i> 댓글 보기
+            </a>
+        </div>
+
     </div>
 
     <p class="mb-1">* 총 <span class="text-danger font-weight-bold"><%= _total %></span>개의 참여가 있습니다.</p>

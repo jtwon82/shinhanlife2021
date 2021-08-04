@@ -104,6 +104,7 @@ namespace OrangeSummer.Web.MasterApplication.member
             sb.Append("&mobile=" + Check.IsNone(Request["mobile"], ""));
             sb.Append("&sdate=" + Check.IsNone(Request["sdate"], ""));
             sb.Append("&edate=" + Check.IsNone(Request["edate"], ""));
+            sb.Append("&change_pwd=" + Check.IsNone(Request["change_pwd"], ""));
 
             return sb.ToString();
         }
@@ -133,9 +134,11 @@ namespace OrangeSummer.Web.MasterApplication.member
             try
             {
                 string id = Check.IsNone(Request["id"], true);
+                string change_pwd = Element.Get(this.change_pwd);
+
                 using (Business.Member biz = new Business.Member(Common.Master.AppSetting.Connection))
                 {
-                    bool result = biz.Reset(id);
+                    bool result = biz.Reset(id, change_pwd);
                     if (result)
                     {
                         Tool.RR($"detail.aspx?id={id}{Parameters()}");
@@ -174,5 +177,6 @@ namespace OrangeSummer.Web.MasterApplication.member
                 MLib.Util.Error.WebHandler(ex);
             }
         }
+
     }
 }

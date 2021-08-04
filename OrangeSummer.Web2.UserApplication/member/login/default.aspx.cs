@@ -79,7 +79,7 @@ namespace OrangeSummer.Web2.UserApplication.member.login
                     //    Tool.RR("/index");
                     //}
 
-                    if (",FC,NEWFC".Contains("," + member.LevelName))
+                    if (",FC,신인FC".Contains("," + member.LevelName))
                     {
                         Tool.RR("/achieve/bm");
                     }

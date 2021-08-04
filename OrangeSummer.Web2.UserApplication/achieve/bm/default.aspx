@@ -9,15 +9,29 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-<body class="bm">
+<body>
 	<div id="sub_wrap" class="subMeta02">
 		<uc1:menu runat="server" id="menu" />
 		<div class="subContainer guide">
 			<p class="subTitle"><img src="/resources/img/sub/bmTitle.png" alt="My업적" /></p>
 			<ul class="bmTabs">
-				<li><a href="/achieve/bm" class="current">개인 부문</a></li>
                 <%
-                    if ( ",SL,E SL,G SL,S SL".Contains(","+OrangeSummer.Common.User.Identify.Level) )
+                    if (",신인FC".Contains("," + OrangeSummer.Common.User.Identify.LevelName))
+                    {
+                %>
+                    <li><a href="/achieve/bm" class="current">신인FC 부문</a></li>
+                <%
+                    }
+                    else
+                    {
+                %>
+                    <li><a href="/achieve/bm" class="current">개인 부문</a></li>
+                <%
+                    }
+                %>
+				
+                <%
+                    if ( ",SL,E SL,G SL,S SL".Contains(","+OrangeSummer.Common.User.Identify.LevelName) )
                     {
                 %>
                 <li><a href="/achieve/sl"><%=OrangeSummer.Common.User.Identify.LevelName %> 부문</a></li>

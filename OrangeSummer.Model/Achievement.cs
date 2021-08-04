@@ -21,6 +21,17 @@
         public string PersonCamp { get; set; }
         public string PersonCanp { get; set; }
         public string PersonRank { get; set; }
+
+        public string Person2Cmip { get; set; }
+        public string Person2Camp { get; set; }
+        public string Person2Canp { get; set; }
+        public string Person2Rank { get; set; }
+
+        public string Cmip { get; set; }
+        public string Camp { get; set; }
+        public string Canp { get; set; }
+        public string Rank { get; set; }
+
         public string PersonRank2 { get; set; }
         public string LeaderCmip { get; set; }
         public string LeaderRank { get; set; }

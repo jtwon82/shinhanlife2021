@@ -14,12 +14,18 @@ namespace OrangeSummer.Web.MasterApplication.dash
         protected string _mnew = string.Empty;
         protected string _aperson = string.Empty;
         protected string _apersoncamp = string.Empty;
-        protected string _asl = string.Empty;
+        protected string _assl = string.Empty;
+        protected string _agsl = string.Empty;
+        protected string _aesl = string.Empty;
         protected string _abranch = string.Empty;
         protected string _pbranch = string.Empty;
         protected string _pname = string.Empty;
-        protected string _lbranch = string.Empty;
-        protected string _lname = string.Empty;
+        protected string _SLbranch = string.Empty;
+        protected string _SLname = string.Empty;
+        protected string _SLbranch2 = string.Empty;
+        protected string _SLname2 = string.Empty;
+        protected string _SLbranch3 = string.Empty;
+        protected string _SLname3 = string.Empty;
         protected string _bbranch = string.Empty;
         protected string _bname = string.Empty;
 
@@ -59,13 +65,17 @@ namespace OrangeSummer.Web.MasterApplication.dash
                         DataRow dr = ds.Tables[1].Rows[0];
                         _aperson = Convert.ToDecimal(dr["PERSON"].ToString()).ToString("#,##0");
                         _apersoncamp = Convert.ToDecimal(dr["PERSONCAMP"].ToString()).ToString("#,##0");
-                        _asl = Convert.ToDecimal(dr["SL"].ToString()).ToString("#,##0");
+                        _assl = Convert.ToDecimal(dr["SSL"].ToString()).ToString("#,##0");
+                        _agsl = Convert.ToDecimal(dr["GSL"].ToString()).ToString("#,##0");
+                        _aesl = Convert.ToDecimal(dr["ESL"].ToString()).ToString("#,##0");
                         _abranch = Convert.ToDecimal(dr["BRANCH"].ToString()).ToString("#,##0");
                     }
                     else
                     {
                         _aperson = "0";
-                        _asl = "0";
+                        _assl = "0";
+                        _agsl = "0";
+                        _aesl = "0";
                         _abranch = "0";
                     }
 
@@ -82,23 +92,49 @@ namespace OrangeSummer.Web.MasterApplication.dash
                         _pname = "0";
                     }
 
-                    // SL 1위
+                    // S SL 1위
                     if (ds.Tables[3].Rows.Count > 0)
                     {
                         DataRow dr = ds.Tables[3].Rows[0];
-                        _lbranch = dr["BRANCH_NAME"].ToString().Replace("지점", "");
-                        _lname = dr["NAME"].ToString();
+                        _SLbranch2 = dr["BRANCH_NAME"].ToString().Replace("지점", "");
+                        _SLname2 = dr["NAME"].ToString();
                     }
                     else
                     {
-                        _lbranch = "0";
-                        _lname = "0";
+                        _SLbranch2 = "0";
+                        _SLname2 = "0";
                     }
 
-                    // 지점 1위
+                    // G SL 1위
                     if (ds.Tables[4].Rows.Count > 0)
                     {
                         DataRow dr = ds.Tables[4].Rows[0];
+                        _SLbranch3 = dr["BRANCH_NAME"].ToString().Replace("지점", "");
+                        _SLname3 = dr["NAME"].ToString();
+                    }
+                    else
+                    {
+                        _SLbranch3 = "0";
+                        _SLname3 = "0";
+                    }
+
+                    // E SL 1위
+                    if (ds.Tables[5].Rows.Count > 0)
+                    {
+                        DataRow dr = ds.Tables[5].Rows[0];
+                        _SLbranch = dr["BRANCH_NAME"].ToString().Replace("지점", "");
+                        _SLname = dr["NAME"].ToString();
+                    }
+                    else
+                    {
+                        _SLbranch = "0";
+                        _SLname = "0";
+                    }
+
+                    // 지점 1위
+                    if (ds.Tables[6].Rows.Count > 0)
+                    {
+                        DataRow dr = ds.Tables[6].Rows[0];
                         _bbranch = dr["BRANCH_NAME"].ToString().Replace("지점", "");
                         _bname = dr["NAME"].ToString();
                     }

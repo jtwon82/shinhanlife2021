@@ -30,8 +30,12 @@
                 </tr>
                 <tr>
                     <th>비밀번호</th>
-                    <td colspan="3" class="text-left"><%= _pwd %>
-                        <asp:LinkButton ID="btnReset" runat="server" OnClick="btnReset_Click" OnClientClick="if (!data.reset()) { return false; }" CssClass="btn btn-primary ml-3" Text="비밀번호 재설정"></asp:LinkButton>
+                    <td colspan='3' class="text-left">
+                        <table style="border:0px;width:100%;">
+                            <tr><td width="30%">현재비번:<%= _pwd %></td>
+                                <td width="30%"><asp:TextBox ID="change_pwd" placeholder="변경비번" ClientIDMode="Static" runat="server" style="width:200px;" CssClass="form-control"></asp:TextBox></td>
+                                <td width="30%"><asp:LinkButton ID="btnReset" runat="server" OnClick="btnReset_Click" OnClientClick="if (!data.reset()) { return false; }" CssClass="btn btn-primary ml-3" Text="비밀번호 재설정"></asp:LinkButton></td></tr>
+                        </table>
                     </td>
                 </tr>
                 <!--
@@ -100,6 +104,11 @@
                 }
             },
             reset: function () {
+                var literal = {
+                    change_pwd: { selector: $("#change_pwd").val() },
+                };
+                $.validate.rules(literal);
+
                 if (confirm("비밀번호를 재설정하시겠습니까?")) {
                     return true;
                 } else {

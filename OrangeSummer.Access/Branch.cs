@@ -85,7 +85,7 @@ namespace OrangeSummer.Access
                             Sort = Convert.ToInt32(dr["SORT"].ToString()),
                             FkAdmin = dr["FK_ADMIN"].ToString(),
                             FkTravel = dr["FK_TRAVEL"].ToString(),
-                            Name = dr["NAME"].ToString(),
+                            Name = dr["BRANCH_NAME"].ToString(),
                             DelYn = dr["DEL_YN"].ToString(),
                             RegistDate = dr["REGIST_DATE"].ToString()
                         };

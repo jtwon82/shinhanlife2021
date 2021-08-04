@@ -40,6 +40,7 @@ namespace OrangeSummer.Web.MasterApplication.member
                 string mobile = Check.IsNone(Request["mobile"], "");
                 string sdate = Check.IsNone(Request["sdate"], "");
                 string edate = Check.IsNone(Request["edate"], "");
+                string name = Check.IsNone(Request["name"], "");
 
                 // 지점
                 using (Business.Branch biz = new Business.Branch(Common.Master.AppSetting.Connection))
@@ -49,7 +50,7 @@ namespace OrangeSummer.Web.MasterApplication.member
                     {
                         this.branch.DataSource = list;
                         this.branch.DataTextField = "Name";
-                        this.branch.DataValueField = "Id";
+                        this.branch.DataValueField = "Name";
                         this.branch.DataBind();
                     }
 
@@ -70,10 +71,11 @@ namespace OrangeSummer.Web.MasterApplication.member
                 Element.Set(this.mobile, mobile);
                 Element.Set(this.sdate, sdate);
                 Element.Set(this.edate, edate);
+                Element.Set(this.name, name);
 
                 using (Business.Member biz = new Business.Member(Common.Master.AppSetting.Connection))
                 {
-                    List<Model.Member> list = biz.List(page, _size, branch, level, code, mobile, sdate, edate);
+                    List<Model.Member> list = biz.List(page, _size, branch, level, code, mobile, sdate, edate, name);
                     if (list != null)
                     {
                         this.rptList.DataSource = list;
@@ -89,6 +91,7 @@ namespace OrangeSummer.Web.MasterApplication.member
                     paging.AddParams("mobile", mobile);
                     paging.AddParams("sdate", sdate);
                     paging.AddParams("edate", edate);
+                    paging.AddParams("name", name);
                     _paging = paging.ToString();
                 }
             }
@@ -115,6 +118,7 @@ namespace OrangeSummer.Web.MasterApplication.member
             sb.Append("&mobile=" + Check.IsNone(Request["mobile"], ""));
             sb.Append("&sdate=" + Check.IsNone(Request["sdate"], ""));
             sb.Append("&edate=" + Check.IsNone(Request["edate"], ""));
+            sb.Append("&name=" + Check.IsNone(Request["name"], ""));
 
             return sb.ToString();
         }
@@ -128,6 +132,7 @@ namespace OrangeSummer.Web.MasterApplication.member
             url.AddParams("mobile", Element.Get(this.mobile));
             url.AddParams("sdate", Element.Get(this.sdate));
             url.AddParams("edate", Element.Get(this.edate));
+            url.AddParams("name", Element.Get(this.name));
             url.Redirect();
         }
 
@@ -141,10 +146,11 @@ namespace OrangeSummer.Web.MasterApplication.member
                 string mobile = Check.IsNone(Request["mobile"], "");
                 string sdate = Check.IsNone(Request["sdate"], "");
                 string edate = Check.IsNone(Request["edate"], "");
+                string name = Check.IsNone(Request["name"], "");
 
                 using (Business.Member biz = new Business.Member(Common.Master.AppSetting.Connection))
                 {
-                    List<Model.Member> list = biz.Excel(branch, level, code, mobile, sdate, edate);
+                    List<Model.Member> list = biz.Excel(branch, level, code, mobile, sdate, edate, name);
                     if (list != null)
                     {
                         string _filename = "회원리스트";

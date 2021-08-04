@@ -23,17 +23,17 @@ namespace OrangeSummer.Business
         /// <summary>
         /// 회원관리 리스트
         /// </summary>
-        public List<Model.Member> List(int page, int size, string branch, string level, string code, string mobile, string sdate, string edate)
+        public List<Model.Member> List(int page, int size, string branch, string level, string code, string mobile, string sdate, string edate, string name)
         {
-            return _member.List(page, size, branch, level, code, mobile, sdate, edate);
+            return _member.List(page, size, branch, level, code, mobile, sdate, edate, name );
         }
 
         /// <summary>
         /// 회원관리 엑셀
         /// </summary>
-        public List<Model.Member> Excel(string branch, string level, string code, string mobile, string sdate, string edate)
+        public List<Model.Member> Excel(string branch, string level, string code, string mobile, string sdate, string edate, string name)
         {
-            return _member.Excel(branch, level, code, mobile, sdate, edate);
+            return _member.Excel(branch, level, code, mobile, sdate, edate, name);
         }
 
         /// <summary>
@@ -55,9 +55,9 @@ namespace OrangeSummer.Business
         /// <summary>
         /// 회원관리 비밀번호 재설정
         /// </summary>
-        public bool Reset(string id)
+        public bool Reset(string id, string change_pwd)
         {
-            return _member.Reset(id);
+            return _member.Reset(id, change_pwd);
         }
 
         /// <summary>

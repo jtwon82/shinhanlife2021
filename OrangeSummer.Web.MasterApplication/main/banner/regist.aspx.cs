@@ -95,48 +95,19 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
                 string mobile = string.Empty;
                 string ext = string.Empty;
 
-                //ext = System.IO.Path.GetExtension(this.pc.PostedFile.FileName).ToLower();
-                //if (ext != ".jpg" && ext != ".png")
-                //    JS.Back("jpg, png파일만 업로드 가능합니다.");
-
-                //ext = System.IO.Path.GetExtension(this.mobile.PostedFile.FileName).ToLower();
-                //if (ext != ".jpg" && ext != ".png")
-                //    JS.Back("jpg, png파일만 업로드 가능합니다.");
-
-                //S3 s3 = new S3(Common.Master.AppSetting.AwsAccess, Common.Master.AppSetting.AwsSecret, Common.Master.AppSetting.AwsBucket);
-                //s3.IsPublic = true;
-                //// PC 이미지
-                //s3.Upload(this.pc.PostedFile.InputStream, ext);
-                //if (s3.Result)
-                //    pc = s3.Key;
-                //else
-                //    JS.Back("처리중 에러가 발생했습니다.");
-
-                //// 모바일 이미지
-                //s3.Upload(this.mobile.PostedFile.InputStream, ext);
-                //if (s3.Result)
-                //    mobile = s3.Key;
-                //else
-                //    JS.Back("처리중 에러가 발생했습니다.");
-
-
-                //HttpUpload upload = new HttpUpload(this.pc.PostedFile);
-                //upload.Attached();
-                //if (upload.Result)
-                //    pc = upload.FIleFullPath();
-                //else
-                //    JS.Back("처리중 에러가 발생했습니다.");
-
                 ext = System.IO.Path.GetExtension(this.mobile.PostedFile.FileName).ToLower();
-                if (ext != ".jpg" && ext != ".png")
-                    JS.Back("jpg, png파일만 업로드 가능합니다.");
+                if (!Check.IsNone(ext))
+                {
+                    if (ext != ".jpg" && ext != ".png")
+                        JS.Back("jpg, png파일만 업로드 가능합니다.");
 
-                HttpUpload upload2 = new HttpUpload(this.mobile.PostedFile);
-                upload2.Attached();
-                if (upload2.Result)
-                    mobile = upload2.FIleFullPath();
-                else
-                    JS.Back("처리중 에러가 발생했습니다.");
+                    HttpUpload upload2 = new HttpUpload(this.mobile.PostedFile);
+                    upload2.Attached();
+                    if (upload2.Result)
+                        mobile = upload2.FIleFullPath();
+                    else
+                        JS.Back("처리중 에러가 발생했습니다.");
+                }
 
                 Model.Banner banner = new Model.Banner();
                 banner.Id = Tool.UniqueNewGuid;
@@ -180,21 +151,12 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
                 //s3.IsPublic = true;
 
                 // PC 이미지
+                ext = System.IO.Path.GetExtension(this.pc.PostedFile.FileName).ToLower();
                 if (!Check.IsNone(ext))
                 {
-                    ext = System.IO.Path.GetExtension(this.pc.PostedFile.FileName).ToLower();
                     if (ext != ".jpg" && ext != ".png")
                         JS.Back("jpg, png파일만 업로드 가능합니다.");
-
-                    //s3.Upload(this.pc.PostedFile.InputStream, ext);
-                    //if (s3.Result)
-                    //{
-                    //    pc = s3.Key;
-                    //    s3.Delete(pced); // 기존파일 삭제
-                    //}
-                    //else
-                    //    JS.Back("처리중 에러가 발생했습니다.");
-
+                    
                     HttpUpload upload = new HttpUpload(this.pc.PostedFile);
                     upload.Attached();
                     if (upload.Result)
@@ -207,19 +169,10 @@ namespace OrangeSummer.Web.MasterApplication.main.banner
 
                 // 모바일 이미지
                 ext = System.IO.Path.GetExtension(this.mobile.PostedFile.FileName).ToLower();
-                if (ext != ".jpg" && ext != ".png")
-                    JS.Back("jpg, png파일만 업로드 가능합니다.");
                 if (!Check.IsNone(ext))
                 {
-
-                    //s3.Upload(this.mobile.PostedFile.InputStream, ext);
-                    //if (s3.Result)
-                    //{
-                    //    mobile = s3.Key;
-                    //    s3.Delete(mobiled); // 기존파일 삭제
-                    //}
-                    //else
-                    //    JS.Back("처리중 에러가 발생했습니다.");
+                    if (ext != ".jpg" && ext != ".png")
+                        JS.Back("jpg, png파일만 업로드 가능합니다.");
 
                     HttpUpload upload2 = new HttpUpload(this.mobile.PostedFile);
                     upload2.Attached();

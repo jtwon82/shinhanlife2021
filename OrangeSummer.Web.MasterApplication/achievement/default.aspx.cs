@@ -49,8 +49,8 @@ namespace OrangeSummer.Web.MasterApplication.achievement
                     if (list != null)
                     {
                         this.branch.DataSource = list;
-                        this.branch.DataTextField = "Name";
-                        this.branch.DataValueField = "Id";
+                        this.branch.DataTextField = "NAME";
+                        this.branch.DataValueField = "NAME";
                         this.branch.DataBind();
                     }
 

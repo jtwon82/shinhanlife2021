@@ -68,7 +68,7 @@ namespace OrangeSummer.Web2.UserApplication.member.regist
                 Model.Member member = biz.UserLogin(code, pwd);
                 if (member != null)
                 {
-                    string[] array = { member.Id, member.Code, member.Name, member.Level, member.Branch.Id, member.Branch.Name, member.ProfileImg, member.BackgroundImg };
+                    string[] array = { member.Id, member.Code, member.Name, member.Level, member.Branch.Id, member.Branch.Name, member.ProfileImg, member.BackgroundImg, member.LevelName };
 
                     Forms.Authorize(OrangeSummer.Common.User.AppSetting.EncKey, member.Id, array);
                     //string remember = Element.Get(this.remember);

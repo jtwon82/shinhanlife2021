@@ -49,7 +49,7 @@ namespace OrangeSummer.Web.MasterApplication.ranking
                     {
                         this.branch.DataSource = list;
                         this.branch.DataTextField = "Name";
-                        this.branch.DataValueField = "Id";
+                        this.branch.DataValueField = "Name";
                         this.branch.DataBind();
                     }
 

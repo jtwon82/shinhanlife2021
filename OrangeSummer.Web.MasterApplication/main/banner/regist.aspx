@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <th>LINK</th>
-                    <td colspan="3" class="text-left"><asp:TextBox ID="link" runat="server" MaxLength="200" CssClass="form-control"></asp:TextBox></td>
+                    <td colspan="3" class="text-left"><asp:TextBox ID="link" runat="server" MaxLength="200" CssClass="form-control" autocomplete='off'></asp:TextBox></td>
                 </tr>
                 <tr>
                     <th>노출 기간</th>
