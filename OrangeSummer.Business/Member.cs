@@ -77,6 +77,14 @@ namespace OrangeSummer.Business
         {
             return _member.UserDetail(id);
         }
+        
+        /// <summary>
+        /// 회원 조회
+        /// </summary>
+        public Model.Member UserDetailV2(Model.Member member)
+        {
+            return _member.UserDetailV2(member);
+        }
 
         /// <summary>
         /// 회원 코드 중복체크
@@ -92,6 +100,14 @@ namespace OrangeSummer.Business
         public string UserCheck(string code, string name)
         {
             return _member.UserCheck(code, name);
+        }
+
+        /// <summary>
+        /// 회원 코드 중복체크
+        /// </summary>
+        public string UserCheckV3(string code, string name)
+        {
+            return _member.UserCheckV3(code, name);
         }
 
         /// <summary>

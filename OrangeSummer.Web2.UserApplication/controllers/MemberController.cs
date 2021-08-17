@@ -113,6 +113,40 @@ namespace OrangeSummer.Web2.UserApplication.controllers
         }
 
         /// <summary>
+        /// 사용자 코드 중복체크 V3
+        /// </summary>
+        [HttpPost]
+        [ActionName("checkCodeV3")]
+        public HttpResponseMessage checkCodeV3(MemberRequest request)
+        {
+            HttpResponseMessage resp = null;
+            try
+            {
+                Json json = new Json() { Result = "FAIL", Message = "." };
+                using (Business.Member biz = new Business.Member(Common.User.AppSetting.Connection))
+                {
+                    string result = biz.UserCheckV3(request.Code, request.Name);
+                    json.Result = result;
+                }
+
+                JsonSerializerSettings jss = new JsonSerializerSettings() { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+                string stringfy = JsonConvert.SerializeObject(json, jss);
+                resp = new HttpResponseMessage()
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = new StringContent(stringfy, Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception ex)
+            {
+                MLib.Util.Error.ApiHandler(ex);
+                resp = new HttpResponseMessage() { StatusCode = HttpStatusCode.InternalServerError };
+            }
+
+            return resp;
+        }
+
+        /// <summary>
         /// 에디터 첨부파일 업로드
         /// </summary>
         [HttpPost]

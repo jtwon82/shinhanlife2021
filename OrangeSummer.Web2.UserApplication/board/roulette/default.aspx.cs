@@ -32,7 +32,7 @@ namespace OrangeSummer.Web2.UserApplication.board.roulette
         {
             try
             {
-                if ("00408,17386,24384,41504,45799,56499,64500".Contains(Common.User.Identify.Code))
+                if (",19888,25932,35537,35726,39954,41929,44443,44496,56142,56153,57363,60914,64776,65232,66213,66247,66325,66483".Contains(","+Common.User.Identify.Code))
                 {
                     _result = "FAIL";
                 }

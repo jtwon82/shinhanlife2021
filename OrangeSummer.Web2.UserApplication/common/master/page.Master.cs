@@ -22,7 +22,7 @@ namespace OrangeSummer.Web2.UserApplication.common.master
             #region [ 로그인 체크 ]
             string url = ServerVariables.Url;
             bool checker = false;
-            string[] directory = { "/default.aspx", "/member/regist/default.aspx", "/member/login/default.aspx", "/member/terms/default.aspx" };
+            string[] directory = { "/default.aspx", "/member/regist/default.aspx", "/member/login/default.aspx", "/member/terms/default.aspx", "/member/find_pw/default.aspx" };
             foreach (var item in directory)
             {
                 if (url.Equals(item))

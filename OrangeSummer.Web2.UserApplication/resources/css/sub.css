@@ -38,6 +38,10 @@
 	background:#fff url(/resources/img/sub/subMeta09.jpg) top center no-repeat;
 	height:401px !important;
 }
+.subMeta10{
+	background:#fff url(../img/sub/subMeta10.jpg) top center no-repeat;
+	height:401px !important;
+}
 .subTitle{
 	width:430px;
 	margin: 115px auto 115px auto;
@@ -1184,3 +1188,36 @@ ul.bmTabs li a:hover, ul.bmTabs li a.current, ul.bmTabs.measure li.current, ul.b
   .event_vote .logo_bottom img{
       margin:0 auto;
   }
+  
+/* 210804 비밀번호 찾기 추가 */
+.pwFind_wrap{
+	background:url(../img/sub/findpwIcon.png) top center no-repeat;
+	padding-top:10px;
+}
+.find_result{
+	font-size:38px;
+	font-family: 'OneShinhanL', sans-serif;
+	color:#705dcf; 
+	padding:140px 0;
+	text-align:center;
+	line-height:62px;
+}
+.find_result em.pw{
+	display:block;
+}
+.find_result em.pw input{
+	font-weight:bold;
+	display:inline-block;
+	font-family: 'OneShinhanB', sans-serif;
+	border:none;
+	font-size:38px;
+	vertical-align: baseline;
+	width:100%;
+}
+.find_result em.pw input::placeholder{
+	color:#705dcf;
+}
+.find_result em.pw input[type="text"]{
+	color:#705dcf;
+	text-align:center;
+}

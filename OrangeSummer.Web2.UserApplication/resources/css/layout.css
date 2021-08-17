@@ -192,7 +192,7 @@ html.open {overflow: hidden;}
 }
 .loginPage{
 	width:720px;
-	margin:210px auto 0 auto;
+	margin:300px auto 0 auto;
 }
 .loginPage .fc_code, .loginPage .fc_pwd{
 	width:639px;
@@ -223,7 +223,7 @@ html.open {overflow: hidden;}
 	font-family: 'OneShinhanL', sans-serif;
 	font-size:25px;
 	position:absolute;
-	right:220px;
+	left:50px;
 	margin-top:20px;
 }
 .loginPage .login_check label{
@@ -399,10 +399,23 @@ html.open {overflow: hidden;}
     color: #000;
     opacity: 1;
 }
-
-/* 신인FC 폰트사이즈 변경 
-.newfc{
-	font-size:37px;
+/* 210804 비밀번호 찾기 추가 */
+.btn_list{
+	float:right;
+	margin: 20px 60px 0 0;
+}
+.btn_list li{ 
+	float:left;
+}
+.btn_list li span{ 
+	display:inline-block;
+	margin:0 10px;
 	color:#fff;
-	font-family: 'OneShinhanB';
-}*/
+	font-size: 20px;
+	vertical-align: text-bottom;
+}
+.btn_list li a{ 
+	color:#fff;
+	font-family: 'OneShinhanL', sans-serif;
+    font-size: 25px;
+}

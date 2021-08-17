@@ -26,10 +26,11 @@
                 <asp:HiddenField ID="remember" runat="server" ClientIDMode="Static" Value="Y" />
                 <label for="loginChk">자동 로그인</label>
 			</div>
+            <ul class="btn_list">
+				<li><a href="/member/find_pw/">비밀번호 찾기</a><span>|</span></li>
+				<li><a href="/member/regist/">회원가입</a></li>
+			</ul>
                 
-			<div class="btn_join">
-				<a href="/member/regist/">회원가입</a>
-			</div>
 		</div>
 	</div>
 </body>

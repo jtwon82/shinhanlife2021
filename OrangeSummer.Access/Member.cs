@@ -259,6 +259,45 @@ namespace OrangeSummer.Access
         }
 
         /// <summary>
+        /// 회원 조회V2
+        /// </summary>
+        public Model.Member UserDetailV2(Model.Member _member)
+        {
+            Model.Member member = null;
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@CODE", _member.Code));
+            using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_MEMBER_CHECK", parameters))
+            {
+                if (dt.Rows.Count == 1)
+                {
+                    DataRow dr = dt.Rows[0];
+
+                    string name = dr["NAME"].ToString();
+                    string mobile = dr["MOBILE"].ToString();
+
+                    if (name.Equals(_member.Name) && mobile.Equals(_member.Mobile) ) 
+                    {
+                        List<SqlParameter> parameters2 = new List<SqlParameter>();
+                        parameters2.Add(new SqlParameter("@ID", dr["ID"].ToString().ToUpper()));
+                        using (DataTable dt2 = DBHelper.ExecuteDataTable(_connection, "USP_MEMBER_DETAIL", parameters2))
+                        {
+                            if (dt2.Rows.Count == 1)
+                            {
+                                DataRow dr2 = dt2.Rows[0];
+                                member = new Model.Member()
+                                {
+                                    Pwd = dr2["PWD"].ToString()
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+
+            return member;
+        }
+
+        /// <summary>
         /// 회원 전화번호 중복체크
         /// </summary>
         public string UserCheckPno(string pno)
@@ -288,6 +327,27 @@ namespace OrangeSummer.Access
             parameters.Add(new SqlParameter("@NAME", name));
             parameters.Add(new SqlParameter("@CODE", code));
             using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_MEMBER_CHECKV2", parameters))
+            {
+                if (dt.Rows.Count == 1)
+                {
+                    DataRow dr = dt.Rows[0];
+                    result = dr["RESULT"].ToString();
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 회원 코드 중복체크V3
+        /// </summary>
+        public string UserCheckV3(string code, string name)
+        {
+            string result = "FAIL";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@NAME", name));
+            parameters.Add(new SqlParameter("@CODE", code));
+            using (DataTable dt = DBHelper.ExecuteDataTable(_connection, "USP_MEMBER_CHECKV3", parameters))
             {
                 if (dt.Rows.Count == 1)
                 {
